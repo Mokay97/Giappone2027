@@ -305,6 +305,22 @@ nav.tabs a[aria-current="page"] svg{stroke:var(--alert)}
 .hgroup span{font-family:var(--kanji);font-weight:800;color:var(--c);font-size:20px}
 .chip .cnt{font-size:13px;opacity:.7;margin-left:2px}
 a.hlink{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+/* animazione di apertura */
+#intro{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;align-items:center;justify-content:center;transition:opacity .45s ease;cursor:pointer}
+#intro.out{opacity:0;pointer-events:none}
+#intro svg{width:100%;height:100%;max-width:560px}
+.i-sun{animation:iSun .62s cubic-bezier(.2,.8,.2,1) both;transform-box:fill-box;transform-origin:center}
+@keyframes iSun{from{transform:translateY(170px) scale(.9);opacity:0}to{transform:none;opacity:1}}
+.i-k{font-family:var(--kanji);font-weight:800;font-size:66px;fill:#fff;animation:iInk .5s cubic-bezier(.3,.6,.3,1) both}
+@keyframes iInk{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+.i-title{font-family:var(--sans);font-weight:700;font-size:22px;fill:var(--ink);animation:iFade .5s ease .5s both}
+.i-sub{font-family:var(--sans);font-size:13px;fill:var(--muted);animation:iFade .5s ease .62s both}
+@keyframes iFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.i-line{animation:iDraw .7s cubic-bezier(.4,0,.2,1) .72s both}
+@keyframes iDraw{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.i-st{transform-box:fill-box;transform-origin:center;animation:iPop .26s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes iPop{from{transform:scale(0)}to{transform:scale(1)}}
+#introPlane{position:fixed;left:0;top:0;width:30px;height:30px;color:var(--ink);z-index:101;opacity:0;pointer-events:none}
 [hidden]{display:none!important}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media (min-width:600px){.kanji{font-size:72px}.kanji.k3{font-size:48px}.day-head h2{font-size:30px}}
@@ -523,6 +539,8 @@ const today = new Date(); today.setHours(0,0,0,0);
 const start = parse(DAYS[0].date);
 const diff = Math.round((start - today)/864e5);
 let todayIdx = DAYS.findIndex(d => parse(d.date).getTime() === today.getTime());
+let FLIGHT_PCT = 0;
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
 (function flight(){
   const from = parse(COUNTDOWN_FROM);
   let pct, label;
@@ -533,10 +551,17 @@ let todayIdx = DAYS.findIndex(d => parse(d.date).getTime() === today.getTime());
     pct = 1; label = `<strong>Siamo in Giappone!</strong> Giorno ${todayIdx+1} di ${DAYS.length}, ${esc(DAYS[todayIdx].city)}`;
   } else { pct = 1; label = `<strong>Okaeri!</strong> Bentornati a casa`; }
   $("#flLabel").innerHTML = label;
-  const set = () => { $("#flFill").style.width = (pct*100)+"%"; $("#flPlane").style.left = (pct*100)+"%"; };
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) set();
-  else { $("#flight").classList.add("animate"); requestAnimationFrame(() => requestAnimationFrame(set)); }
+  FLIGHT_PCT = pct;
 })();
+/* muove l'aereo lungo la barra: animate=false lo mette subito al suo posto */
+function flightTo(animate){
+  const f = $("#flFill"), p = $("#flPlane"), fl = $("#flight"), v = (FLIGHT_PCT*100)+"%";
+  fl.classList.remove("animate");
+  if (!animate || REDUCED) { f.style.width = v; p.style.left = v; return; }
+  f.style.width = "0%"; p.style.left = "0%"; void f.offsetWidth;
+  fl.classList.add("animate");
+  requestAnimationFrame(() => { f.style.width = v; p.style.left = v; });
+}
 
 /* ====== giorni ====== */
 let cur = todayIdx >= 0 ? todayIdx : 0;
@@ -994,6 +1019,66 @@ function wheelScroll(el){
 ["#route","#chips","#hchips","#daypick"].forEach(s => { const el = $(s); if (el) wheelScroll(el); });
 addEventListener("hashchange", route);
 route();
+/* ====== animazione di apertura ======
+   - prima apertura della giornata: sole, kanji, linea della metro, aereo che atterra nella barra
+   - altre aperture e ritorno dall'app in background: solo l'aereo che scorre lungo la barra */
+function playIntro(){
+  const cols = DAYS.map(d => cityOf(d.city).c), n = DAYS.length, x0 = 44, x1 = 316, ly = 470;
+  const xs = DAYS.map((_,k) => x0 + k*(x1-x0)/(n-1));
+  const segs = xs.slice(1).map((x,k) => `<path d="M${xs[k]} ${ly} L${x} ${ly}" stroke="${cols[k+1]}" stroke-width="6" stroke-linecap="round"/>`).join("");
+  const stops = xs.map((x,k) => `<circle class="i-st" cx="${x}" cy="${ly}" r="6.5" fill="var(--bg)" stroke="${cols[k]}" stroke-width="3.5" style="animation-delay:${(0.78+k*0.04).toFixed(2)}s"/>`).join("");
+  const ov = document.createElement("div");
+  ov.id = "intro"; ov.setAttribute("aria-hidden","true");
+  ov.innerHTML = `<svg viewBox="0 0 360 640" preserveAspectRatio="xMidYMid meet">
+    <circle class="i-sun" cx="180" cy="270" r="84" fill="var(--alert)"/>
+    <text class="i-k" x="146" y="294" text-anchor="middle" style="animation-delay:.32s">日</text>
+    <text class="i-k" x="214" y="294" text-anchor="middle" style="animation-delay:.5s">本</text>
+    <text class="i-title" x="180" y="404" text-anchor="middle">Giappone ’27</text>
+    <text class="i-sub" x="180" y="428" text-anchor="middle">6 – 21 marzo · Tokyo, Kyoto, Osaka, Nara</text>
+    <g class="i-line">${segs}</g>${stops}
+    <circle id="iEnd" cx="${x1}" cy="${ly}" r="0"/><circle id="iStart" cx="${x0}" cy="${ly}" r="0"/>
+  </svg>`;
+  const plane = document.createElement("div");
+  plane.id = "introPlane";
+  plane.innerHTML = $("#flPlane").outerHTML.replace('id="flPlane"','').replace('class="fl-plane"','style="width:100%;height:100%"');
+  document.body.append(ov, plane);
+  const hp = $("#flPlane"), fill = $("#flFill");
+  hp.style.visibility = "hidden"; fill.style.width = "0%"; hp.style.left = (FLIGHT_PCT*100)+"%";
+  const timers = [];
+  const pt = id => { const r = ov.querySelector(id).getBoundingClientRect(); return {x: r.left + r.width/2, y: r.top + r.height/2}; };
+  const at = (x,y) => `translate(${x-15}px, ${y-15}px)`;
+  let anim;
+  const finish = () => {
+    timers.forEach(clearTimeout); if (anim) anim.cancel();
+    ov.remove(); plane.remove();
+    fill.style.transition = ""; hp.style.visibility = ""; flightTo(false);
+  };
+  ov.addEventListener("click", finish);
+  timers.push(setTimeout(() => {
+    const s = pt("#iStart"), e = pt("#iEnd");
+    anim = plane.animate([{transform: at(s.x,s.y), opacity: 0}, {transform: at(s.x+12,s.y), opacity: 1, offset: .12}, {transform: at(e.x,e.y), opacity: 1}],
+      {duration: 680, easing: "cubic-bezier(.45,0,.25,1)", fill: "forwards"});
+  }, 1120));
+  timers.push(setTimeout(() => {
+    const e = pt("#iEnd"), tr = $(".fl-track").getBoundingClientRect();
+    const tx = tr.left + FLIGHT_PCT*tr.width, ty = tr.top + 14;
+    ov.classList.add("out");
+    anim = plane.animate([{transform: at(e.x,e.y)}, {transform: at(tx,ty)}], {duration: 480, easing: "cubic-bezier(.2,.7,.2,1)", fill: "forwards"});
+    fill.style.transition = "width .48s cubic-bezier(.2,.7,.2,1)";
+    requestAnimationFrame(() => { fill.style.width = (FLIGHT_PCT*100)+"%"; });
+  }, 1860));
+  timers.push(setTimeout(finish, 2400));
+}
+(function startup(){
+  const day = new Date().toDateString();
+  if (!REDUCED && store.get("introDay","") !== day) { store.set("introDay", day); playIntro(); }
+  else flightTo(true);
+  let hiddenAt = 0;
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) { hiddenAt = Date.now(); return; }
+    if (hiddenAt && Date.now() - hiddenAt > 10000 && !document.getElementById("intro")) flightTo(true);
+  });
+})();
 </script>
 <script>
 if ("serviceWorker" in navigator) {
