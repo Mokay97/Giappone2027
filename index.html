@@ -981,6 +981,17 @@ function route(){
   if (v==="giorni") showDay(cur);
   window.scrollTo(0,0);
 }
+/* rotellina del mouse: scorrimento orizzontale delle file (date, città, giorni) */
+function wheelScroll(el){
+  el.addEventListener("wheel", e => {
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX) || el.scrollWidth <= el.clientWidth) return;
+    const max = el.scrollWidth - el.clientWidth;
+    if ((e.deltaY < 0 && el.scrollLeft <= 0) || (e.deltaY > 0 && el.scrollLeft >= max - 1)) return;
+    e.preventDefault();
+    el.scrollLeft += e.deltaY * (e.deltaMode === 1 ? 32 : 1);
+  }, {passive:false});
+}
+["#route","#chips","#hchips","#daypick"].forEach(s => { const el = $(s); if (el) wheelScroll(el); });
 addEventListener("hashchange", route);
 route();
 </script>
