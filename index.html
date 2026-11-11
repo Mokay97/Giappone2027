@@ -1020,8 +1020,8 @@ function wheelScroll(el){
 addEventListener("hashchange", route);
 route();
 /* ====== animazione di apertura ======
-   - prima apertura della giornata: sole, kanji, linea della metro, aereo che atterra nella barra
-   - altre aperture e ritorno dall'app in background: solo l'aereo che scorre lungo la barra */
+   - ogni apertura dell'app: sole, kanji, linea della metro, aereo che atterra nella barra
+   - ritorno dall'app in background: solo l'aereo che scorre lungo la barra */
 function playIntro(){
   const cols = DAYS.map(d => cityOf(d.city).c), n = DAYS.length, x0 = 44, x1 = 316, ly = 470;
   const xs = DAYS.map((_,k) => x0 + k*(x1-x0)/(n-1));
@@ -1070,8 +1070,7 @@ function playIntro(){
   timers.push(setTimeout(finish, 2400));
 }
 (function startup(){
-  const day = new Date().toDateString();
-  if (!REDUCED && store.get("introDay","") !== day) { store.set("introDay", day); playIntro(); }
+  if (!REDUCED) playIntro();
   else flightTo(true);
   let hiddenAt = 0;
   document.addEventListener("visibilitychange", () => {
