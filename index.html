@@ -675,6 +675,16 @@ track.innerHTML = DAYS.map((d,i) => {
 $("#legend").innerHTML = ["Tokyo","Kyoto","Osaka","Nara"].map(n=>`<span style="--c:${CITIES[n].c}">${n}</span>`).join("");
 track.addEventListener("click", e => { const b=e.target.closest(".stop"); if(b) showDay(+b.dataset.i); });
 
+/* Prima/Dopo: i pulsanti restano sotto il dito e la mappa del giorno resta in vista, così si vede la sua animazione */
+function pageDay(i){
+  const p0 = document.querySelector("#day .pager"), before = p0 ? p0.getBoundingClientRect().top : null;
+  showDay(i);
+  if (before === null) return;
+  const p1 = document.querySelector("#day .pager");
+  if (p1) window.scrollBy(0, p1.getBoundingClientRect().top - before);
+  const maps = document.querySelectorAll("#day .daymap"), m = maps[maps.length-1];
+  if (m) { const r = m.getBoundingClientRect(); if (r.top < 8) window.scrollBy(0, r.top - 8); }
+}
 function showDay(i){
   cur = i;
   const d = DAYS[i], c = cityOf(d.city), dt = parse(d.date);
@@ -707,8 +717,8 @@ function showDay(i){
   }));
   el.querySelectorAll("a.hlink").forEach(a => a.addEventListener("click", () => { state.hotelJump = a.dataset.h; }));
   const ho = el.querySelector("#hideOpt"); if (ho) ho.onchange = () => { store.set("hideOpt", ho.checked); showDay(cur); };
-  $("#prev").onclick = () => showDay(cur-1);
-  $("#next").onclick = () => showDay(cur+1);
+  $("#prev").onclick = () => pageDay(cur-1);
+  $("#next").onclick = () => pageDay(cur+1);
   const sc = $("#seeCity"); if (sc) sc.onclick = () => { state.city = d.city; store.set("city", d.city); state.zone = null; state.focusDay = i+1; state._anim = true; location.hash = "luoghi"; };
 }
 
