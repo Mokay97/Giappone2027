@@ -178,6 +178,12 @@ section h2.sec{font-size:20px;margin:26px 0 8px}
 .stays small{color:var(--muted);font-size:14px}
 .tips{margin:0;padding-left:20px}
 .tips li{margin:0 0 10px}
+.todostat{margin:-2px 0 8px;font-size:14px;color:var(--muted)}
+.todo h3{margin:14px 0 4px;font-size:14px;color:var(--muted);font-weight:500}
+.todo label{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);cursor:pointer;font-size:15px;line-height:1.4}
+.todo input{width:20px;height:20px;margin:1px 0 0;accent-color:var(--ok)}
+.todo small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.todo label.ok>span{color:var(--muted);text-decoration:line-through}
 .phr{display:grid;grid-template-columns:1fr 1fr;gap:0}
 .phr div{padding:10px 0;border-bottom:1px solid var(--line)}
 .phr div:nth-child(odd){font-weight:700;padding-right:10px}
@@ -454,6 +460,9 @@ svg.zoomed .rt.faint{opacity:.22}
     </section>
 
     <section id="v-info" hidden>
+      <h2 class="sec">Prima di partire</h2>
+      <p class="todostat" id="todostat"></p>
+      <div id="todo"></div>
       <h2 class="sec">Da sapere</h2>
       <ol class="tips">
         <li>Suica o PASMO sul telefono (Apple Wallet o app Welcome Suica): si paga metro, treni locali, bus e konbini con un tocco.</li>
@@ -1184,6 +1193,44 @@ function route(){
   if (v==="giorni") showDay(cur);
   window.scrollTo(0,0);
 }
+/* ====== prima di partire: verifiche e prenotazioni ====== */
+const TODO = [
+  ["Da verificare con gli hotel", [
+    ["ina1","INA House Nijojo: la reception è aperta alle 6:45 del 15/3?","Serve per spedire le valigie a Tokyo; in alternativa si spedisce da un konbini"],
+    ["ina2","INA House Nijojo: custodisce le valigie arrivate il 12/3 fino al check-in del 13?",""],
+    ["vin1","Hotel Vintage: custodisce le valigie in arrivo il 16–17/3 fino al check-in del 18?","Meglio farselo confermare per iscritto"],
+    ["mb1","Morning Box: tiene gli zaini dalle 8 del 16/3, prima del check-in?","Altrimenti armadietti a Universal City"],
+    ["mb2","Morning Box: avete prenotato capsule o camere?","Nei capsule hotel i piani sono spesso separati tra uomini e donne"],
+    ["mk1","Mikasa Ryokan: orari della navetta da Kintetsu-Nara (17/3 sera e 18/3 mattina)","E il giro serale gratuito sul monte Wakakusa"]
+  ]],
+  ["Da prenotare", [
+    ["dis","Biglietti DisneySea per il 10/3","A data fissa; poi Premier Access per Fantasy Springs dall'app"],
+    ["usj","Universal Studios e Express Pass per il 16/3","L'Express Pass include l'ingresso a Super Nintendo World"],
+    ["sky","Skytree, fascia delle 17:00 dell'8/3","Per il tramonto"],
+    ["tlb","teamLab Borderless, 18/3 verso le 15:30",""],
+    ["cena","Cena al banco a Ebisu, 9/3 sera, per sei","Tabelog o TableCheck, 1–2 mesi prima"],
+    ["bus","Bus Shinjuku → Kawaguchiko e ritorno, 12/3",""],
+    ["shk","Shinkansen: 13/3 posti lato E, 18/3 posti lato A","Per vedere il Fuji in entrambi i viaggi"]
+  ]],
+  ["Sul telefono", [
+    ["sui","Suica o PASMO nel wallet",""],
+    ["esim","eSIM attivata",""],
+    ["gm","Google Maps installato e accesso fatto","Per i pulsanti delle indicazioni"]
+  ]]
+];
+function renderTodo(){
+  const done = new Set(store.get("todo", []));
+  const all = TODO.flatMap(g => g[1]);
+  $("#todostat").textContent = `${all.filter(t => done.has(t[0])).length} su ${all.length} fatti. Le spunte restano salvate su questo telefono.`;
+  $("#todo").innerHTML = TODO.map(([title, items]) => `<div class="todo"><h3>${title}</h3>${items.map(([id, txt, note]) =>
+    `<label class="${done.has(id)?"ok":""}"><input type="checkbox" data-t="${id}"${done.has(id)?" checked":""}><span>${esc(txt)}${note?`<small>${esc(note)}</small>`:""}</span></label>`).join("")}</div>`).join("");
+}
+document.getElementById("todo").addEventListener("change", e => {
+  const id = e.target.dataset.t; if (!id) return;
+  const done = new Set(store.get("todo", [])); e.target.checked ? done.add(id) : done.delete(id);
+  store.set("todo", [...done]); renderTodo();
+});
+renderTodo();
 /* rotellina del mouse: scorrimento orizzontale delle file (date, città, giorni) */
 function wheelScroll(el){
   el.addEventListener("wheel", e => {
