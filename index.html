@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F3F4F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>Giappone 2027</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Giappone ’27">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preload" href="fonts/ZenKakuGothicNew-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><b>日本</b><span>Giappone ’27</span></div>
+  </header>
+  <div class="flight" id="flight">
+    <div class="fl-ends"><span><b>Milano</b> MXP</span><span><b>Tokyo</b> HND</span></div>
+    <div class="fl-track" aria-hidden="true">
+      <span class="fl-dot a"></span><span class="fl-dot b"></span>
+      <div class="fl-fill" id="flFill"></div>
+      <svg class="fl-plane" id="flPlane" viewBox="0 0 24 24"><path fill="currentColor" d="M21.5 11.2 14 9.6 9.6 2.5H7.4l2.2 7.3-4.9.6-1.9-2.6H1.3l1.2 4.2-1.2 4.2h1.5l1.9-2.6 4.9.6-2.2 7.3h2.2l4.4-7.1 7.5-1.6c.6-.1.6-1.1 0-1.2z"/></svg>
+    </div>
+    <p class="fl-label" id="flLabel"></p>
+  </div>
+
+  <main>
+    <section id="v-giorni">
+      <div class="route" id="route"><div class="track" id="track"></div></div>
+      <div class="legend" id="legend"></div>
+      <article class="day" id="day"></article>
+      <p class="sr" id="dayLive" aria-live="polite"></p>
+    </section>
+
+    <section id="v-luoghi" hidden>
+      <div class="tools">
+        <div class="chips" id="chips"></div>
+      </div>
+      <div class="mapcard" id="mapcard" hidden>
+        <div id="map"></div>
+        <div class="daypick" id="daypick"></div>
+        <div class="maplegend" id="maplegend"></div>
+        <div class="zinfo" id="zinfo"></div>
+      </div>
+      <div class="filters">
+        <div class="row2">
+          <div class="seg" id="seg">
+            <button data-imp="all" aria-pressed="true">Tutti</button>
+            <button data-imp="5">Imperdibili</button>
+            <button data-imp="234">Opzionali</button>
+            <button data-imp="1">Scartati</button>
+          </div>
+        </div>
+        <div class="row2">
+          <input class="search" id="q" type="search" placeholder="Cerca un luogo" aria-label="Cerca un luogo">
+          <label class="toggle"><input type="checkbox" id="hideDone"> Nascondi visti</label>
+        </div>
+      </div>
+      <p class="stat" id="pstat"></p>
+      <ul class="plist" id="plist"></ul>
+    </section>
+
+    <section id="v-soldi" hidden>
+      <div class="big">
+        <div><small>Costo a testa</small><strong id="perHead"></strong></div>
+        <div><small>Ancora da pagare a testa</small><strong id="left"></strong><div class="bar"><i id="paidbar"></i></div></div>
+      </div>
+      <div class="conv">
+        <h2>Convertitore</h2>
+        <div class="convrow">
+          <div><label for="yen">Yen</label><input id="yen" inputmode="decimal" value="1000"></div>
+          <div class="eq">=</div>
+          <div><label for="eur">Euro</label><input id="eur" inputmode="decimal"></div>
+        </div>
+        <div class="quick" id="quick"></div>
+        <div class="rate"><label for="rate">Cambio: 1 € =</label><input id="rate" inputmode="decimal"><span>yen</span></div>
+      </div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Voce</th><th class="num">Totale</th><th class="num">A testa</th><th class="num due">Da pagare<br>a testa</th></tr></thead>
+        <tbody id="btable"></tbody>
+      </table></div>
+      <p class="foot">Importi dal foglio Budget dell’Excel. Trasporti e bagagli sono stime con margine del 10%; USJ, ingressi, pasti e imprevisti sono stime (dettaglio nel foglio Stime extra). Non inclusi: Kamakura (si decide sul posto), shopping e souvenir.</p>
+    </section>
+
+    <section id="v-hotel" hidden>
+      <div class="tools"><div class="chips" id="hchips"></div></div>
+      <p class="hintro" id="hintro"></p>
+      <div id="hlist"></div>
+    </section>
+
+    <section id="v-info" hidden>
+      <h2 class="sec">Prima di partire</h2>
+      <p class="todostat" id="todostat"></p>
+      <div id="todo"></div>
+      <h2 class="sec">Da sapere</h2>
+      <ol class="tips">
+        <li>Suica o PASMO sul telefono (Apple Wallet o app Welcome Suica): si paga metro, treni locali, bus e konbini con un tocco.</li>
+        <li>I taxi portano 4 persone: in sei servono due auto, oppure un “jumbo taxi” da 9 posti.</li>
+        <li>Valigie: si spediscono dalla reception il giorno prima (11/3 per Kyoto, 15/3 per Tokyo). Tenete nello zaino un cambio per la notte.</li>
+        <li>Molti locali piccoli accettano solo contanti: si preleva senza problemi ai bancomat di 7-Eleven.</li>
+        <li>Cestini quasi introvabili: girate con un sacchetto per i rifiuti.</li>
+        <li>Niente mance: in Giappone non si usano e possono mettere in imbarazzo.</li>
+        <li>Shinkansen da Tokyo verso Kyoto: posto E per vedere il Fuji dal finestrino.</li>
+        <li>Universal Studios: per Super Nintendo World serve un ingresso a orario o l’Express Pass, da comprare prima.</li>
+      </ol>
+      <h2 class="sec">Frasi utili</h2>
+      <div class="phr" id="phr"></div>
+      <h2 class="sec">Emergenze</h2>
+      <div class="sos">
+        <a href="tel:110"><span>110</span>Polizia</a>
+        <a href="tel:119"><span>119</span>Ambulanza e vigili del fuoco</a>
+      </div>
+      <p class="foot">Le spunte “visto” e il cambio restano salvati su questo telefono. <button id="reset">Azzera le spunte</button> · <button id="theme">Cambia tema</button></p>
+    </section>
+  </main>
+</div>
+
+<nav class="tabs" aria-label="Sezioni">
+  <div>
+    <a href="#giorni" data-v="giorni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="5" cy="12" r="2.5"/><circle cx="12" cy="12" r="2.5"/><circle cx="19" cy="12" r="2.5"/><path d="M7.5 12h2M14.5 12h2"/></svg>Giorni</a>
+    <a href="#luoghi" data-v="luoghi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Luoghi</a>
+    <a href="#hotel" data-v="hotel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19V6M3 15h18v4M21 15v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11" r="2"/></svg>Hotel</a>
+    <a href="#soldi" data-v="soldi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4l6 8 6-8M12 12v8M7 13h10M7 17h10"/></svg>Soldi</a>
+    <a href="#info" data-v="info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>Info</a>
+  </div>
+</nav>
+
+<script src="app.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
+</script>
+</body>
+</html>
