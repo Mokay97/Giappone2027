@@ -1,0 +1,2803 @@
+{
+ "days": [
+  {
+   "date": "2027-03-06",
+   "city": "Milano",
+   "m": "Partenza ore 12:30",
+   "p": "Volo",
+   "s": "Volo",
+   "n": "Bagaglio a mano con un cambio: le valigie viaggeranno da sole tra le città",
+   "title": "Partenza",
+   "hotel": null,
+   "alert": false,
+   "decide": false
+  },
+  {
+   "date": "2027-03-07",
+   "city": "Tokyo",
+   "m": "Arrivo a Haneda, bus fino all'hotel",
+   "p": "Check-in al Toshi Hotel, riposo; opzionale: osservatorio gratuito del Tochō",
+   "s": "Omoide Yokocho (Shinjuku)",
+   "n": "Jet lag: giornata leggera. Attivare la Suica sul telefono",
+   "plan": [
+    {
+     "t": "14:00",
+     "k": "Trasferimento",
+     "n": "Haneda → Toshi Hotel",
+     "d": "~60 min",
+     "p": "",
+     "x": "Airport Limousine Bus fino a Tokyo Garden Terrace Kioichō, di fronte all'hotel. Orario da adattare all'arrivo del volo",
+     "nav": {
+      "o": "Haneda Airport Terminal 3",
+      "g": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "15:00",
+     "k": "Hotel",
+     "n": "Check-in al Toshi Hotel e riposo",
+     "d": "2 h",
+     "p": "",
+     "x": "Jet lag: una doccia e un pisolino corto"
+    },
+    {
+     "t": "17:30",
+     "k": "Trasferimento",
+     "n": "Akasaka-mitsuke → Shinjuku",
+     "d": "~15 min",
+     "p": "",
+     "x": "Linea Marunouchi, diretta. Akasaka-mitsuke è collegata sottoterra a Nagatachō",
+     "nav": {
+      "o": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "g": "Tokyo Metropolitan Government Building, Shinjuku",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "17:45",
+     "k": "Panorama",
+     "n": "Osservatorio del Palazzo del Governo (Tochō)",
+     "d": "45 min",
+     "p": "Opzionale",
+     "x": "Gratuito, al 45° piano: tramonto e città che si accende. La sera sulla facciata ci sono proiezioni luminose"
+    },
+    {
+     "t": "19:00",
+     "k": "Di passaggio",
+     "n": "Grattacieli di Shinjuku ovest",
+     "d": "15 min",
+     "p": "",
+     "x": "A piedi verso la stazione, tra le luci dei grattacieli"
+    },
+    {
+     "t": "19:15",
+     "k": "Pasto",
+     "n": "Cena a Omoide Yokochō",
+     "d": "1 h 30",
+     "p": "Imperdibile",
+     "x": "Vicoli di yakitori accanto alla stazione: i locali sono minuscoli, meglio dividersi in due gruppi da tre",
+     "nav": {
+      "g": "Omoide Yokocho, Shinjuku, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "21:00",
+     "k": "Di passaggio",
+     "n": "Kabukichō e la testa di Godzilla",
+     "d": "20 min",
+     "p": "Opzionale",
+     "x": "Il quartiere dei divertimenti, tranquillo; Godzilla spunta dall'Hotel Gracery",
+     "nav": {
+      "g": "Godzilla Head, Kabukicho, Shinjuku, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "21:30",
+     "k": "Trasferimento",
+     "n": "Shinjuku → hotel",
+     "d": "~20 min",
+     "p": "",
+     "x": "Marunouchi fino ad Akasaka-mitsuke",
+     "nav": {
+      "g": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "m": "transit"
+     }
+    }
+   ],
+   "title": "Arrivo e Shinjuku",
+   "hotel": "Toshi Hotel",
+   "alert": false,
+   "decide": false
+  },
+  {
+   "date": "2027-03-08",
+   "city": "Tokyo",
+   "m": "Senso-ji presto e Nakamise; opzionale: Kuramae",
+   "p": "Lungofiume Sumida, Tokyo Mizumachi, Solamachi",
+   "s": "Skytree al tramonto",
+   "n": "Prenotare la Skytree alle 17:00",
+   "plan": [
+    {
+     "t": "7:50",
+     "k": "Trasferimento",
+     "n": "Akasaka-mitsuke → Asakusa",
+     "d": "~30 min",
+     "p": "",
+     "x": "Linea Ginza, diretta fino al capolinea",
+     "nav": {
+      "o": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "g": "Kaminarimon, Asakusa, Tokyo",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "8:25",
+     "k": "Di passaggio",
+     "n": "Kaminarimon e Nakamise-dōri",
+     "d": "20 min",
+     "p": "Imperdibile",
+     "x": "La grande lanterna rossa e la via dei negozi: presto è quasi deserta, i negozi aprono tra le 9 e le 10"
+    },
+    {
+     "t": "8:45",
+     "k": "Visita",
+     "n": "Senso-ji",
+     "d": "45 min",
+     "p": "Imperdibile",
+     "x": "Il tempio più antico di Tokyo, con la pagoda a cinque piani e il santuario di Asakusa accanto",
+     "nav": {
+      "g": "Senso-ji, Asakusa, Tokyo",
+      "v": [
+       "Nakamise Shopping Street, Asakusa"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "9:45",
+     "k": "Di passaggio",
+     "n": "Vie di Asakusa e Denbōin-dōri",
+     "d": "30 min",
+     "p": "",
+     "x": "Botteghe in stile Edo e dolci tipici come melonpan e ningyō-yaki",
+     "nav": {
+      "g": "Denboin-dori, Asakusa, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "10:30",
+     "k": "Visita",
+     "n": "Kuramae: caffè e botteghe artigiane",
+     "d": "1 h",
+     "p": "Opzionale",
+     "x": "15 minuti a piedi verso sud. In alternativa: Chopsticks Studio ad Asakusa, su prenotazione",
+     "nav": {
+      "g": "Kuramae Station, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "11:30",
+     "k": "Panorama",
+     "n": "Lungofiume Sumida fino ad Azuma-bashi",
+     "d": "20 min",
+     "p": "",
+     "x": "Passeggiata pedonale con la Skytree sempre davanti e la 'fiamma' dorata della Asahi",
+     "nav": {
+      "g": "Azumabashi Bridge, Tokyo",
+      "v": [
+       "Komagata Bridge, Tokyo"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "12:00",
+     "k": "Pasto",
+     "n": "Pranzo ad Asakusa",
+     "d": "1 h",
+     "p": "",
+     "x": "Tempura o soba, vicino al ponte Azuma-bashi"
+    },
+    {
+     "t": "13:15",
+     "k": "Panorama",
+     "n": "Sumida River Walk e Tokyo Mizumachi",
+     "d": "20 min",
+     "p": "",
+     "x": "Passerella sul fiume accanto ai binari, poi negozi sotto la ferrovia fino alla Skytree",
+     "nav": {
+      "g": "Tokyo Mizumachi, Sumida, Tokyo",
+      "v": [
+       "Sumida River Walk, Tokyo"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "13:45",
+     "k": "Di passaggio",
+     "n": "Parco Oshinari",
+     "d": "15 min",
+     "p": "Opzionale",
+     "x": "La foto classica della Skytree che si riflette nel canale",
+     "nav": {
+      "g": "Oshinari Park, Sumida, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "14:00",
+     "k": "Visita",
+     "n": "Tokyo Solamachi",
+     "d": "2 h 30",
+     "p": "",
+     "x": "Il centro commerciale ai piedi della torre: Pokémon Center, Kirby Café, negozi di souvenir giapponesi",
+     "nav": {
+      "g": "Tokyo Solamachi, Sumida, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "17:00",
+     "k": "Panorama",
+     "n": "Skytree al tramonto",
+     "d": "1 h 15",
+     "p": "Imperdibile",
+     "x": "Prenotare la fascia delle 17:00: il sole tramonta verso le 17:45, si vede la città di giorno e poi accesa. Con il cielo limpido anche il Fuji"
+    },
+    {
+     "t": "18:30",
+     "k": "Pasto",
+     "n": "Cena a Solamachi",
+     "d": "1 h",
+     "p": "",
+     "x": ""
+    },
+    {
+     "t": "19:45",
+     "k": "Trasferimento",
+     "n": "Oshiage → Nagatachō",
+     "d": "~25 min",
+     "p": "",
+     "x": "Linea Hanzōmon, diretta: si scende a 3 minuti dall'hotel",
+     "nav": {
+      "o": "Oshiage Station, Tokyo",
+      "g": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "m": "transit"
+     }
+    }
+   ],
+   "title": "Asakusa e Skytree",
+   "hotel": "Toshi Hotel",
+   "alert": false,
+   "decide": false
+  },
+  {
+   "date": "2027-03-09",
+   "city": "Tokyo",
+   "m": "Omotesando, Santuario Meiji, Takeshita-dori",
+   "p": "Cat Street, Shibuya PARCO, Miyashita Park",
+   "s": "Crossing al tramonto, Center-gai, cena al banco a Ebisu",
+   "n": "Prenotare la cena al banco con 1–2 mesi d'anticipo",
+   "plan": [
+    {
+     "t": "8:30",
+     "k": "Trasferimento",
+     "n": "Nagatachō → Omotesandō",
+     "d": "~8 min",
+     "p": "",
+     "x": "Linea Hanzōmon, diretta",
+     "nav": {
+      "o": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "g": "Omotesando Station, Tokyo",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "8:40",
+     "k": "Panorama",
+     "n": "Viale Omotesandō",
+     "d": "15 min",
+     "p": "",
+     "x": "Il viale alberato con i palazzi delle grandi firme, a negozi ancora chiusi"
+    },
+    {
+     "t": "9:00",
+     "k": "Visita",
+     "n": "Santuario Meiji",
+     "d": "1 h 15",
+     "p": "Imperdibile",
+     "x": "Si entra dal grande torii di Harajuku: viale nel bosco, muro di botti di sake, santuario. Il parco Yoyogi è accanto",
+     "nav": {
+      "g": "Meiji Jingu, Shibuya, Tokyo",
+      "v": [
+       "Omotesando Hills, Tokyo"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "10:30",
+     "k": "Di passaggio",
+     "n": "Takeshita-dōri",
+     "d": "30 min",
+     "p": "Imperdibile",
+     "x": "La via della moda giovane: crêpe e negozi kawaii",
+     "nav": {
+      "g": "Takeshita Street, Harajuku, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "11:00",
+     "k": "Visita",
+     "n": "Design Festa Gallery",
+     "d": "30 min",
+     "p": "Opzionale",
+     "x": "Gallerie d'arte gratuite in un edificio coperto di graffiti, a pochi passi",
+     "nav": {
+      "g": "Design Festa Gallery, Harajuku, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "11:30",
+     "k": "Di passaggio",
+     "n": "Cat Street verso Shibuya",
+     "d": "25 min",
+     "p": "",
+     "x": "Strada pedonale di negozi e streetwear che scende fino a Shibuya",
+     "nav": {
+      "g": "Cat Street, Shibuya, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "12:00",
+     "k": "Pasto",
+     "n": "Pranzo a Shibuya",
+     "d": "1 h",
+     "p": "",
+     "x": ""
+    },
+    {
+     "t": "13:15",
+     "k": "Visita",
+     "n": "Shibuya PARCO: Pokémon Center e Nintendo Tokyo",
+     "d": "1 h 30",
+     "p": "Imperdibile",
+     "x": "Al 6° piano. Di martedì pomeriggio c'è meno gente",
+     "nav": {
+      "g": "Shibuya PARCO, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "15:00",
+     "k": "Di passaggio",
+     "n": "Miyashita Park e statua di Hachikō",
+     "d": "30 min",
+     "p": "",
+     "x": "Parco pensile sopra i negozi; Hachikō è all'uscita della stazione",
+     "nav": {
+      "g": "Miyashita Park, Shibuya, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "15:30",
+     "k": "Di passaggio",
+     "n": "Shopping a Shibuya: 109, Loft, Tower Records, Don Quijote",
+     "d": "1 h 40",
+     "p": "",
+     "x": "Il giro dei negozi simbolo del quartiere, tutti a pochi minuti a piedi",
+     "nav": {
+      "g": "Shibuya 109, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "17:15",
+     "k": "Di passaggio",
+     "n": "Shibuya Crossing al tramonto",
+     "d": "20 min",
+     "p": "Imperdibile",
+     "x": "Lo si attraversa a piedi, poi lo si guarda dall'alto, gratis, dal passaggio della Shibuya Mark City",
+     "nav": {
+      "g": "Shibuya Scramble Crossing, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "17:40",
+     "k": "Di passaggio",
+     "n": "Center-gai",
+     "d": "30 min",
+     "p": "Imperdibile",
+     "x": "La via delle insegne e delle sale giochi",
+     "nav": {
+      "g": "Shibuya Center Gai, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "18:15",
+     "k": "Di passaggio",
+     "n": "Nonbei Yokochō",
+     "d": "45 min",
+     "p": "Opzionale",
+     "x": "Vicolo di minuscoli bar lungo la ferrovia: un aperitivo prima di cena",
+     "nav": {
+      "g": "Nonbei Yokocho, Shibuya, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "19:05",
+     "k": "Trasferimento",
+     "n": "Shibuya → Ebisu",
+     "d": "~3 min",
+     "p": "",
+     "x": "JR Yamanote, una fermata",
+     "nav": {
+      "o": "Shibuya Station, Tokyo",
+      "g": "Ebisu Station, Tokyo",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "19:15",
+     "k": "Pasto",
+     "n": "Cena al banco: ti cucinano davanti",
+     "d": "1 h 45",
+     "p": "Imperdibile",
+     "x": "Teppanyaki, tempura o yakitori al banco, in un locale di quartiere a Ebisu. Banchi da 8–10 posti: per sei va prenotato con 1–2 mesi d'anticipo su Tabelog o TableCheck (anche in inglese). Spesa indicativa 6.000–12.000 yen a testa"
+    },
+    {
+     "t": "21:15",
+     "k": "Di passaggio",
+     "n": "Ebisu Yokochō",
+     "d": "45 min",
+     "p": "Opzionale",
+     "x": "Galleria coperta di piccoli locali dove si beve gomito a gomito con i giapponesi",
+     "nav": {
+      "o": "Ebisu Station, Tokyo",
+      "g": "Ebisu Yokocho, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "22:15",
+     "k": "Trasferimento",
+     "n": "Ebisu → Nagatachō",
+     "d": "~25 min",
+     "p": "",
+     "x": "JR fino a Shibuya, poi Hanzōmon diretta",
+     "nav": {
+      "g": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "m": "transit"
+     }
+    }
+   ],
+   "title": "Harajuku e Shibuya",
+   "hotel": "Toshi Hotel",
+   "alert": false,
+   "decide": false
+  },
+  {
+   "date": "2027-03-10",
+   "city": "Tokyo",
+   "m": "DisneySea dall'apertura",
+   "p": "DisneySea",
+   "s": "Spettacolo serale e rientro",
+   "n": "Biglietti a data fissa; Premier Access per Fantasy Springs",
+   "plan": [
+    {
+     "t": "7:15",
+     "k": "Trasferimento",
+     "n": "Hotel → DisneySea",
+     "d": "~55 min",
+     "p": "",
+     "x": "Linea Yūrakuchō fino a Yūrakuchō, a piedi ai binari Keiyō della Stazione di Tokyo (10 minuti di corridoi), JR Keiyō fino a Maihama, poi Disney Resort Line",
+     "nav": {
+      "o": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "g": "Tokyo DisneySea, Urayasu",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "7:50",
+     "k": "Panorama",
+     "n": "Linea Keiyō lungo la baia",
+     "d": "15 min",
+     "p": "",
+     "x": "Dal finestrino il porto e la baia di Tokyo"
+    },
+    {
+     "t": "8:15",
+     "k": "Visita",
+     "n": "DisneySea, dall'apertura alla chiusura",
+     "d": "12 h",
+     "p": "Imperdibile",
+     "x": "Essere ai cancelli prima dell'apertura e prenotare subito dall'app il Premier Access per Fantasy Springs. Pranzo e cena nel parco, spettacolo serale sul porto"
+    },
+    {
+     "t": "21:00",
+     "k": "Trasferimento",
+     "n": "DisneySea → hotel",
+     "d": "~60 min",
+     "p": "",
+     "x": "Stesso percorso al contrario",
+     "nav": {
+      "o": "Tokyo DisneySea, Urayasu",
+      "g": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "m": "transit"
+     }
+    }
+   ],
+   "title": "DisneySea",
+   "hotel": "Toshi Hotel",
+   "alert": false,
+   "decide": false
+  },
+  {
+   "date": "2027-03-11",
+   "city": "Tokyo",
+   "m": "Dieta e fossato; opzionali: Nijubashi, Giardino Orientale, Jimbocho",
+   "p": "Ochanomizu, Kanda Myojin, Akihabara",
+   "s": "Sale giochi e cena ad Akihabara",
+   "n": "Giardini chiusi lun e ven. SPEDIRE VALIGIE A KYOTO dalla reception",
+   "plan": [
+    {
+     "t": "8:45",
+     "k": "Hotel",
+     "n": "Spedizione valigie a Kyoto",
+     "d": "15 min",
+     "p": "",
+     "x": "Alla reception, con Yamato TA-Q-BIN, verso INA House Nijojo. Nello zaino il necessario per due notti"
+    },
+    {
+     "t": "9:00",
+     "k": "Panorama",
+     "n": "Palazzo della Dieta e fossato",
+     "d": "20 min",
+     "p": "",
+     "x": "A piedi dall'hotel: si passa davanti al Parlamento e si scende lungo il fossato fino a Sakuradamon",
+     "nav": {
+      "o": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "g": "National Diet Building, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "9:20",
+     "k": "Di passaggio",
+     "n": "Piazza del Palazzo Imperiale e ponte Nijūbashi",
+     "d": "20 min",
+     "p": "Opzionale",
+     "x": "Lo scorcio più fotografato del Palazzo",
+     "nav": {
+      "g": "Nijubashi Bridge, Tokyo",
+      "v": [
+       "Sakuradamon Gate, Tokyo"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "9:45",
+     "k": "Visita",
+     "n": "Giardino Orientale del Palazzo Imperiale",
+     "d": "1 h",
+     "p": "Opzionale",
+     "x": "Gratuito, dall'ingresso Ōtemon. Chiuso lunedì e venerdì: il giovedì è aperto",
+     "nav": {
+      "g": "Otemon Gate, Imperial Palace East Gardens, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "11:00",
+     "k": "Trasferimento",
+     "n": "A piedi fino a Jimbōchō",
+     "d": "15 min",
+     "p": "",
+     "x": "Uscita dalla porta Hirakawamon",
+     "nav": {
+      "g": "Jimbocho Station, Tokyo",
+      "v": [
+       "Hirakawamon Gate, Tokyo"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "11:15",
+     "k": "Di passaggio",
+     "n": "Jimbōchō, la via dei libri",
+     "d": "45 min",
+     "p": "Opzionale",
+     "x": "Decine di librerie dell'usato, stampe antiche e manga d'epoca"
+    },
+    {
+     "t": "12:00",
+     "k": "Pasto",
+     "n": "Pranzo a Jimbōchō",
+     "d": "1 h",
+     "p": "",
+     "x": "Il quartiere è famoso per il curry giapponese"
+    },
+    {
+     "t": "13:15",
+     "k": "Panorama",
+     "n": "Ochanomizu e ponte Hijiribashi",
+     "d": "20 min",
+     "p": "",
+     "x": "A piedi: dal ponte si vedono i treni che si incrociano sopra il fiume Kanda",
+     "nav": {
+      "g": "Hijiribashi Bridge, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "13:40",
+     "k": "Visita",
+     "n": "Santuario Kanda Myōjin",
+     "d": "30 min",
+     "p": "Imperdibile",
+     "x": "Il santuario protettore di Akihabara, con amuleti per l'elettronica e richiami agli anime",
+     "nav": {
+      "g": "Kanda Myojin, Tokyo",
+      "v": [
+       "Yushima Seido, Tokyo"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "14:15",
+     "k": "Visita",
+     "n": "Akihabara: Radio Kaikan, negozi retrò e sale giochi",
+     "d": "4 h",
+     "p": "Imperdibile",
+     "x": "7 minuti a piedi. Radio Kaikan, Mandarake, videogiochi d'epoca, gashapon",
+     "nav": {
+      "g": "Akihabara Radio Kaikan, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "18:30",
+     "k": "Pasto",
+     "n": "Cena ad Akihabara",
+     "d": "1 h 15",
+     "p": "",
+     "x": ""
+    },
+    {
+     "t": "20:00",
+     "k": "Trasferimento",
+     "n": "Suehirochō → Akasaka-mitsuke",
+     "d": "~20 min",
+     "p": "",
+     "x": "Linea Ginza, diretta",
+     "nav": {
+      "o": "Suehirocho Station, Tokyo",
+      "g": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "m": "transit"
+     }
+    }
+   ],
+   "title": "Palazzo Imperiale e Akihabara",
+   "hotel": "Toshi Hotel",
+   "alert": true,
+   "decide": false
+  },
+  {
+   "date": "2027-03-12",
+   "city": "Tokyo",
+   "m": "Bus per Kawaguchiko, Pagoda Chureito",
+   "p": "Hōtō a pranzo, parco Oishi; opzionale: funivia",
+   "s": "Rientro e cena a Shinjuku",
+   "n": "Partire presto: al mattino il Fuji si vede meglio",
+   "plan": [
+    {
+     "t": "6:50",
+     "k": "Trasferimento",
+     "n": "Akasaka-mitsuke → Shinjuku",
+     "d": "~15 min",
+     "p": "",
+     "x": "Linea Marunouchi",
+     "nav": {
+      "o": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "g": "Busta Shinjuku, Tokyo",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "7:45",
+     "k": "Trasferimento",
+     "n": "Bus Shinjuku → Kawaguchiko",
+     "d": "~2 h",
+     "p": "",
+     "x": "Dal terminal Busta Shinjuku, posti da prenotare. Sedersi a destra per vedere il Fuji in arrivo. Alternativa panoramica: treno Fuji Excursion",
+     "nav": {
+      "o": "Busta Shinjuku, Tokyo",
+      "g": "Kawaguchiko Station, Yamanashi",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "9:50",
+     "k": "Trasferimento",
+     "n": "Kawaguchiko → Shimoyoshida",
+     "d": "~15 min",
+     "p": "",
+     "x": "Treno locale Fujikyū",
+     "nav": {
+      "g": "Shimoyoshida Station, Yamanashi",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "10:10",
+     "k": "Visita",
+     "n": "Pagoda Chureito",
+     "d": "1 h 15",
+     "p": "Imperdibile",
+     "x": "398 gradini fino alla terrazza: la pagoda rossa con il Fuji alle spalle. Al mattino il monte si vede meglio",
+     "nav": {
+      "g": "Chureito Pagoda, Fujiyoshida",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "11:30",
+     "k": "Di passaggio",
+     "n": "Honchō-dōri a Fujiyoshida",
+     "d": "20 min",
+     "p": "Opzionale",
+     "x": "La via retrò con il Fuji in fondo",
+     "nav": {
+      "g": "Honcho Street, Fujiyoshida",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "12:30",
+     "k": "Pasto",
+     "n": "Pranzo a Kawaguchiko: hōtō",
+     "d": "1 h",
+     "p": "",
+     "x": "Zuppa di tagliatelle spesse, specialità locale",
+     "nav": {
+      "g": "Kawaguchiko Station, Yamanashi",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "13:45",
+     "k": "Trasferimento",
+     "n": "Retro Bus fino al parco Oishi",
+     "d": "~25 min",
+     "p": "",
+     "x": "Linea rossa, gira intorno al lago",
+     "nav": {
+      "g": "Oishi Park, Fujikawaguchiko",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "14:15",
+     "k": "Panorama",
+     "n": "Parco Oishi e riva nord del lago",
+     "d": "1 h",
+     "p": "Imperdibile",
+     "x": "Il Fuji riflesso nel lago Kawaguchi"
+    },
+    {
+     "t": "15:30",
+     "k": "Visita",
+     "n": "Funivia Kachi Kachi",
+     "d": "45 min",
+     "p": "Opzionale",
+     "x": "Vista dall'alto su lago e Fuji, vicino alla stazione",
+     "nav": {
+      "g": "Kachi Kachi Ropeway, Fujikawaguchiko",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "16:45",
+     "k": "Trasferimento",
+     "n": "Bus Kawaguchiko → Shinjuku",
+     "d": "~2 h",
+     "p": "",
+     "x": "",
+     "nav": {
+      "o": "Kawaguchiko Station, Yamanashi",
+      "g": "Busta Shinjuku, Tokyo",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "19:00",
+     "k": "Pasto",
+     "n": "Cena a Shinjuku",
+     "d": "1 h 15",
+     "p": "",
+     "x": ""
+    },
+    {
+     "t": "20:30",
+     "k": "Trasferimento",
+     "n": "Shinjuku → hotel",
+     "d": "~20 min",
+     "p": "",
+     "x": "Preparare lo zaino: domani si parte per Kyoto",
+     "nav": {
+      "o": "Shinjuku Station, Tokyo",
+      "g": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "m": "transit"
+     }
+    }
+   ],
+   "title": "Monte Fuji",
+   "hotel": "Toshi Hotel",
+   "alert": false,
+   "decide": false
+  },
+  {
+   "date": "2027-03-13",
+   "city": "Kyoto",
+   "m": "Shinkansen Tokyo → Kyoto (lato E per il Fuji)",
+   "p": "Castello Nijō, mercato Nishiki, Kennin-ji, Yasaka-jinja",
+   "s": "Shirakawa e Hanamikoji al tramonto, cena a Gion",
+   "n": "Valigie già all'hotel: si viaggia con lo zaino",
+   "plan": [
+    {
+     "t": "7:15",
+     "k": "Hotel",
+     "n": "Check-out dal Toshi Hotel",
+     "d": "15 min",
+     "p": "",
+     "x": "Le valigie sono già a Kyoto dall'11: si viaggia con lo zaino"
+    },
+    {
+     "t": "7:30",
+     "k": "Trasferimento",
+     "n": "Akasaka-mitsuke → Stazione di Tokyo",
+     "d": "~15 min",
+     "p": "",
+     "x": "Linea Marunouchi, diretta",
+     "nav": {
+      "o": "Toshi Center Hotel, Hirakawacho, Tokyo",
+      "g": "Tokyo Station",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "8:00",
+     "k": "Panorama",
+     "n": "Shinkansen Nozomi Tokyo → Kyoto",
+     "d": "2 h 15",
+     "p": "Imperdibile",
+     "x": "Posti sul lato E, a destra: il Fuji compare dopo circa 45 minuti. Comprate un ekiben in stazione da mangiare in treno"
+    },
+    {
+     "t": "10:15",
+     "k": "Di passaggio",
+     "n": "Stazione di Kyoto: atrio e grande scalinata",
+     "d": "20 min",
+     "p": "Opzionale",
+     "x": "L'edificio futuristico della stazione, con la terrazza gratuita in cima alla scalinata"
+    },
+    {
+     "t": "10:40",
+     "k": "Trasferimento",
+     "n": "Stazione di Kyoto → INA House Nijojo",
+     "d": "~30 min",
+     "p": "",
+     "x": "JR Sagano fino a Nijō, poi 15 minuti a piedi; in alternativa due taxi",
+     "nav": {
+      "o": "Kyoto Station",
+      "g": "INA House Nijojo, Kyoto",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "11:15",
+     "k": "Hotel",
+     "n": "INA House Nijojo: deposito zaini",
+     "d": "15 min",
+     "p": "",
+     "x": "Le valigie spedite da Tokyo vi aspettano qui; check-in dalle 15"
+    },
+    {
+     "t": "11:30",
+     "k": "Visita",
+     "n": "Castello Nijō",
+     "d": "1 h 15",
+     "p": "Opzionale",
+     "x": "La residenza degli shogun: i pavimenti 'usignolo' del palazzo Ninomaru e i giardini. 11 minuti a piedi dall'hotel",
+     "nav": {
+      "g": "Nijo Castle, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "12:50",
+     "k": "Trasferimento",
+     "n": "Nijōjō-mae → Kyoto Shiyakusho-mae",
+     "d": "~10 min",
+     "p": "",
+     "x": "Linea Tōzai, poi 5 minuti a piedi",
+     "nav": {
+      "g": "Nishiki Market, Kyoto",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "13:10",
+     "k": "Pasto",
+     "n": "Pranzo itinerante al mercato Nishiki",
+     "d": "1 h 15",
+     "p": "Opzionale",
+     "x": "Cinque isolati di banchi: tamagoyaki, spiedini di pesce, sottaceti, mochi. Molti banchi chiudono verso le 17"
+    },
+    {
+     "t": "14:30",
+     "k": "Di passaggio",
+     "n": "Teramachi e Shinkyōgoku",
+     "d": "20 min",
+     "p": "",
+     "x": "Le gallerie coperte di negozi che incrociano il mercato",
+     "nav": {
+      "g": "Shinkyogoku Shopping Street, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "14:50",
+     "k": "Panorama",
+     "n": "Ponte di Shijō sul fiume Kamo",
+     "d": "10 min",
+     "p": "",
+     "x": "La vista sul fiume e sulle case di Pontochō",
+     "nav": {
+      "g": "Shijo Ohashi Bridge, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "15:05",
+     "k": "Visita",
+     "n": "Kennin-ji",
+     "d": "45 min",
+     "p": "Opzionale",
+     "x": "Il tempio zen più antico di Kyoto: giardini di sabbia e i due draghi dipinti sul soffitto. Ultimo ingresso alle 16",
+     "nav": {
+      "g": "Kennin-ji, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "16:00",
+     "k": "Visita",
+     "n": "Yasaka-jinja e parco Maruyama",
+     "d": "45 min",
+     "p": "",
+     "x": "Il santuario rosso in fondo a Shijō-dōri e il parco alle sue spalle",
+     "nav": {
+      "g": "Yasaka Shrine, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "16:50",
+     "k": "Di passaggio",
+     "n": "Shirakawa e ponte Tatsumi",
+     "d": "25 min",
+     "p": "Imperdibile",
+     "x": "Il canale con i salici e le case da tè: l'angolo più bello di Gion",
+     "nav": {
+      "g": "Tatsumi Bridge, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "17:20",
+     "k": "Di passaggio",
+     "n": "Hanamikoji al tramonto",
+     "d": "40 min",
+     "p": "Imperdibile",
+     "x": "La via delle case da tè: con un po' di fortuna si incrocia una geiko. Rispettate i divieti di foto nei vicoli privati",
+     "nav": {
+      "g": "Hanamikoji Street, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "18:15",
+     "k": "Pasto",
+     "n": "Cena a Gion",
+     "d": "1 h 30",
+     "p": "",
+     "x": "Locali di obanzai, la cucina casalinga di Kyoto"
+    },
+    {
+     "t": "20:00",
+     "k": "Trasferimento",
+     "n": "Gion → hotel",
+     "d": "~30 min",
+     "p": "",
+     "x": "Bus urbano oppure due taxi (circa 20 minuti)",
+     "nav": {
+      "o": "Gion-Shijo Station, Kyoto",
+      "g": "INA House Nijojo, Kyoto",
+      "m": "transit"
+     }
+    }
+   ],
+   "title": "Verso Kyoto",
+   "hotel": "INA House Nijojo",
+   "alert": false,
+   "decide": false
+  },
+  {
+   "date": "2027-03-14",
+   "city": "Kyoto",
+   "m": "Bambù all'alba, Tenryū-ji, Togetsukyō",
+   "p": "Tram Randen, Kitano Tenmangū, Kinkaku-ji, Ryōan-ji",
+   "s": "Stazione di Kyoto: Skyway, ramen, Kyoto Tower",
+   "n": "Prima delle 8 alla foresta di bambù",
+   "plan": [
+    {
+     "t": "6:45",
+     "k": "Trasferimento",
+     "n": "Hotel → Saga-Arashiyama",
+     "d": "~30 min",
+     "p": "",
+     "x": "A piedi fino alla stazione JR Nijō, poi linea Sagano, diretta",
+     "nav": {
+      "o": "INA House Nijojo, Kyoto",
+      "g": "Saga-Arashiyama Station, Kyoto",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "7:20",
+     "k": "Di passaggio",
+     "n": "Foresta di bambù",
+     "d": "30 min",
+     "p": "Imperdibile",
+     "x": "Prima delle 8 è quasi deserta: dopo diventa una processione",
+     "nav": {
+      "g": "Arashiyama Bamboo Grove, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "7:50",
+     "k": "Panorama",
+     "n": "Parco Kameyama, vista sul fiume Hozu",
+     "d": "25 min",
+     "p": "Opzionale",
+     "x": "In cima al sentiero dietro il bambù, gratuito",
+     "nav": {
+      "g": "Kameyama Park, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "8:30",
+     "k": "Visita",
+     "n": "Tenryū-ji",
+     "d": "45 min",
+     "p": "Imperdibile",
+     "x": "Il giardino con lo stagno e le colline alle spalle; apre alle 8:30",
+     "nav": {
+      "g": "Tenryu-ji, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "9:20",
+     "k": "Panorama",
+     "n": "Ponte Togetsukyō e lungofiume",
+     "d": "30 min",
+     "p": "Imperdibile",
+     "x": "Il ponte simbolo di Arashiyama con le montagne dietro",
+     "nav": {
+      "g": "Togetsukyo Bridge, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "9:50",
+     "k": "Visita",
+     "n": "Monkey Park Iwatayama",
+     "d": "1 h",
+     "p": "Opzionale",
+     "x": "Venti minuti di salita: scimmie in libertà e vista su tutta Kyoto",
+     "nav": {
+      "g": "Iwatayama Monkey Park, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "11:00",
+     "k": "Di passaggio",
+     "n": "Via principale di Arashiyama",
+     "d": "45 min",
+     "p": "",
+     "x": "Botteghe, dolci al matcha e crocchette di yuba",
+     "nav": {
+      "g": "Randen Arashiyama Station, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "11:45",
+     "k": "Pasto",
+     "n": "Pranzo ad Arashiyama",
+     "d": "1 h",
+     "p": "",
+     "x": "Il tofu bollito (yudōfu) è la specialità della zona"
+    },
+    {
+     "t": "12:50",
+     "k": "Panorama",
+     "n": "Tram Randen fino a Kitano-Hakubaichō",
+     "d": "~25 min",
+     "p": "",
+     "x": "Il tramvia storico a una carrozza che attraversa i quartieri di Kyoto",
+     "nav": {
+      "o": "Randen Arashiyama Station, Kyoto",
+      "g": "Kitano-Hakubaicho Station, Kyoto",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "13:20",
+     "k": "Visita",
+     "n": "Kitano Tenmangū e giardino dei susini",
+     "d": "45 min",
+     "p": "Opzionale",
+     "x": "A metà marzo i susini dovrebbero essere in piena fioritura",
+     "nav": {
+      "g": "Kitano Tenmangu, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "14:10",
+     "k": "Trasferimento",
+     "n": "A piedi fino al Kinkaku-ji",
+     "d": "20 min",
+     "p": "",
+     "x": "Strade di quartiere verso nord",
+     "nav": {
+      "g": "Kinkaku-ji, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "14:30",
+     "k": "Visita",
+     "n": "Kinkaku-ji",
+     "d": "45 min",
+     "p": "Imperdibile",
+     "x": "Il Padiglione d'Oro che si specchia nello stagno"
+    },
+    {
+     "t": "15:20",
+     "k": "Panorama",
+     "n": "Kinukake-no-michi",
+     "d": "20 min",
+     "p": "",
+     "x": "La 'strada della seta' ai piedi delle colline, verso il Ryōan-ji"
+    },
+    {
+     "t": "15:45",
+     "k": "Visita",
+     "n": "Ryōan-ji",
+     "d": "45 min",
+     "p": "Opzionale",
+     "x": "Il giardino zen di pietre più famoso del Giappone: 15 pietre, mai visibili tutte insieme",
+     "nav": {
+      "g": "Ryoan-ji, Kyoto",
+      "v": [
+       "Kinukake-no-michi, Kyoto"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "16:40",
+     "k": "Trasferimento",
+     "n": "Ryōan-ji → Stazione di Kyoto",
+     "d": "~45 min",
+     "p": "",
+     "x": "Bus urbano; in alternativa due taxi (circa 25 minuti)",
+     "nav": {
+      "g": "Kyoto Station",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "17:30",
+     "k": "Panorama",
+     "n": "Stazione di Kyoto: Skyway e terrazza",
+     "d": "30 min",
+     "p": "",
+     "x": "Passerella sospesa a 45 metri e terrazza in cima alla scalinata, gratis: Kyoto al tramonto"
+    },
+    {
+     "t": "18:15",
+     "k": "Pasto",
+     "n": "Cena al Kyoto Ramen Kōji",
+     "d": "1 h",
+     "p": "",
+     "x": "Al 10° piano della stazione: ramen da tutto il Giappone"
+    },
+    {
+     "t": "19:30",
+     "k": "Panorama",
+     "n": "Kyoto Tower",
+     "d": "40 min",
+     "p": "Opzionale",
+     "x": "La torre davanti alla stazione: Kyoto illuminata a 360 gradi",
+     "nav": {
+      "o": "Kyoto Station",
+      "g": "Kyoto Tower",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "20:15",
+     "k": "Trasferimento",
+     "n": "Kyoto → hotel",
+     "d": "~30 min",
+     "p": "",
+     "x": "JR Sagano fino a Nijō, poi 15 minuti a piedi. In camera c'è la lavatrice: buon momento per il bucato",
+     "nav": {
+      "o": "Kyoto Station",
+      "g": "INA House Nijojo, Kyoto",
+      "m": "transit"
+     }
+    }
+   ],
+   "title": "Arashiyama e Kinkaku-ji",
+   "hotel": "INA House Nijojo",
+   "alert": false,
+   "decide": false
+  },
+  {
+   "date": "2027-03-15",
+   "city": "Kyoto",
+   "m": "Fushimi Inari all'alba, Kiyomizu-dera",
+   "p": "Sannenzaka, Kōdai-ji; opzionali: Ginkaku-ji, Sentiero del Filosofo, Nanzen-ji",
+   "s": "Cena a Pontochō e rive del Kamo",
+   "n": "SPEDIRE VALIGIE A TOKYO (Hotel Vintage, check-in 18/3)",
+   "plan": [
+    {
+     "t": "6:45",
+     "k": "Hotel",
+     "n": "Spedizione valigie a Tokyo",
+     "d": "15 min",
+     "p": "",
+     "x": "Verso l'Hotel Vintage, check-in il 18. Se la reception è chiusa così presto, si spedisce da un konbini vicino"
+    },
+    {
+     "t": "7:00",
+     "k": "Trasferimento",
+     "n": "Hotel → Inari",
+     "d": "~35 min",
+     "p": "",
+     "x": "JR Sagano fino a Kyoto, poi JR Nara fino a Inari (5 minuti)",
+     "nav": {
+      "o": "INA House Nijojo, Kyoto",
+      "g": "Inari Station, Kyoto",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "7:40",
+     "k": "Visita",
+     "n": "Fushimi Inari: i mille torii fino a Yotsutsuji",
+     "d": "2 h",
+     "p": "Imperdibile",
+     "x": "Il sentiero sotto migliaia di torii rossi; a Yotsutsuji, a metà monte, c'è la vista su Kyoto. Presto al mattino è quasi vuoto",
+     "nav": {
+      "g": "Fushimi Inari Taisha, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "9:45",
+     "k": "Di passaggio",
+     "n": "La via dei venditori di Inari",
+     "d": "20 min",
+     "p": "",
+     "x": "Spiedini, inari-sushi e dolci a forma di volpe"
+    },
+    {
+     "t": "10:10",
+     "k": "Trasferimento",
+     "n": "Fushimi-Inari → Kiyomizu-Gojō",
+     "d": "~10 min",
+     "p": "",
+     "x": "Linea Keihan, diretta",
+     "nav": {
+      "o": "Fushimi Inari Station, Kyoto",
+      "g": "Kiyomizu-Gojo Station, Kyoto",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "10:25",
+     "k": "Panorama",
+     "n": "Salita di Chawan-zaka",
+     "d": "20 min",
+     "p": "",
+     "x": "La 'salita delle tazze', fiancheggiata da botteghe di ceramica",
+     "nav": {
+      "g": "Kiyomizu-dera, Kyoto",
+      "v": [
+       "Chawanzaka, Kyoto"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "10:50",
+     "k": "Visita",
+     "n": "Kiyomizu-dera",
+     "d": "1 h",
+     "p": "Imperdibile",
+     "x": "La grande terrazza di legno sospesa sulla collina e la fonte Otowa"
+    },
+    {
+     "t": "12:00",
+     "k": "Di passaggio",
+     "n": "Sannenzaka e Ninenzaka",
+     "d": "40 min",
+     "p": "Imperdibile",
+     "x": "Le scalinate di pietra con le case di legno: il cuore della vecchia Kyoto",
+     "nav": {
+      "g": "Ninenzaka, Kyoto",
+      "v": [
+       "Sannenzaka, Kyoto"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "12:45",
+     "k": "Pasto",
+     "n": "Pranzo a Higashiyama",
+     "d": "1 h",
+     "p": "",
+     "x": ""
+    },
+    {
+     "t": "13:45",
+     "k": "Di passaggio",
+     "n": "Pagoda Yasaka e Nene-no-michi",
+     "d": "25 min",
+     "p": "",
+     "x": "Lo scorcio della pagoda in fondo alla via, poi il vialetto lastricato",
+     "nav": {
+      "g": "Yasaka Pagoda, Kyoto",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "14:15",
+     "k": "Visita",
+     "n": "Kōdai-ji",
+     "d": "45 min",
+     "p": "Opzionale",
+     "x": "Tempio con giardini zen e un boschetto di bambù tutto suo",
+     "nav": {
+      "g": "Kodai-ji, Kyoto",
+      "v": [
+       "Nene-no-michi, Kyoto"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "15:05",
+     "k": "Trasferimento",
+     "n": "Kōdai-ji → Ginkaku-ji",
+     "d": "~25 min",
+     "p": "",
+     "x": "Bus urbano o due taxi",
+     "nav": {
+      "g": "Ginkaku-ji, Kyoto",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "15:35",
+     "k": "Visita",
+     "n": "Ginkaku-ji",
+     "d": "45 min",
+     "p": "Opzionale",
+     "x": "Il Padiglione d'Argento con il giardino di sabbia rastrellata; chiude alle 17"
+    },
+    {
+     "t": "16:25",
+     "k": "Panorama",
+     "n": "Sentiero del Filosofo",
+     "d": "40 min",
+     "p": "Opzionale",
+     "x": "Due chilometri a piedi lungo il canale, tra templi e casette",
+     "nav": {
+      "g": "Nanzen-ji, Kyoto",
+      "v": [
+       "Philosopher's Path, Kyoto"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "17:10",
+     "k": "Di passaggio",
+     "n": "Nanzen-ji e acquedotto",
+     "d": "30 min",
+     "p": "Opzionale",
+     "x": "L'acquedotto in mattoni dell'Ottocento dentro il tempio, visitabile anche dopo la chiusura"
+    },
+    {
+     "t": "17:45",
+     "k": "Trasferimento",
+     "n": "Keage → Sanjō Keihan",
+     "d": "~10 min",
+     "p": "",
+     "x": "Linea Tōzai, diretta",
+     "nav": {
+      "o": "Keage Station, Kyoto",
+      "g": "Pontocho, Kyoto",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "18:15",
+     "k": "Pasto",
+     "n": "Cena a Pontochō",
+     "d": "1 h 30",
+     "p": "",
+     "x": "Il vicolo delle lanterne lungo il fiume: si cena guardando il Kamo"
+    },
+    {
+     "t": "20:00",
+     "k": "Panorama",
+     "n": "Passeggiata sulle rive del Kamo",
+     "d": "20 min",
+     "p": "",
+     "x": "Le coppie sedute a distanze regolari lungo il fiume: una tradizione di Kyoto"
+    },
+    {
+     "t": "20:30",
+     "k": "Trasferimento",
+     "n": "Sanjō Keihan → Nijōjō-mae",
+     "d": "~15 min",
+     "p": "",
+     "x": "Linea Tōzai, diretta, poi 10 minuti a piedi",
+     "nav": {
+      "o": "Sanjo Keihan Station, Kyoto",
+      "g": "INA House Nijojo, Kyoto",
+      "m": "transit"
+     }
+    }
+   ],
+   "title": "Fushimi Inari e Higashiyama",
+   "hotel": "INA House Nijojo",
+   "alert": true,
+   "decide": false
+  },
+  {
+   "date": "2027-03-16",
+   "city": "Osaka",
+   "m": "Kyoto → Osaka, zaini al Morning Box, Universal Studios",
+   "p": "Universal Studios",
+   "s": "Dotonbori, street food; opzionale: Round1",
+   "n": "Express Pass / Nintendo World da comprare prima",
+   "plan": [
+    {
+     "t": "6:30",
+     "k": "Hotel",
+     "n": "Check-out da INA House Nijojo",
+     "d": "10 min",
+     "p": "",
+     "x": "Si parte con lo zaino: le valigie sono già in viaggio verso Tokyo"
+    },
+    {
+     "t": "6:40",
+     "k": "Trasferimento",
+     "n": "Hotel → Stazione di Kyoto",
+     "d": "~25 min",
+     "p": "",
+     "x": "A piedi fino a Nijō, poi JR Sagano",
+     "nav": {
+      "o": "INA House Nijojo, Kyoto",
+      "g": "Kyoto Station",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "7:10",
+     "k": "Trasferimento",
+     "n": "Kyoto → Osaka",
+     "d": "~30 min",
+     "p": "",
+     "x": "JR Special Rapid, diretto",
+     "nav": {
+      "o": "Kyoto Station",
+      "g": "Osaka Station",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "7:45",
+     "k": "Trasferimento",
+     "n": "Osaka → Hotel Morning Box",
+     "d": "~15 min",
+     "p": "",
+     "x": "Linea Midōsuji fino a Shinsaibashi, poi 8 minuti a piedi",
+     "nav": {
+      "o": "Osaka Station",
+      "g": "Hotel Morning Box Osaka Shinsaibashi",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "8:00",
+     "k": "Hotel",
+     "n": "Morning Box: deposito zaini",
+     "d": "10 min",
+     "p": "",
+     "x": "Da confermare con l'hotel prima di partire; in alternativa armadietti a Universal City"
+    },
+    {
+     "t": "8:15",
+     "k": "Trasferimento",
+     "n": "Hotel → Universal Studios",
+     "d": "~35 min",
+     "p": "",
+     "x": "Midōsuji fino a Umeda, JR Loop fino a Nishikujō, poi JR Yumesaki",
+     "nav": {
+      "o": "Hotel Morning Box Osaka Shinsaibashi",
+      "g": "Universal Studios Japan, Osaka",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "8:50",
+     "k": "Visita",
+     "n": "Universal Studios Japan",
+     "d": "11 h",
+     "p": "Imperdibile",
+     "x": "Si comincia da Super Nintendo World con l'orario dell'Express Pass. Poi Harry Potter, Minion Park, Jurassic Park. Pranzo e cena veloce nel parco"
+    },
+    {
+     "t": "20:00",
+     "k": "Trasferimento",
+     "n": "Universal City → Osaka-Namba",
+     "d": "~25 min",
+     "p": "",
+     "x": "JR Yumesaki fino a Nishikujō, poi linea Hanshin Namba, diretta",
+     "nav": {
+      "o": "Universal City Station, Osaka",
+      "g": "Ebisubashi Bridge, Osaka",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "20:30",
+     "k": "Di passaggio",
+     "n": "Dotonbori di sera",
+     "d": "1 h",
+     "p": "Imperdibile",
+     "x": "Il canale illuminato, l'insegna della Glico dal ponte Ebisu, i granchi giganti sulle facciate"
+    },
+    {
+     "t": "21:00",
+     "k": "Pasto",
+     "n": "Street food a Dotonbori",
+     "d": "1 h",
+     "p": "",
+     "x": "Takoyaki, okonomiyaki e kushikatsu: Osaka è la città del 'mangiare fino a crollare'"
+    },
+    {
+     "t": "22:00",
+     "k": "Visita",
+     "n": "Round1 Sennichimae",
+     "d": "1 h",
+     "p": "Opzionale",
+     "x": "Sale giochi, bowling e karaoke su più piani, aperto fino a tardi",
+     "nav": {
+      "g": "Round1 Sennichimae, Osaka",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "23:00",
+     "k": "Di passaggio",
+     "n": "Shinsaibashi-suji verso l'hotel",
+     "d": "20 min",
+     "p": "",
+     "x": "La lunghissima galleria coperta dei negozi, poi a dormire",
+     "nav": {
+      "g": "Hotel Morning Box Osaka Shinsaibashi",
+      "v": [
+       "Shinsaibashi-suji Shopping Street, Osaka"
+      ],
+      "m": "walking"
+     }
+    }
+   ],
+   "title": "Universal Studios e Dotonbori",
+   "hotel": "Hotel Morning Box",
+   "alert": false,
+   "decide": false
+  },
+  {
+   "date": "2027-03-17",
+   "city": "Nara",
+   "m": "Colazione a Kuromon, Kintetsu per Nara, cervi, Tōdai-ji",
+   "p": "Nigatsu-dō, Kasuga Taisha, Naramachi",
+   "s": "Mikasa Ryokan: onsen e cena kaiseki",
+   "n": "Navetta del ryokan dalla stazione Kintetsu-Nara",
+   "plan": [
+    {
+     "t": "8:00",
+     "k": "Pasto",
+     "n": "Colazione al mercato Kuromon",
+     "d": "1 h",
+     "p": "Opzionale",
+     "x": "La 'cucina di Osaka': pesce alla griglia, frutta e spiedini. 15 minuti a piedi dall'hotel",
+     "nav": {
+      "o": "Hotel Morning Box Osaka Shinsaibashi",
+      "g": "Kuromon Market, Osaka",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "9:15",
+     "k": "Hotel",
+     "n": "Check-out dal Morning Box",
+     "d": "15 min",
+     "p": "",
+     "x": "",
+     "nav": {
+      "g": "Hotel Morning Box Osaka Shinsaibashi",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "9:30",
+     "k": "Trasferimento",
+     "n": "Kintetsu Nippombashi → Kintetsu-Nara",
+     "d": "~40 min",
+     "p": "",
+     "x": "Linea Kintetsu Nara, rapido diretto. La stazione è a 10 minuti a piedi dall'hotel",
+     "nav": {
+      "g": "Kintetsu-Nara Station, Nara",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "10:15",
+     "k": "Di passaggio",
+     "n": "Higashimuki e Kōfuku-ji",
+     "d": "25 min",
+     "p": "",
+     "x": "La via commerciale coperta e il complesso del tempio; la pagoda a cinque piani è coperta per restauri",
+     "nav": {
+      "g": "Kofuku-ji, Nara",
+      "v": [
+       "Higashimuki Shopping Street, Nara"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "10:45",
+     "k": "Di passaggio",
+     "n": "Parco di Nara e i cervi",
+     "d": "45 min",
+     "p": "Imperdibile",
+     "x": "I cervi si inchinano per i biscotti shika senbei (circa 200 yen): teneteli in alto, sono insistenti",
+     "nav": {
+      "g": "Nara Park",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "11:35",
+     "k": "Visita",
+     "n": "Tōdai-ji: Nandaimon e Daibutsuden",
+     "d": "1 h",
+     "p": "Imperdibile",
+     "x": "La porta con i due guardiani di legno, poi la sala con il Grande Buddha di bronzo alto 15 metri",
+     "nav": {
+      "g": "Todai-ji, Nara",
+      "v": [
+       "Nandaimon Gate, Nara"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "12:40",
+     "k": "Pasto",
+     "n": "Pranzo vicino al Tōdai-ji",
+     "d": "1 h",
+     "p": "",
+     "x": "Specialità: kakinoha-zushi, sushi avvolto in foglie di cachi"
+    },
+    {
+     "t": "13:45",
+     "k": "Panorama",
+     "n": "Nigatsu-dō",
+     "d": "40 min",
+     "p": "Opzionale",
+     "x": "La terrazza della sala sulla collina, gratis, con la vista su tutta Nara",
+     "nav": {
+      "g": "Nigatsu-do, Nara",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "14:35",
+     "k": "Panorama",
+     "n": "Sentiero nel bosco fino al Kasuga Taisha",
+     "d": "25 min",
+     "p": "",
+     "x": "Un viale di lanterne di pietra coperte di muschio"
+    },
+    {
+     "t": "15:00",
+     "k": "Visita",
+     "n": "Kasuga Taisha",
+     "d": "45 min",
+     "p": "Imperdibile",
+     "x": "Il santuario vermiglio con migliaia di lanterne di bronzo e di pietra",
+     "nav": {
+      "g": "Kasuga Taisha, Nara",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "16:00",
+     "k": "Di passaggio",
+     "n": "Naramachi",
+     "d": "45 min",
+     "p": "Opzionale",
+     "x": "Il quartiere delle case dei mercanti, con negozi di artigianato e caffè",
+     "nav": {
+      "g": "Naramachi, Nara",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "17:00",
+     "k": "Trasferimento",
+     "n": "Navetta dalla stazione Kintetsu-Nara al ryokan",
+     "d": "~25 min",
+     "p": "",
+     "x": "10 minuti a piedi fino alla stazione, poi la navetta gratuita del ryokan (circa 10 minuti). Orari da verificare con il ryokan",
+     "nav": {
+      "g": "Kintetsu-Nara Station, Nara",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "17:30",
+     "k": "Hotel",
+     "n": "Check-in al Mikasa Ryokan e onsen",
+     "d": "1 h 30",
+     "p": "",
+     "x": "Yukata e bagno termale all'aperto con vista sulla città"
+    },
+    {
+     "t": "19:00",
+     "k": "Pasto",
+     "n": "Cena kaiseki al ryokan",
+     "d": "2 h",
+     "p": "Imperdibile",
+     "x": "La cena tradizionale a più portate, inclusa nel soggiorno"
+    },
+    {
+     "t": "21:00",
+     "k": "Panorama",
+     "n": "Navetta serale al monte Wakakusa",
+     "d": "45 min",
+     "p": "Opzionale",
+     "x": "Giro gratuito organizzato dal ryokan: Nara illuminata dall'alto"
+    }
+   ],
+   "title": "Nara e ryokan",
+   "hotel": "Mikasa Ryokan",
+   "alert": false,
+   "decide": false
+  },
+  {
+   "date": "2027-03-18",
+   "city": "Tokyo",
+   "m": "Onsen, Kintetsu Nara → Kyoto, Shinkansen per Tokyo (lato A per il Fuji)",
+   "p": "teamLab Borderless (Azabudai)",
+   "s": "Tokyo Tower illuminata",
+   "n": "Check-in Hotel Vintage dalle 15: le valigie sono già lì",
+   "plan": [
+    {
+     "t": "7:00",
+     "k": "Hotel",
+     "n": "Onsen al mattino e colazione",
+     "d": "1 h 30",
+     "p": "",
+     "x": ""
+    },
+    {
+     "t": "9:00",
+     "k": "Trasferimento",
+     "n": "Navetta fino alla stazione Kintetsu-Nara",
+     "d": "~15 min",
+     "p": "",
+     "x": "Check-out entro le 10:30",
+     "nav": {
+      "o": "Mikasa Ryokan, Nara",
+      "g": "Kintetsu-Nara Station, Nara",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "9:30",
+     "k": "Trasferimento",
+     "n": "Kintetsu-Nara → Kyoto",
+     "d": "~40 min",
+     "p": "",
+     "x": "Linea Kintetsu Kyoto: espresso limitato (supplemento, posti riservati) o espresso normale",
+     "nav": {
+      "o": "Kintetsu-Nara Station, Nara",
+      "g": "Kyoto Station",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "10:30",
+     "k": "Pasto",
+     "n": "Ekiben alla Stazione di Kyoto",
+     "d": "40 min",
+     "p": "",
+     "x": "Si sceglie il pranzo in scatola da mangiare sullo Shinkansen"
+    },
+    {
+     "t": "11:30",
+     "k": "Panorama",
+     "n": "Shinkansen Kyoto → Tokyo",
+     "d": "2 h 15",
+     "p": "",
+     "x": "Posti sul lato A: il Fuji compare a sinistra tra Shizuoka e Shin-Fuji"
+    },
+    {
+     "t": "13:45",
+     "k": "Trasferimento",
+     "n": "Stazione di Tokyo → Hotel Vintage",
+     "d": "~20 min",
+     "p": "",
+     "x": "Due taxi oppure 20 minuti a piedi: le valigie sono già in hotel",
+     "nav": {
+      "o": "Tokyo Station",
+      "g": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "14:15",
+     "k": "Hotel",
+     "n": "Hotel Vintage: deposito zaini (check-in dalle 15)",
+     "d": "30 min",
+     "p": "",
+     "x": ""
+    },
+    {
+     "t": "15:00",
+     "k": "Trasferimento",
+     "n": "Hatchōbori → Kamiyachō",
+     "d": "~15 min",
+     "p": "",
+     "x": "Linea Hibiya, diretta",
+     "nav": {
+      "o": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "g": "teamLab Borderless, Azabudai Hills, Tokyo",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "15:30",
+     "k": "Visita",
+     "n": "teamLab Borderless (Azabudai Hills)",
+     "d": "2 h 30",
+     "p": "Imperdibile",
+     "x": "Ingresso con orario da prenotare. Opere digitali immersive in cui ci si perde"
+    },
+    {
+     "t": "18:15",
+     "k": "Panorama",
+     "n": "Tokyo Tower illuminata e tempio Zōjō-ji",
+     "d": "40 min",
+     "p": "Opzionale",
+     "x": "10 minuti a piedi: la torre accesa vista dal parco Shiba, gratis",
+     "nav": {
+      "g": "Zojo-ji, Minato, Tokyo",
+      "v": [
+       "Tokyo Tower"
+      ],
+      "m": "walking"
+     }
+    },
+    {
+     "t": "19:15",
+     "k": "Pasto",
+     "n": "Cena ad Azabudai o Toranomon",
+     "d": "1 h 15",
+     "p": "",
+     "x": ""
+    },
+    {
+     "t": "20:45",
+     "k": "Trasferimento",
+     "n": "Kamiyachō → Hatchōbori",
+     "d": "~15 min",
+     "p": "",
+     "x": "Hibiya, diretta",
+     "nav": {
+      "o": "Kamiyacho Station, Tokyo",
+      "g": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "m": "transit"
+     }
+    }
+   ],
+   "title": "Ritorno a Tokyo",
+   "hotel": "Hotel Vintage",
+   "alert": false,
+   "decide": false
+  },
+  {
+   "date": "2027-03-19",
+   "city": "Tokyo",
+   "m": "Giornata libera: si decide sul posto",
+   "p": "Kamakura, Nakano + Shimokitazawa o Tokyo con calma",
+   "s": "Cena d'addio e karaoke",
+   "n": "DA DECIDERE sul posto: nessuna di queste opzioni richiede prenotazioni",
+   "plan": [
+    {
+     "t": "9:00",
+     "k": "Visita",
+     "n": "Opzione A: Kamakura",
+     "d": "giornata",
+     "p": "Opzionale",
+     "x": "JR Yokosuka dalla Stazione di Tokyo, diretta (~1 h). Grande Buddha, Hase-dera, Komachi-dōri, Tsurugaoka Hachimangū; Enoshima se avanza tempo",
+     "nav": {
+      "o": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "g": "Kotoku-in, Kamakura",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "9:00",
+     "k": "Visita",
+     "n": "Opzione B: Nakano Broadway e Shimokitazawa",
+     "d": "giornata",
+     "p": "Opzionale",
+     "x": "Linea Tōzai da Kayabachō (10 minuti a piedi) fino a Nakano, diretta (~25 min); i negozi aprono verso le 12. Poi JR fino a Shinjuku e Odakyū per Shimokitazawa: vintage e caffè",
+     "nav": {
+      "o": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "g": "Nakano Broadway, Tokyo",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "9:00",
+     "k": "Visita",
+     "n": "Opzione C: Tokyo con calma",
+     "d": "giornata",
+     "p": "Opzionale",
+     "x": "Colazione al mercato esterno di Tsukiji (10 minuti a piedi), passeggiata a Ginza, poi gli opzionali rimasti",
+     "nav": {
+      "o": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "g": "Tsukiji Outer Market, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "19:00",
+     "k": "Pasto",
+     "n": "Cena d'addio sotto gli archi di Yūrakuchō",
+     "d": "1 h 30",
+     "p": "",
+     "x": "Izakaya sotto i binari della ferrovia, tra Yūrakuchō e Shimbashi",
+     "nav": {
+      "o": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "g": "Yurakucho Station, Tokyo",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "20:45",
+     "k": "Visita",
+     "n": "Karaoke d'addio al Giappone",
+     "d": "3 h",
+     "p": "Imperdibile",
+     "x": "L'unico karaoke del viaggio: sala privata per sei, a ore, con bevande incluse. Ultimo saluto come si deve"
+    },
+    {
+     "t": "23:45",
+     "k": "Trasferimento",
+     "n": "Yūrakuchō → Hatchōbori",
+     "d": "~10 min",
+     "p": "",
+     "x": "Linea Hibiya, diretta. Ultime corse verso mezzanotte, altrimenti due taxi",
+     "nav": {
+      "o": "Yurakucho Station, Tokyo",
+      "g": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "m": "transit"
+     }
+    }
+   ],
+   "title": "Giornata libera",
+   "hotel": "Hotel Vintage",
+   "alert": false,
+   "decide": true
+  },
+  {
+   "date": "2027-03-20",
+   "city": "Tokyo",
+   "m": "Opzionali: colazione a Tsukiji, Yanaka Ginza",
+   "p": "Valigie e trasferimento a Haneda",
+   "s": "Volo in serata",
+   "n": "",
+   "plan": [
+    {
+     "t": "8:00",
+     "k": "Pasto",
+     "n": "Colazione al mercato esterno di Tsukiji",
+     "d": "1 h",
+     "p": "Opzionale",
+     "x": "10 minuti a piedi dall'hotel: sushi, tamagoyaki, frutta",
+     "nav": {
+      "o": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "g": "Tsukiji Outer Market, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "9:30",
+     "k": "Hotel",
+     "n": "Check-out e deposito valigie",
+     "d": "15 min",
+     "p": "",
+     "x": "Check-out entro le 10",
+     "nav": {
+      "g": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "9:45",
+     "k": "Trasferimento",
+     "n": "Hatchōbori → Ueno → Nippori",
+     "d": "~25 min",
+     "p": "",
+     "x": "Hibiya diretta fino a Ueno, poi JR Yamanote per due fermate",
+     "nav": {
+      "o": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "g": "Yuyake Dandan, Yanaka, Tokyo",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "10:15",
+     "k": "Di passaggio",
+     "n": "Yanaka Ginza e Yūyake Dandan",
+     "d": "1 h 30",
+     "p": "Opzionale",
+     "x": "La Tokyo di quartiere: botteghe, gatti e il cimitero alberato di Yanaka",
+     "nav": {
+      "o": "Yuyake Dandan, Yanaka, Tokyo",
+      "g": "Yanaka Ginza, Tokyo",
+      "m": "walking"
+     }
+    },
+    {
+     "t": "12:00",
+     "k": "Pasto",
+     "n": "Pranzo a Yanaka",
+     "d": "1 h",
+     "p": "",
+     "x": ""
+    },
+    {
+     "t": "13:30",
+     "k": "Trasferimento",
+     "n": "Ritorno in hotel per le valigie",
+     "d": "~30 min",
+     "p": "",
+     "x": "",
+     "nav": {
+      "o": "Nippori Station, Tokyo",
+      "g": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "m": "transit"
+     }
+    },
+    {
+     "t": "15:00",
+     "k": "Trasferimento",
+     "n": "Hotel → Haneda",
+     "d": "~45 min",
+     "p": "",
+     "x": "Hibiya fino a Higashi-ginza, poi linea Asakusa/Keikyū diretta all'aeroporto. Arrivare 3 ore prima del volo",
+     "nav": {
+      "o": "Hotel Vintage, 2-10-7 Irifune, Chuo, Tokyo",
+      "g": "Haneda Airport Terminal 3",
+      "m": "transit"
+     }
+    }
+   ],
+   "title": "Ultima mattina",
+   "hotel": null,
+   "alert": false,
+   "decide": false
+  },
+  {
+   "date": "2027-03-21",
+   "city": "Milano",
+   "m": "Arrivo ore 18:00",
+   "p": "",
+   "s": "",
+   "n": "",
+   "title": "Arrivo a Milano",
+   "hotel": null,
+   "alert": false,
+   "decide": false
+  }
+ ],
+ "places": [
+  {
+   "city": "Tokyo",
+   "name": "Skytree",
+   "imp": 5,
+   "desc": "Una delle torri più alte del mondo, simbolo della Tokyo moderna. Dai suoi osservatori offre una vista spettacolare sulla metropoli e, nelle giornate limpide, sul Monte Fuji.",
+   "price": 18,
+   "id": "p0"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Disneyland Sea",
+   "imp": 5,
+   "desc": "Un parco a tema unico, ispirato al mare e alle grandi avventure. Tra scenografie spettacolari, attrazioni immersive e aree tematiche suggestive, offre un’esperienza diversa dai classici parchi Disney.",
+   "price": 60,
+   "id": "p1"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Santuario Meiji",
+   "imp": 5,
+   "desc": "Immerso in una vasta foresta nel cuore di Tokyo, è un importante santuario shintoista dedicato all’Imperatore Meiji e all’Imperatrice Shōken. Un luogo di pace lontano dal caos cittadino.",
+   "price": 0,
+   "id": "p2"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Senso-ji",
+   "imp": 5,
+   "desc": "Il tempio buddista più antico di Tokyo, famoso per la grande lanterna rossa della porta Kaminarimon e la vivace via commerciale Nakamise, ricca di souvenir e specialità locali.",
+   "price": 0,
+   "id": "p3"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Tokyo Tower",
+   "imp": 2,
+   "desc": "Iconica torre ispirata alla Torre Eiffel, è uno dei simboli storici della città. I suoi osservatori regalano splendide vedute dello skyline, soprattutto al tramonto e di sera.",
+   "price": 19,
+   "id": "p4"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Omoide Yokocho Memory Lane",
+   "imp": 5,
+   "desc": "Un dedalo di stretti vicoli a Shinjuku, illuminati da lanterne e insegne, dove piccoli locali servono yakitori e piatti tradizionali. Perfetto per respirare l’atmosfera della Tokyo più autentica.",
+   "price": 30,
+   "id": "p5"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Palazzo Imperiale",
+   "imp": 2,
+   "desc": "Residenza ufficiale dell’Imperatore del Giappone, si trova nel cuore di Tokyo, circondato da fossati, mura storiche e ampi spazi verdi.",
+   "price": 0,
+   "id": "p6"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Jimbōchō",
+   "imp": 2,
+   "desc": "Il quartiere dei libri di Tokyo, ricco di librerie indipendenti, volumi usati, caffetterie e negozi specializzati. Una meta affascinante per gli amanti della lettura e per chi cerca un’atmosfera più tranquilla.",
+   "price": 0,
+   "id": "p7"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Akihabara Radio Kaikan",
+   "imp": 5,
+   "desc": "Un edificio iconico nel cuore di Akihabara, pieno di negozi dedicati ad anime, manga, videogiochi, modellini e collezionismo. Una tappa imperdibile per immergersi nella cultura pop giapponese.",
+   "price": 0,
+   "id": "p8"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Shibuya Crossing e Shibuya Center-gai",
+   "imp": 5,
+   "desc": "Il celebre incrocio pedonale di Tokyo, circondato da schermi giganti, negozi e locali. Una tappa imperdibile per vivere l’energia della metropoli e la sua vivace vita notturna.",
+   "price": 0,
+   "id": "p9"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Shibuya PARCO: Pokémon Center e Nintendo TOKYO",
+   "imp": 5,
+   "desc": "Un complesso commerciale che ospita negozi ufficiali dedicati a Pokémon e Nintendo, ricchi di gadget, videogiochi e prodotti esclusivi. Una tappa ideale per gli appassionati di cultura pop giapponese.",
+   "price": 0,
+   "id": "p10"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Nakano Broadway",
+   "imp": 2,
+   "desc": "Un centro commerciale famoso per i negozi specializzati in anime, manga, figure da collezione e videogiochi, con articoli vintage e oggetti rari. Una meta imperdibile per gli appassionati di cultura otaku.",
+   "price": 0,
+   "id": "p11"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Karaoke giapponese",
+   "imp": 5,
+   "desc": "Un’esperienza sociale tipica del Giappone, con stanze private, cataloghi musicali enormi e canzoni di ogni genere, comprese le sigle degli anime. Perfetto per trascorrere una serata divertente in gruppo.",
+   "price": 20,
+   "id": "p12"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Chopsticks Studio Asakusa",
+   "imp": 2,
+   "desc": "Un laboratorio dove scoprire l’arte delle bacchette giapponesi e cimentarsi nella loro realizzazione o personalizzazione. Un’attività creativa per avvicinarsi alla cultura artigianale locale.",
+   "price": 30,
+   "id": "p13"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Nonbei Yokochō",
+   "imp": 2,
+   "desc": "Una piccola rete di vicoli a Shibuya, famosa per i suoi minuscoli bar dall’atmosfera retrò. Luci soffuse, locali raccolti e un fascino nostalgico la rendono una tappa suggestiva dopo il tramonto.",
+   "price": 25,
+   "id": "p14"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Shimo - Kitazawa",
+   "imp": 2,
+   "desc": "Un quartiere alternativo noto per negozi vintage, piccoli teatri, locali indipendenti e caffè originali. Perfetto per esplorare la Tokyo bohémien, fare shopping e scoprire nuove tendenze.",
+   "price": 0,
+   "id": "p15"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Shibuya Sky",
+   "imp": 1,
+   "desc": "Un osservatorio panoramico con una spettacolare terrazza all’aperto, da cui ammirare Tokyo dall’alto. Particolarmente suggestivo al tramonto, offre una prospettiva diversa sulla città.",
+   "price": 20,
+   "id": "p16"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Animate Ikebukuro",
+   "imp": 1,
+   "desc": "Un grande negozio multipiano dedicato ad anime, manga, personaggi e merchandise. Una tappa ideale per scoprire le ultime novità della cultura pop giapponese.",
+   "price": 0,
+   "id": "p17"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Harajuku e Takeshita-dōri",
+   "imp": 5,
+   "desc": "Un quartiere vivace famoso per la moda giovanile, i negozi eccentrici, i dolci particolari e la cultura kawaii. Perfetto per scoprire il lato più creativo e originale di Tokyo.",
+   "price": 0,
+   "id": "p18"
+  },
+  {
+   "city": "Tokyo",
+   "name": "teamLab Borderless",
+   "imp": 5,
+   "desc": "Un museo di arte digitale immersiva con installazioni luminose, ambienti interattivi e opere che si trasformano nello spazio. Un’esperienza spettacolare che unisce tecnologia, arte e creatività.",
+   "price": 30,
+   "id": "p19"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Santuario Kanda Myōjin",
+   "imp": 5,
+   "desc": "Un santuario storico vicino ad Akihabara, dove la tradizione shintoista incontra la cultura pop e il mondo dell’elettronica. Una visita interessante da abbinare ai negozi di anime e manga del quartiere.",
+   "price": 0,
+   "id": "p20"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Yanaka Ginza",
+   "imp": 2,
+   "desc": "Una strada commerciale dall’atmosfera tradizionale, ricca di piccole botteghe, snack locali e negozi di quartiere. Un’occasione per scoprire una Tokyo più autentica e tranquilla, lontana dai grandi grattacieli.",
+   "price": 0,
+   "id": "p21"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Kuramae",
+   "imp": 2,
+   "desc": "Un quartiere creativo vicino ad Asakusa, conosciuto per caffetterie indipendenti, laboratori artigianali, negozi di design e piccole botteghe. Ideale per una passeggiata lontano dai percorsi più turistici.",
+   "price": 0,
+   "id": "p22"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Tokyo Sky Tree dal parco di Oshinari",
+   "imp": 2,
+   "desc": "Un angolo panoramico ideale per ammirare e fotografare la Tokyo Skytree dal basso, con una prospettiva suggestiva tra spazi verdi e architettura urbana.",
+   "price": 0,
+   "id": "p23"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Yoyogi - kōen",
+   "imp": 2,
+   "desc": "Uno dei parchi più amati di Tokyo, con ampi prati, sentieri alberati e spazi per rilassarsi. Nei fine settimana si anima con picnic, musicisti e gruppi di persone che praticano attività all’aperto.",
+   "price": 0,
+   "id": "p24"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Design Festa e Space Banksia",
+   "imp": 2,
+   "desc": "Un contesto creativo legato all’arte indipendente, al design e alla cultura alternativa di Tokyo. Tra esposizioni, oggetti originali e iniziative artistiche, offre uno sguardo sulla scena creativa locale.",
+   "price": 10,
+   "id": "p25"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Womb, locale notturno industrial",
+   "imp": 1,
+   "desc": "Uno dei club più conosciuti di Tokyo, celebre per la musica elettronica, il sound system e le serate con DJ internazionali. Un punto di riferimento per chi vuole vivere la scena notturna della città.",
+   "price": 30,
+   "id": "p26"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Il Giardino Orientale",
+   "imp": 2,
+   "desc": "Parte degli antichi terreni del Castello di Edo, è un’oasi di tranquillità nel centro della città, con giardini curati, resti storici e paesaggi tipicamente giapponesi.",
+   "price": 0,
+   "id": "p27"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Giardino Hama - Rikyū",
+   "imp": 1,
+   "desc": "Un elegante giardino storico affacciato sulla baia di Tokyo, famoso per i laghetti, i ponti tradizionali e la casa da tè. Il contrasto tra natura e grattacieli crea uno degli scenari più particolari della città.",
+   "price": 2,
+   "id": "p28"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Farmers Market @ UNU",
+   "imp": 1,
+   "desc": "Un mercato all’aperto vicino all’Università delle Nazioni Unite, dove produttori locali propongono frutta, verdura, specialità gastronomiche e prodotti artigianali. Un’occasione per scoprire il lato più sostenibile della città.",
+   "price": 0,
+   "id": "p29"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Tomba di Hachikō",
+   "imp": 1,
+   "desc": "Un luogo legato alla storia del celebre cane Hachikō, simbolo di fedeltà e devozione. La sua storia è ricordata soprattutto dalla famosa statua davanti alla stazione di Shibuya.",
+   "price": 0,
+   "id": "p30"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Sumida Aquarium",
+   "imp": 1,
+   "desc": "Situato nel complesso della Tokyo Skytree, è un acquario moderno noto per le vasche scenografiche, i pinguini e le meduse, con un percorso raccolto e curato.",
+   "price": 14,
+   "id": "p31"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Acquario Sunshine City",
+   "imp": 1,
+   "desc": "Un acquario urbano situato sul tetto del complesso Sunshine City a Ikebukuro. Le vasche e le esposizioni, tra cui quella dedicata ai pinguini, creano un’esperienza sorprendente nel cuore della città.",
+   "price": 18,
+   "id": "p32"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Tokyo Sea Life Park",
+   "imp": 1,
+   "desc": "Un acquario affacciato sulla baia di Tokyo, riconoscibile per la sua grande cupola di vetro. Ospita numerose specie marine, tra cui pinguini e tonni, in un ambiente immerso nel verde.",
+   "price": 4,
+   "id": "p33"
+  },
+  {
+   "city": "Tokyo",
+   "name": "Capybara Cafe",
+   "imp": 1,
+   "desc": "Un locale a tema dove è possibile osservare da vicino i capibara in un ambiente dedicato. Un’esperienza insolita e rilassante, ideale per chi ama gli animali.",
+   "price": 25,
+   "id": "p34"
+  },
+  {
+   "city": "Tokyo",
+   "name": "PokéPark Kanto",
+   "imp": 1,
+   "desc": "Un’attrazione dedicata all’universo Pokémon, pensata per far vivere ai visitatori un’esperienza immersiva tra personaggi, ambientazioni e attività a tema.",
+   "price": 90,
+   "id": "p35"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Arashiyama",
+   "imp": 5,
+   "desc": "Un suggestivo quartiere di Kyoto famoso per la celebre foresta di bambù, i templi e il ponte Togetsukyō. Un luogo dove immergersi nella natura e nella bellezza del Giappone tradizionale.",
+   "price": null,
+   "id": "p36"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Fushimi Inari",
+   "imp": 5,
+   "desc": "Uno dei santuari shintoisti più iconici del Giappone, famoso per i migliaia di torii rossi che formano sentieri suggestivi lungo il monte Inari. Un’esperienza unica tra spiritualità e paesaggi spettacolari.",
+   "price": null,
+   "id": "p37"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Kiyomizu-dera",
+   "imp": 5,
+   "desc": "Un magnifico tempio buddista di Kyoto, celebre per la sua grande terrazza in legno affacciata sulla città. Circondato da stradine tradizionali e botteghe, offre uno scorcio autentico del Giappone storico.",
+   "price": null,
+   "id": "p38"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Kinkaku-ji",
+   "imp": 5,
+   "desc": "Il Padiglione d’Oro, tempio zen rivestito di foglia d’oro che si specchia nello stagno circostante. Uno dei simboli del Giappone, da abbinare al vicino santuario Kitano Tenmangu.",
+   "price": null,
+   "id": "p39"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Gion e Hanamikoji",
+   "imp": 5,
+   "desc": "Il quartiere storico delle geishe, con case in legno, sale da tè e lanterne. Al crepuscolo si respira l’atmosfera più autentica; in alcuni vicoli privati le foto sono vietate.",
+   "price": null,
+   "id": "p40"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Mercato Nishiki",
+   "imp": 3,
+   "desc": "Una via coperta lunga cinque isolati, piena di banchi di cibo: tamagoyaki, pesce, sottaceti, dolci e tè. Perfetto per un pranzo itinerante, meglio entro metà pomeriggio.",
+   "price": null,
+   "id": "p41"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Castello Nijo",
+   "imp": 3,
+   "desc": "Residenza degli shogun Tokugawa, famosa per i pavimenti che cigolano come usignoli per segnalare gli intrusi e per i giardini. A pochi passi dall’hotel INA House Nijojo.",
+   "price": null,
+   "id": "p42"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Kitano Tenmangu",
+   "imp": 3,
+   "desc": "Santuario dedicato allo studio, con un grande giardino di susini: a metà marzo la fioritura dovrebbe essere al massimo. Si trova a breve distanza dal Kinkaku-ji.",
+   "price": null,
+   "id": "p43"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Pontocho",
+   "imp": 3,
+   "desc": "Un vicolo stretto lungo il fiume Kamo, illuminato da lanterne e pieno di ristoranti e bar. Ideale per una cena di gruppo dopo una giornata in giro.",
+   "price": null,
+   "id": "p44"
+  },
+  {
+   "city": "Osaka",
+   "name": "Universal Studios Japan",
+   "imp": 5,
+   "desc": "Un enorme parco a tema con attrazioni spettacolari e mondi immersivi, tra cui Super Nintendo World e The Wizarding World of Harry Potter. Una giornata all’insegna del divertimento e delle esperienze indimenticabili.",
+   "price": null,
+   "id": "p45"
+  },
+  {
+   "city": "Osaka",
+   "name": "Nipponbashi",
+   "imp": 1,
+   "desc": "Il quartiere di Osaka dedicato ad anime, manga, videogiochi e collezionismo, spesso paragonato ad Akihabara. Tra negozi specializzati e sale giochi, è una tappa ideale per gli appassionati di cultura pop giapponese.",
+   "price": null,
+   "id": "p46"
+  },
+  {
+   "city": "Osaka",
+   "name": "Round1 Stadium Sennichimae",
+   "imp": 3,
+   "desc": "Un grande centro di intrattenimento dove sfidarsi tra bowling, arcade, giochi musicali e altre attività. Perfetto per trascorrere qualche ora divertendosi in gruppo e vivere il lato più ludico del Giappone.",
+   "price": null,
+   "id": "p47"
+  },
+  {
+   "city": "Osaka",
+   "name": "Dotonbori",
+   "imp": 5,
+   "desc": "Il cuore vivace di Osaka, famoso per le insegne luminose, il celebre cartello Glico e lo street food locale. Tra takoyaki, okonomiyaki e locali affollati, è il luogo ideale per vivere l’energia della città.",
+   "price": null,
+   "id": "p48"
+  },
+  {
+   "city": "Osaka",
+   "name": "Shitennō-ji",
+   "imp": 1,
+   "desc": "Uno dei templi buddisti più antichi del Giappone, fondato nel VI secolo. Con la sua architettura tradizionale e i suoi tranquilli spazi interni, offre un’immersione nella storia spirituale del Paese.",
+   "price": null,
+   "id": "p49"
+  },
+  {
+   "city": "Osaka",
+   "name": "Amerikamura",
+   "imp": 3,
+   "desc": "Un quartiere giovane e alternativo, noto per la moda streetwear, i negozi vintage, la musica e la street art. Un punto di riferimento per scoprire le tendenze urbane e la cultura giovanile di Osaka.",
+   "price": null,
+   "id": "p50"
+  },
+  {
+   "city": "Nara",
+   "name": "Parco dei cervi di Nara",
+   "imp": 5,
+   "desc": "Un grande parco immerso nel verde, famoso per i cervi che girano liberamente tra i visitatori. Un’esperienza unica e divertente, dove entrare in contatto con uno dei simboli più amati di Nara.",
+   "price": null,
+   "id": "p51"
+  },
+  {
+   "city": "Nara",
+   "name": "Tempio Tōdai-ji",
+   "imp": 5,
+   "desc": "Uno dei templi buddisti più importanti del Giappone, celebre per il Daibutsuden, l’enorme edificio in legno che ospita una gigantesca statua in bronzo del Buddha. Un luogo straordinario per scoprire la spiritualità e la storia giapponese.",
+   "price": null,
+   "id": "p52"
+  },
+  {
+   "city": "Nara",
+   "name": "Santuario Kasuga",
+   "imp": 5,
+   "desc": "Un antico santuario shintoista immerso nella foresta di Nara, famoso per le migliaia di lanterne in pietra e bronzo. Un percorso suggestivo tra natura, tradizione e spiritualità, particolarmente affascinante durante le celebrazioni illuminate.",
+   "price": null,
+   "id": "p53"
+  },
+  {
+   "city": "Tashirojima",
+   "name": "Isola dei gatti",
+   "imp": 1,
+   "desc": "Un’isola giapponese famosa per la presenza di numerosi gatti che vivono liberamente tra le case e il porto. Un luogo curioso e tranquillo, ideale per gli amanti degli animali e per scoprire un Giappone lontano dalle grandi città.",
+   "price": null,
+   "other": true,
+   "id": "p54"
+  },
+  {
+   "city": "Shirakawa",
+   "name": "Villaggio di Shirakawa",
+   "imp": 2,
+   "desc": "Il villaggio storico di Shirakawa-go è famoso per le tradizionali case gasshō-zukuri, con caratteristici tetti spioventi in paglia. Circondato da montagne e paesaggi suggestivi, conserva un’atmosfera rurale e autentica del Giappone di un tempo.",
+   "price": null,
+   "other": true,
+   "id": "p55"
+  },
+  {
+   "city": "Nagoya",
+   "name": "Ghibli Park",
+   "imp": 1,
+   "desc": "Un parco tematico dedicato all’universo dello Studio Ghibli, dove esplorare ambientazioni ispirate a film come Il mio vicino Totoro e La città incantata. Un’esperienza immersiva per gli appassionati di animazione giapponese e dei suoi mondi fantastici.",
+   "price": null,
+   "other": true,
+   "id": "p56"
+  },
+  {
+   "city": "Nagoya",
+   "name": "Castello di Nagoya",
+   "imp": 3,
+   "desc": "Uno dei castelli più celebri del Giappone, riconoscibile per il tetto decorato con ornamenti dorati a forma di pesce. Simbolo della storia feudale della città, permette di approfondire l’architettura e il passato dei samurai.",
+   "price": null,
+   "other": true,
+   "id": "p57"
+  },
+  {
+   "city": "Kamakura",
+   "name": "Kamakura",
+   "imp": 3,
+   "desc": "A circa un’ora da Tokyo, l’antica capitale dei samurai: il Grande Buddha all’aperto, templi zen immersi nel verde e, se resta tempo, l’isola di Enoshima. Una delle opzioni per la giornata libera del 19 marzo.",
+   "price": null,
+   "other": true,
+   "id": "p58"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Kennin-ji",
+   "imp": 3,
+   "desc": "Il tempio zen più antico di Kyoto, a due passi da Gion: giardini di sabbia e due draghi dipinti sul soffitto della sala principale.",
+   "price": 4,
+   "id": "p59"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Ryōan-ji",
+   "imp": 3,
+   "desc": "Il giardino zen di pietre più famoso del Giappone: quindici pietre su ghiaia rastrellata, disposte in modo che non si vedano mai tutte insieme.",
+   "price": 3,
+   "id": "p60"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Kōdai-ji",
+   "imp": 3,
+   "desc": "Tempio fondato dalla vedova di Toyotomi Hideyoshi, con giardini zen, sale laccate e un piccolo boschetto di bambù.",
+   "price": 3,
+   "id": "p61"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Ginkaku-ji",
+   "imp": 3,
+   "desc": "Il Padiglione d'Argento, mai rivestito d'argento: giardino di sabbia scolpita e sentiero sulla collina di muschio.",
+   "price": 3,
+   "id": "p62"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Sentiero del Filosofo",
+   "imp": 3,
+   "desc": "Due chilometri di passeggiata lungo un canale tra il Ginkaku-ji e il Nanzen-ji, con templi minori e piccoli caffè.",
+   "price": 0,
+   "id": "p63"
+  },
+  {
+   "city": "Kyoto",
+   "name": "Nanzen-ji",
+   "imp": 3,
+   "desc": "Grande complesso zen con la porta Sanmon e un acquedotto in mattoni dell'Ottocento che attraversa il tempio.",
+   "price": 0,
+   "id": "p64"
+  },
+  {
+   "city": "Osaka",
+   "name": "Mercato Kuromon",
+   "imp": 3,
+   "desc": "La 'cucina di Osaka': 150 banchi di pesce, carne e frutta, molti con assaggi cucinati al momento. Ideale a colazione.",
+   "price": null,
+   "id": "p65"
+  },
+  {
+   "city": "Nara",
+   "name": "Nigatsu-dō",
+   "imp": 3,
+   "desc": "Sala del complesso del Tōdai-ji costruita sul pendio: dalla terrazza di legno si vede tutta Nara, gratis.",
+   "price": 0,
+   "id": "p66"
+  },
+  {
+   "city": "Nara",
+   "name": "Naramachi",
+   "imp": 3,
+   "desc": "Il quartiere storico dei mercanti, con case di legno strette e lunghe, negozi di artigianato e caffè.",
+   "price": 0,
+   "id": "p67"
+  }
+ ],
+ "budget": [
+  {
+   "v": "Volo A/R",
+   "t": 7800.0,
+   "s": "Saldato"
+  },
+  {
+   "v": "Hotel Tokyo 1",
+   "t": 1324.0,
+   "s": "Prenotato"
+  },
+  {
+   "v": "Hotel Tokyo 2",
+   "t": 599.0,
+   "s": "Prenotato"
+  },
+  {
+   "v": "Hotel Kyoto",
+   "t": 492.0,
+   "s": "Prenotato"
+  },
+  {
+   "v": "Trasporti (treni, metro, bus)",
+   "t": 1890.9,
+   "s": "Da fare"
+  },
+  {
+   "v": "Disney Sea",
+   "t": 360.0,
+   "s": "Da fare"
+  },
+  {
+   "v": "Mikasa Ryokan",
+   "t": 873.92,
+   "s": "Prenotato"
+  },
+  {
+   "v": "Hotel Osaka",
+   "t": 128.0,
+   "s": "Prenotato"
+  },
+  {
+   "v": "Spedizione bagagli",
+   "t": 361.53,
+   "s": "Da fare"
+  },
+  {
+   "v": "Assicurazioni",
+   "t": 261.62,
+   "s": "Da fare"
+  },
+  {
+   "v": "E-Sim",
+   "t": 300.0,
+   "s": "Da fare"
+  },
+  {
+   "v": "Universal Studios + Express Pass",
+   "t": 766.67,
+   "s": "Da fare"
+  },
+  {
+   "v": "Ingressi e attività",
+   "t": 800.0,
+   "s": "Da fare"
+  },
+  {
+   "v": "Pasti",
+   "t": 2666.67,
+   "s": "Da fare"
+  },
+  {
+   "v": "Tasse di soggiorno e imprevisti",
+   "t": 271.67,
+   "s": "Da fare"
+  }
+ ]
+}
