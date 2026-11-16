@@ -208,7 +208,7 @@ function showDay(i){
       <div class="dayinfo" id="dayinfo"></div>
     </div>
     ${d.plan ? planHTML(d.plan) : `<ul class="slots">${slots.map(s=>`<li><h3>${s[0]}</h3><p>${esc(s[1])}</p></li>`).join("")}</ul>`}
-    ${ROUTES.some(r=>r.day===i+1) ? ROUTES.filter(r=>r.day===i+1 && (r.city!=="Japan" || r.card)).sort((a,b)=>((b.city==="Japan")-(a.city==="Japan")) || ((a.city===d.city)-(b.city===d.city))).map(r=>r.city).filter((c,k,a)=>a.indexOf(c)===k).map(c=>`<div class="daymap" data-city="${c}">${c==="Japan" ? mapSVG(c,{day:i+1, mode:"day", animate:true}) : mapZoomSVG(c, i+1, true)}</div>`).join("") : ""}
+    ${ROUTES.some(r=>r.day===i+1) ? ROUTES.filter(r=>r.day===i+1 && (r.city!=="Japan" || r.card)).sort((a,b)=>((b.city==="Japan")-(a.city==="Japan")) || ((a.city===d.city)-(b.city===d.city))).map(r=>r.city).filter((c,k,a)=>a.indexOf(c)===k).map(c=>`<div class="daymap" data-city="${c}">${c==="Japan" ? mapSVG(c,{day:i+1, mode:"day", animate:true}) : mapZoomSVG(c, i+1, true)}</div>`).join("").replace(/^/,'<div class="daymaps">').replace(/$/,'</div>') : ""}
     ${d.n ? `<p class="note${d.alert?" alert":d.decide?" decide":""}">${esc(d.n)}</p>` : ""}
     ${d.hotel ? `<div class="sleep"><span>Stanotte: <a class="hlink" href="#hotel" data-h="${esc(d.hotel)}"><b>${esc(d.hotel)}</b></a></span><a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(HOTEL_Q[d.hotel]||d.hotel+" "+d.city)}" target="_blank" rel="noopener">Mappa</a></div>` : ""}
     <div class="pager">
@@ -735,7 +735,7 @@ const SKY = (() => {
 const skySVG = k => { const s = SKY[k]; if (!s) return ""; const [p, extra=""] = s.split(/(?=<circle)/);
   return `<svg viewBox="0 0 720 180" preserveAspectRatio="xMidYMax slice"><path d="${p.replace(/\s+/g," ").trim()}"/>${extra}</svg>`; };
 const PAT = (() => {
-  const svg = (w, h, d) => ({w, h, url: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><path d="${d}" fill="none" stroke="#000" stroke-width="1"/></svg>`)}")`});
+  const svg = (w, h, d) => ({w, h, url: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><path d="${d}" fill="none" stroke="#808080" stroke-width="1"/></svg>`)}")`});
   // seigaiha (onde)
   let s = ""; [[20,20],[0,10],[40,10]].forEach(([cx,cy]) => [18,13,8,3].forEach(r => { s += `M${cx-r} ${cy} A${r} ${r} 0 0 1 ${cx+r} ${cy} `; }));
   // asanoha (foglia di canapa) su griglia triangolare
@@ -760,7 +760,7 @@ function setBackdrop(key){
   if (key === BG) return; BG = key; bgFlip ^= 1;
   const L = document.querySelectorAll("#bgpat i"), S = document.querySelectorAll("#sky > div");
   const p = PAT[key], li = L[bgFlip], si = S[bgFlip];
-  li.style.webkitMaskImage = li.style.maskImage = p.url; li.style.webkitMaskSize = li.style.maskSize = `${p.w}px ${p.h}px`;
+  li.style.backgroundImage = p.url; li.style.backgroundSize = `${p.w}px ${p.h}px`;
   si.innerHTML = skySVG(key);
   li.classList.add("on"); L[bgFlip^1].classList.remove("on");
   si.classList.toggle("on", !!SKY[key]); S[bgFlip^1].classList.remove("on");
@@ -901,6 +901,13 @@ document.getElementById("todo").addEventListener("change", e => {
   store.set("todo", [...done]); renderTodo();
 });
 renderTodo();
+/* tastiera: frecce ← → per cambiare giorno nella vista Giorni */
+addEventListener("keydown", e => {
+  if ($("#v-giorni").hidden || e.altKey || e.ctrlKey || e.metaKey) return;
+  if (e.target.closest && e.target.closest("input, textarea, select")) return;
+  if (e.key === "ArrowRight" && cur < DAYS.length-1) { e.preventDefault(); showDay(cur+1); }
+  if (e.key === "ArrowLeft" && cur > 0) { e.preventDefault(); showDay(cur-1); }
+});
 /* rotellina del mouse: scorrimento orizzontale delle file (date, città, giorni) */
 function wheelScroll(el){
   el.addEventListener("wheel", e => {
