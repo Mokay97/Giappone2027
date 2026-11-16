@@ -1,6 +1,12 @@
 # Giappone 2027 – Novità della guida
 
-Versione attuale: **2.2.0**
+Versione attuale: **2.3.0**
+
+## 2.3.0 — Colori giapponesi (16 novembre 2026)
+- Nuova palette ispirata ai colori tradizionali: carta washi, inchiostro sumi, vermiglio dei torii e indaco
+- Colori delle città sui toni tradizionali: Tokyo indaco, Kyoto glicine, Osaka cachi, Nara matcha
+- Sfondi illustrati: la mappa del Giappone negli Hotel, il monte Fuji in Scadenze e Valigia, il Fuji con l'onda in Info
+- Luoghi su computer: la mappa resta ferma e l'elenco scorre nella sua colonna; cambiando giorno la pagina non si muove più
 
 ## 2.2.0 — Scadenze, Valigia e Luoghi rinnovati (16 novembre 2026)
 - Nuova sezione Scadenze: tutto quello da prenotare e verificare prima di partire, in ordine di data, con i pulsanti per aggiungerlo a Google Calendar o al calendario di iPhone

@@ -4,9 +4,11 @@
 @font-face{font-family:'Zen Kaku Gothic New';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/ZenKakuGothicNew-Bold.woff2) format('woff2')}
 @font-face{font-family:'Shippori Mincho B1';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/ShipporiMinchoB1-ExtraBold.woff2) format('woff2')}
 :root{
-  --bg:#F3F4F2; --surface:#FFFFFF; --ink:#1C2430; --muted:#5E6673; --line:#D8DCD9; --soft:#E9ECEA;
-  --tokyo:#0A86B8; --kyoto:#8458B3; --osaka:#D97A00; --nara:#3F9441; --milano:#7E848D; --other:#A84E73;
-  --alert:#C8202A; --alert-bg:#FCE8E8; --tokyo-f:#006A94; --kyoto-f:#6E43A0; --osaka-f:#A85A00; --nara-f:#2E7531; --milano-f:#5E636B; --other-f:#8E3D5E; --alert-f:#C8202A; --on-f:#FFFFFF; --water:#C9E0EE; --park:#D3E5C9; --rail:#9EA6AE; --land:#EEF0EC; --road:#FFFFFF; --hill:#E1E4DC; --decide:#8A5300; --decide-bg:#FFF1D6; --ok:#2E7D32; --ok-bg:#E3F2E4;
+  --bg:#F5F1E8; --surface:#FFFDF8; --ink:#262421; --muted:#6B655C; --line:#DDD5C6; --soft:#EEE8DC;
+  --tokyo:#2E6A9E; --kyoto:#7E56A6; --osaka:#A9531A; --nara:#587329; --milano:#7A746B; --other:#A0466A;
+  --alert:#B8361F; --alert-bg:#F8E3DD; --tokyo-f:#24527D; --kyoto-f:#6B4796; --osaka-f:#A1500F; --nara-f:#556B2C; --milano-f:#5F5A52; --other-f:#8A3D58; --alert-f:#B8361F; --on-f:#FFFFFF;
+  --shu:#B8361F; --on-shu:#FFFFFF; --ai:#1F3B5C; --on-ai:#F5F1E8;
+  --water:#CFE0E6; --park:#DCE5C8; --rail:#A49E93; --land:#F2EDE2; --road:#FFFFFF; --hill:#E6DFD0; --decide:#8A5300; --decide-bg:#FFF1D6; --ok:#2E7D32; --ok-bg:#E3F2E4;
   --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Noto Sans JP",system-ui,-apple-system,"Segoe UI",sans-serif;
   --kanji:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
   color-scheme:light;
@@ -14,21 +16,23 @@
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#000000; --surface:#141414; --ink:#EDEDED; --muted:#A3A3A3; --line:#2C2C2C; --soft:#1F1F1F;
-    --tokyo:#3AB0E0; --kyoto:#AE88DA; --osaka:#F2A03A; --nara:#6CC36A; --milano:#A2A8B0; --other:#D97BA2;
-    --alert:#FF6B6B; --alert-bg:#3A1F22; --tokyo-f:#3AB0E0; --kyoto-f:#B892E0; --osaka-f:#F2A03A; --nara-f:#6CC36A; --milano-f:#A2A8B0; --other-f:#D97BA2; --alert-f:#FF6B6B; --on-f:#0B0B0B; --water:#132C3D; --park:#16301B; --rail:#5E5E5E; --land:#1A1A1A; --road:#2E2E2E; --hill:#232323; --decide:#F2B85B; --decide-bg:#3A2E1A; --ok:#7FD283; --ok-bg:#1E3322;
+    --tokyo:#6FA8DC; --kyoto:#B79BE0; --osaka:#F0A060; --nara:#A9C46A; --milano:#B5AFA6; --other:#E08AA8;
+    --alert:#FF7A63; --alert-bg:#3A1F1A; --tokyo-f:#6FA8DC; --kyoto-f:#B79BE0; --osaka-f:#F0A060; --nara-f:#A9C46A; --milano-f:#B5AFA6; --other-f:#E08AA8; --alert-f:#FF7A63; --on-f:#0B0B0B; --shu:#FF7A63; --on-shu:#140000; --ai:#8FB3E0; --on-ai:#0B0B0B; --water:#132C3D; --park:#16301B; --rail:#5E5E5E; --land:#1A1A1A; --road:#2E2E2E; --hill:#232323; --decide:#F2B85B; --decide-bg:#3A2E1A; --ok:#7FD283; --ok-bg:#1E3322;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#000000; --surface:#141414; --ink:#EDEDED; --muted:#A3A3A3; --line:#2C2C2C; --soft:#1F1F1F;
-  --tokyo:#3AB0E0; --kyoto:#AE88DA; --osaka:#F2A03A; --nara:#6CC36A; --milano:#A2A8B0; --other:#D97BA2;
-  --alert:#FF6B6B; --alert-bg:#3A1F22; --tokyo-f:#3AB0E0; --kyoto-f:#B892E0; --osaka-f:#F2A03A; --nara-f:#6CC36A; --milano-f:#A2A8B0; --other-f:#D97BA2; --alert-f:#FF6B6B; --on-f:#0B0B0B; --water:#132C3D; --park:#16301B; --rail:#5E5E5E; --land:#1A1A1A; --road:#2E2E2E; --hill:#232323; --decide:#F2B85B; --decide-bg:#3A2E1A; --ok:#7FD283; --ok-bg:#1E3322;
+  --tokyo:#6FA8DC; --kyoto:#B79BE0; --osaka:#F0A060; --nara:#A9C46A; --milano:#B5AFA6; --other:#E08AA8;
+  --alert:#FF7A63; --alert-bg:#3A1F1A; --tokyo-f:#6FA8DC; --kyoto-f:#B79BE0; --osaka-f:#F0A060; --nara-f:#A9C46A; --milano-f:#B5AFA6; --other-f:#E08AA8; --alert-f:#FF7A63; --on-f:#0B0B0B; --shu:#FF7A63; --on-shu:#140000; --ai:#8FB3E0; --on-ai:#0B0B0B; --water:#132C3D; --park:#16301B; --rail:#5E5E5E; --land:#1A1A1A; --road:#2E2E2E; --hill:#232323; --decide:#F2B85B; --decide-bg:#3A2E1A; --ok:#7FD283; --ok-bg:#1E3322;
   color-scheme:dark;
 }
-:root{box-sizing:border-box}
+:root{box-sizing:border-box;--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .28 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--grain:none}}
+:root[data-theme="dark"]{--grain:none}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
+body{margin:0;background:var(--bg) var(--grain,none);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 button,input{font:inherit;color:inherit}
 a{color:inherit}
@@ -48,6 +52,16 @@ html,body{height:100%;overflow:hidden}
 #sky svg{position:absolute;left:-18px;bottom:0;width:calc(100% + 36px);height:100%}
 #sky path,#sky circle{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
 header,.flight,main{position:relative;z-index:1}
+#scene{position:fixed;left:0;right:0;bottom:calc(58px + env(safe-area-inset-bottom,0px));height:58vh;z-index:-1;pointer-events:none;color:var(--ink);
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 45%);mask-image:linear-gradient(to bottom,transparent 0,#000 45%)}
+#scene>div{position:absolute;inset:0;opacity:0;transition:opacity .6s ease}
+#scene>div.on{opacity:var(--scene-o,.15)}
+#scene svg{position:absolute;right:0;bottom:0;width:100%;height:100%}
+#scene path,#scene circle{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+#scene .dot{fill:currentColor;stroke:none}
+#scene text{fill:currentColor;stroke:none;font-family:var(--kanji);font-weight:800;font-size:22px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--scene-o:.22}}
+:root[data-theme="dark"]{--scene-o:.22}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--pat-o:.14;--sky-o:.2}}
 :root[data-theme="dark"]{--pat-o:.14;--sky-o:.2}
 /* petali di susino all'apertura */
@@ -106,7 +120,7 @@ header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
 .pager{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.pager .btn{justify-content:center}.pager .solid{grid-column:1/-1;grid-row:2}
 .btn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 16px;cursor:pointer;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
 .btn:disabled{opacity:.4;cursor:default}
-.btn.solid{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.solid{background:var(--shu);color:var(--on-shu);border-color:var(--shu)}
 
 /* places */
 .tools{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0 6px}
@@ -114,7 +128,8 @@ header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
 .chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
 .chips::-webkit-scrollbar{display:none}
 .chip{flex:0 0 auto;border:2px solid var(--c,var(--line));background:var(--surface);border-radius:999px;padding:6px 14px;font-size:15px;font-weight:500;cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--cf,var(--ink));color:var(--on-f);border-color:var(--cf,var(--ink))}
+.chip[aria-pressed="true"]{background:var(--cf,var(--ai));color:var(--cf-on,var(--on-ai));border-color:var(--cf,var(--ai))}
+.chip[style*="--cf"][aria-pressed="true"]{color:var(--on-f)}
 .row2{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
 .seg{display:flex;background:var(--soft);border-radius:12px;padding:3px;flex:1 1 260px}
 .seg button{flex:1;border:0;background:none;padding:7px 6px;border-radius:9px;font-size:14px;cursor:pointer}
@@ -377,7 +392,7 @@ svg.zoomed .rt.faint{opacity:.22}
 .st.off.dim circle.m{stroke:var(--muted)}
 .navbtn{display:inline-flex;align-items:center;gap:7px;margin-top:8px;padding:7px 13px 7px 10px;border-radius:999px;background:var(--cf,var(--c));color:var(--on-f);text-decoration:none;font-size:13.5px;font-weight:700;box-shadow:0 1px 2px rgba(0,0,0,.15)}
 .navbtn svg{width:18px;height:18px;flex:0 0 auto}
-.navbtn.tr{background:var(--ink);color:var(--bg)}
+.navbtn.tr{background:var(--ai);color:var(--on-ai)}
 .navbtn:active{transform:scale(.97)}
 /* conto alla rovescia */
 .cd{display:inline-flex;gap:6px;vertical-align:baseline;margin-right:4px}
@@ -463,6 +478,7 @@ svg.clean .st .n{font-size:13.5px}
 @media (min-width:1024px){
   .wrap{max-width:1240px;padding:64px 32px 60px}
   #sky{top:56px;height:150px}
+  #scene{bottom:0;height:72vh}
   nav.tabs{top:0;bottom:auto;border-top:0;border-bottom:1px solid var(--line);padding-bottom:0;transform:none;will-change:auto}
   nav.tabs div{max-width:1240px;display:flex;justify-content:flex-end;gap:4px;padding:0 32px}
   nav.tabs a{flex-direction:row;gap:8px;padding:16px 14px;font-size:15px;border-bottom:3px solid transparent}
@@ -481,11 +497,17 @@ svg.clean .st .n{font-size:13.5px}
   #day .pager{grid-template-columns:auto auto 1fr;justify-content:start}
   #day .pager .solid{grid-column:auto;grid-row:auto;justify-self:end}
   /* Luoghi: mappa grande a sinistra, elenco a destra */
-  #v-luoghi{display:grid;grid-template-columns:minmax(0,2fr) minmax(330px,1fr);column-gap:32px;align-items:start}
-  #v-luoghi #map svg{max-height:calc(100vh - 230px);width:auto;max-width:100%;margin:0 auto}
+  #v-luoghi{display:grid;grid-template-columns:minmax(0,2fr) minmax(330px,1fr);grid-template-rows:auto auto auto minmax(0,1fr);column-gap:32px;align-items:start;height:calc(100vh - 72px)}
+  #v-luoghi>.filters{grid-row:2}
+  #v-luoghi>#pstat{grid-row:3}
+  #v-luoghi>#plist{grid-row:4;align-self:stretch;overflow-y:auto;min-height:0;padding-right:8px;overscroll-behavior:contain}
+  #v-luoghi #map svg{width:auto;max-width:100%;margin:0 auto}
   #v-luoghi>*{grid-column:2}
   #v-luoghi>.tools{grid-column:1 / -1;top:56px}
-  #v-luoghi>#mapcard{grid-column:1;grid-row:2 / span 40;position:sticky;top:116px;margin-top:8px}
+  #v-luoghi>#mapcard{grid-column:1;grid-row:2 / span 3;margin-top:8px;align-self:stretch;display:flex;flex-direction:column}
+  #v-luoghi>#mapcard #map{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
+  #v-luoghi #map svg{max-height:100%}
+  #v-luoghi>.tools{position:static}
   #v-scadenze,#v-valigia{max-width:820px;margin:0 auto}
   /* Hotel: schede su due colonne */
   #hlist{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
