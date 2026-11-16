@@ -1,6 +1,6 @@
 /* Giappone 2027 – logica della guida. I dati sono in data.json */
 (async () => {
-const __D = await fetch('data.json').then(r => r.json());
+const __D = await fetch('data.json?v=202611161018', {cache:'no-cache'}).then(r => r.json());
 /* ====== DATI: modificabili ====== */
 const DAYS = __D.days;
 const PLACES = __D.places;
@@ -84,6 +84,7 @@ const PHRASES = [
 ];
 
 /* ====== storage ====== */
+const SC = () => document.getElementById("scroller");
 const store = {
   get(k,d){try{const v=localStorage.getItem("jp27-"+k);return v===null?d:JSON.parse(v)}catch(e){return d}},
   set(k,v){try{localStorage.setItem("jp27-"+k,JSON.stringify(v))}catch(e){}}
@@ -187,9 +188,9 @@ function pageDay(i){
   showDay(i);
   if (before === null) return;
   const p1 = document.querySelector("#day .pager");
-  if (p1) window.scrollBy(0, p1.getBoundingClientRect().top - before);
+  if (p1) SC().scrollBy(0, p1.getBoundingClientRect().top - before);
   const maps = document.querySelectorAll("#day .daymap"), m = maps[maps.length-1];
-  if (m) { const r = m.getBoundingClientRect(); if (r.top < 8) window.scrollBy(0, r.top - 8); }
+  if (m) { const r = m.getBoundingClientRect(); if (r.top < 8) SC().scrollBy(0, r.top - 8); }
 }
 function showDay(i){
   cur = i;
@@ -657,7 +658,7 @@ function pickZone(id){
   state.zone = state.zone===id ? null : id;
   renderMap(); renderPlaces();
 }
-function goCity(c){ state.city = c; state.zone = null; state.focusDay = null; store.set("city", c); renderChips(); renderMap(); renderPlaces(); setBackdrop(c); window.scrollTo(0,0); }
+function goCity(c){ state.city = c; state.zone = null; state.focusDay = null; store.set("city", c); renderChips(); renderMap(); renderPlaces(); setBackdrop(c); SC().scrollTo(0,0); }
 $("#map").addEventListener("click", e => { const g = e.target.closest(".st"); if (!g) return; g.dataset.go ? goCity(g.dataset.go) : pickZone(g.dataset.z); });
 $("#map").addEventListener("keydown", e => { const g = e.target.closest(".st"); if (g && (e.key==="Enter"||e.key===" ")) { e.preventDefault(); g.dataset.go ? goCity(g.dataset.go) : pickZone(g.dataset.z); } });
 $("#daypick").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; state.focusDay = b.dataset.d ? +b.dataset.d : null; state.zone = null; state._anim = true; renderMap(); renderPlaces(); });
@@ -794,7 +795,7 @@ function route(){
   if (v==="luoghi") setBackdrop(CITIES[state.city] ? state.city : "neutral");
   if (v==="hotel") { if (state.hotelJump) { const hh = HOTELS.find(h=>h.n===state.hotelJump); if (hh) state.hcity = hh.city; } renderHotels(); if (state.hotelJump) { const k = HOTELS.findIndex(h=>h.n===state.hotelJump); state.hotelJump = null; if (k>=0) { setTimeout(()=>document.getElementById("h"+k).scrollIntoView({block:"start"}), 0); return; } } }
   if (v==="giorni") showDay(cur);
-  window.scrollTo(0,0);
+  SC().scrollTo(0,0);
 }
 
 /* ====== ora locale e di Milano, meteo del giorno ====== */
@@ -837,7 +838,7 @@ fetchWeather();
 
 /* ====== swipe tra i giorni sulla scheda ====== */
 /* con lo swipe si torna in cima alla pagina; con i pulsanti Prima/Dopo si resta in fondo (pageDay) */
-function swipeTo(i){ showDay(i); window.scrollTo(0, 0); }
+function swipeTo(i){ showDay(i); SC().scrollTo(0, 0); }
 (function swipe(){
   const day = document.getElementById("day");
   if (!day || day.dataset.swipe) return; day.dataset.swipe = "1";

@@ -1,13 +1,13 @@
 // Service worker: la guida funziona anche senza connessione.
 // Pagina, codice e dati: prima la rete (versione sempre aggiornata), poi la copia salvata.
 // Font e icone: prima la copia salvata.
-const CACHE = "giappone27-v5";
+const CACHE = "giappone27-202611161018";
 const CORE = [
   "./",
   "./index.html",
-  "./style.css",
-  "./app.js",
-  "./data.json",
+  "./style.css?v=202611161018",
+  "./app.js?v=202611161018",
+  "./data.json?v=202611161018",
   "./manifest.webmanifest",
   "./icon-192.png",
   "./icon-512.png",
@@ -30,7 +30,7 @@ self.addEventListener("fetch", e => {
   if (url.origin !== location.origin) return; // meteo e Google Maps: nessuna cache qui
   const fresh = req.mode === "navigate" || /\.(html|js|css|json)$/.test(url.pathname) || url.pathname.endsWith("/");
   if (fresh) {
-    e.respondWith(fetch(req).then(res => { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); return res; })
+    e.respondWith(fetch(req, {cache: "no-cache"}).then(res => { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); return res; })
       .catch(() => caches.match(req).then(hit => hit || caches.match("./index.html"))));
     return;
   }
