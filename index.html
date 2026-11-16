@@ -14,7 +14,7 @@
 <meta name="apple-mobile-web-app-title" content="Giappone ’27">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preload" href="fonts/ZenKakuGothicNew-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=202611161018">
+<link rel="stylesheet" href="style.css?v=202611161044">
 </head>
 <body>
 <div id="bgpat" aria-hidden="true"><i></i><i></i></div>
@@ -99,9 +99,11 @@
     </section>
 
     <section id="v-info" hidden>
-      <h2 class="sec">Prima di partire</h2>
-      <p class="todostat" id="todostat"></p>
-      <div id="todo"></div>
+      <h2 class="sec colL">Novità <span class="ver" id="verTag"></span></h2>
+      <div class="news colL" id="news"></div>
+      <h2 class="sec colL">Prima di partire</h2>
+      <p class="todostat colL" id="todostat"></p>
+      <div id="todo" class="colL"></div>
       <h2 class="sec">Da sapere</h2>
       <ol class="tips">
         <li>Suica o PASMO sul telefono (Apple Wallet o app Welcome Suica): si paga metro, treni locali, bus e konbini con un tocco.</li>
@@ -120,7 +122,7 @@
         <a href="tel:110"><span>110</span>Polizia</a>
         <a href="tel:119"><span>119</span>Ambulanza e vigili del fuoco</a>
       </div>
-      <p class="foot">Le spunte “visto” e il cambio restano salvati su questo telefono. <button id="reset">Azzera le spunte</button> · <button id="theme">Cambia tema</button></p>
+      <p class="foot">Guida versione <b id="verFoot"></b>. Le spunte “visto” e il cambio restano salvati su questo telefono. <button id="reset">Azzera le spunte</button> · <button id="theme">Cambia tema</button></p>
     </section>
   </main>
 </div>
@@ -132,11 +134,11 @@
     <a href="#luoghi" data-v="luoghi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Luoghi</a>
     <a href="#hotel" data-v="hotel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19V6M3 15h18v4M21 15v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11" r="2"/></svg>Hotel</a>
     <a href="#soldi" data-v="soldi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4l6 8 6-8M12 12v8M7 13h10M7 17h10"/></svg>Soldi</a>
-    <a href="#info" data-v="info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>Info</a>
+    <a href="#info" data-v="info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="navlbl">Info<i class="newdot" id="newdot" hidden></i></span></a>
   </div>
 </nav>
 
-<script src="app.js?v=202611161018"></script>
+<script src="app.js?v=202611161044"></script>
 <script>
 if ("serviceWorker" in navigator) {
   addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
