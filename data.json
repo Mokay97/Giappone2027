@@ -2179,6 +2179,9 @@
    "imp": 5,
    "desc": "Una delle torri più alte del mondo, simbolo della Tokyo moderna. Dai suoi osservatori offre una vista spettacolare sulla metropoli e, nelle giornate limpide, sul Monte Fuji.",
    "price": 18,
+   "day": 3,
+   "o": "17:00",
+   "t": "17:00",
    "id": "p0"
   },
   {
@@ -2187,6 +2190,9 @@
    "imp": 5,
    "desc": "Un parco a tema unico, ispirato al mare e alle grandi avventure. Tra scenografie spettacolari, attrazioni immersive e aree tematiche suggestive, offre un’esperienza diversa dai classici parchi Disney.",
    "price": 60,
+   "day": 5,
+   "o": "8:15",
+   "t": "8:15",
    "id": "p1"
   },
   {
@@ -2195,6 +2201,9 @@
    "imp": 5,
    "desc": "Immerso in una vasta foresta nel cuore di Tokyo, è un importante santuario shintoista dedicato all’Imperatore Meiji e all’Imperatrice Shōken. Un luogo di pace lontano dal caos cittadino.",
    "price": 0,
+   "day": 4,
+   "o": "9:00",
+   "t": "9:00",
    "id": "p2"
   },
   {
@@ -2203,6 +2212,9 @@
    "imp": 5,
    "desc": "Il tempio buddista più antico di Tokyo, famoso per la grande lanterna rossa della porta Kaminarimon e la vivace via commerciale Nakamise, ricca di souvenir e specialità locali.",
    "price": 0,
+   "day": 3,
+   "o": "8:45",
+   "t": "8:45",
    "id": "p3"
   },
   {
@@ -2211,6 +2223,9 @@
    "imp": 2,
    "desc": "Iconica torre ispirata alla Torre Eiffel, è uno dei simboli storici della città. I suoi osservatori regalano splendide vedute dello skyline, soprattutto al tramonto e di sera.",
    "price": 19,
+   "day": 13,
+   "o": "18:15",
+   "t": "18:15",
    "id": "p4"
   },
   {
@@ -2219,6 +2234,9 @@
    "imp": 5,
    "desc": "Un dedalo di stretti vicoli a Shinjuku, illuminati da lanterne e insegne, dove piccoli locali servono yakitori e piatti tradizionali. Perfetto per respirare l’atmosfera della Tokyo più autentica.",
    "price": 30,
+   "day": 2,
+   "o": "19:15",
+   "t": "19:15",
    "id": "p5"
   },
   {
@@ -2227,6 +2245,9 @@
    "imp": 2,
    "desc": "Residenza ufficiale dell’Imperatore del Giappone, si trova nel cuore di Tokyo, circondato da fossati, mura storiche e ampi spazi verdi.",
    "price": 0,
+   "day": 6,
+   "o": "9:20",
+   "t": "9:20",
    "id": "p6"
   },
   {
@@ -2235,6 +2256,9 @@
    "imp": 2,
    "desc": "Il quartiere dei libri di Tokyo, ricco di librerie indipendenti, volumi usati, caffetterie e negozi specializzati. Una meta affascinante per gli amanti della lettura e per chi cerca un’atmosfera più tranquilla.",
    "price": 0,
+   "day": 6,
+   "o": "11:15",
+   "t": "11:15",
    "id": "p7"
   },
   {
@@ -2243,6 +2267,9 @@
    "imp": 5,
    "desc": "Un edificio iconico nel cuore di Akihabara, pieno di negozi dedicati ad anime, manga, videogiochi, modellini e collezionismo. Una tappa imperdibile per immergersi nella cultura pop giapponese.",
    "price": 0,
+   "day": 6,
+   "o": "14:15",
+   "t": "14:15",
    "id": "p8"
   },
   {
@@ -2251,6 +2278,9 @@
    "imp": 5,
    "desc": "Il celebre incrocio pedonale di Tokyo, circondato da schermi giganti, negozi e locali. Una tappa imperdibile per vivere l’energia della metropoli e la sua vivace vita notturna.",
    "price": 0,
+   "day": 4,
+   "o": "17:15",
+   "t": "17:15",
    "id": "p9"
   },
   {
@@ -2259,6 +2289,9 @@
    "imp": 5,
    "desc": "Un complesso commerciale che ospita negozi ufficiali dedicati a Pokémon e Nintendo, ricchi di gadget, videogiochi e prodotti esclusivi. Una tappa ideale per gli appassionati di cultura pop giapponese.",
    "price": 0,
+   "day": 4,
+   "o": "13:15",
+   "t": "13:15",
    "id": "p10"
   },
   {
@@ -2267,6 +2300,9 @@
    "imp": 2,
    "desc": "Un centro commerciale famoso per i negozi specializzati in anime, manga, figure da collezione e videogiochi, con articoli vintage e oggetti rari. Una meta imperdibile per gli appassionati di cultura otaku.",
    "price": 0,
+   "day": 14,
+   "o": "9:00",
+   "t": "9:00",
    "id": "p11"
   },
   {
@@ -2275,6 +2311,9 @@
    "imp": 5,
    "desc": "Un’esperienza sociale tipica del Giappone, con stanze private, cataloghi musicali enormi e canzoni di ogni genere, comprese le sigle degli anime. Perfetto per trascorrere una serata divertente in gruppo.",
    "price": 20,
+   "day": 14,
+   "o": "20:45",
+   "t": "20:45",
    "id": "p12"
   },
   {
@@ -2283,6 +2322,9 @@
    "imp": 2,
    "desc": "Un laboratorio dove scoprire l’arte delle bacchette giapponesi e cimentarsi nella loro realizzazione o personalizzazione. Un’attività creativa per avvicinarsi alla cultura artigianale locale.",
    "price": 30,
+   "day": 3,
+   "o": "10:31",
+   "t": "10:30",
    "id": "p13"
   },
   {
@@ -2291,6 +2333,9 @@
    "imp": 2,
    "desc": "Una piccola rete di vicoli a Shibuya, famosa per i suoi minuscoli bar dall’atmosfera retrò. Luci soffuse, locali raccolti e un fascino nostalgico la rendono una tappa suggestiva dopo il tramonto.",
    "price": 25,
+   "day": 4,
+   "o": "18:15",
+   "t": "18:15",
    "id": "p14"
   },
   {
@@ -2299,23 +2344,10 @@
    "imp": 2,
    "desc": "Un quartiere alternativo noto per negozi vintage, piccoli teatri, locali indipendenti e caffè originali. Perfetto per esplorare la Tokyo bohémien, fare shopping e scoprire nuove tendenze.",
    "price": 0,
+   "day": 14,
+   "o": "9:01",
+   "t": "9:00",
    "id": "p15"
-  },
-  {
-   "city": "Tokyo",
-   "name": "Shibuya Sky",
-   "imp": 1,
-   "desc": "Un osservatorio panoramico con una spettacolare terrazza all’aperto, da cui ammirare Tokyo dall’alto. Particolarmente suggestivo al tramonto, offre una prospettiva diversa sulla città.",
-   "price": 20,
-   "id": "p16"
-  },
-  {
-   "city": "Tokyo",
-   "name": "Animate Ikebukuro",
-   "imp": 1,
-   "desc": "Un grande negozio multipiano dedicato ad anime, manga, personaggi e merchandise. Una tappa ideale per scoprire le ultime novità della cultura pop giapponese.",
-   "price": 0,
-   "id": "p17"
   },
   {
    "city": "Tokyo",
@@ -2323,7 +2355,10 @@
    "imp": 5,
    "desc": "Un quartiere vivace famoso per la moda giovanile, i negozi eccentrici, i dolci particolari e la cultura kawaii. Perfetto per scoprire il lato più creativo e originale di Tokyo.",
    "price": 0,
-   "id": "p18"
+   "day": 4,
+   "o": "10:30",
+   "t": "10:30",
+   "id": "p16"
   },
   {
    "city": "Tokyo",
@@ -2331,7 +2366,10 @@
    "imp": 5,
    "desc": "Un museo di arte digitale immersiva con installazioni luminose, ambienti interattivi e opere che si trasformano nello spazio. Un’esperienza spettacolare che unisce tecnologia, arte e creatività.",
    "price": 30,
-   "id": "p19"
+   "day": 13,
+   "o": "15:30",
+   "t": "15:30",
+   "id": "p17"
   },
   {
    "city": "Tokyo",
@@ -2339,7 +2377,10 @@
    "imp": 5,
    "desc": "Un santuario storico vicino ad Akihabara, dove la tradizione shintoista incontra la cultura pop e il mondo dell’elettronica. Una visita interessante da abbinare ai negozi di anime e manga del quartiere.",
    "price": 0,
-   "id": "p20"
+   "day": 6,
+   "o": "13:40",
+   "t": "13:40",
+   "id": "p18"
   },
   {
    "city": "Tokyo",
@@ -2347,7 +2388,10 @@
    "imp": 2,
    "desc": "Una strada commerciale dall’atmosfera tradizionale, ricca di piccole botteghe, snack locali e negozi di quartiere. Un’occasione per scoprire una Tokyo più autentica e tranquilla, lontana dai grandi grattacieli.",
    "price": 0,
-   "id": "p21"
+   "day": 15,
+   "o": "10:15",
+   "t": "10:15",
+   "id": "p19"
   },
   {
    "city": "Tokyo",
@@ -2355,7 +2399,10 @@
    "imp": 2,
    "desc": "Un quartiere creativo vicino ad Asakusa, conosciuto per caffetterie indipendenti, laboratori artigianali, negozi di design e piccole botteghe. Ideale per una passeggiata lontano dai percorsi più turistici.",
    "price": 0,
-   "id": "p22"
+   "day": 3,
+   "o": "10:30",
+   "t": "10:30",
+   "id": "p20"
   },
   {
    "city": "Tokyo",
@@ -2363,7 +2410,10 @@
    "imp": 2,
    "desc": "Un angolo panoramico ideale per ammirare e fotografare la Tokyo Skytree dal basso, con una prospettiva suggestiva tra spazi verdi e architettura urbana.",
    "price": 0,
-   "id": "p23"
+   "day": 3,
+   "o": "13:45",
+   "t": "13:45",
+   "id": "p21"
   },
   {
    "city": "Tokyo",
@@ -2371,7 +2421,10 @@
    "imp": 2,
    "desc": "Uno dei parchi più amati di Tokyo, con ampi prati, sentieri alberati e spazi per rilassarsi. Nei fine settimana si anima con picnic, musicisti e gruppi di persone che praticano attività all’aperto.",
    "price": 0,
-   "id": "p24"
+   "day": 4,
+   "o": "9:01",
+   "t": "9:00",
+   "id": "p22"
   },
   {
    "city": "Tokyo",
@@ -2379,15 +2432,10 @@
    "imp": 2,
    "desc": "Un contesto creativo legato all’arte indipendente, al design e alla cultura alternativa di Tokyo. Tra esposizioni, oggetti originali e iniziative artistiche, offre uno sguardo sulla scena creativa locale.",
    "price": 10,
-   "id": "p25"
-  },
-  {
-   "city": "Tokyo",
-   "name": "Womb, locale notturno industrial",
-   "imp": 1,
-   "desc": "Uno dei club più conosciuti di Tokyo, celebre per la musica elettronica, il sound system e le serate con DJ internazionali. Un punto di riferimento per chi vuole vivere la scena notturna della città.",
-   "price": 30,
-   "id": "p26"
+   "day": 4,
+   "o": "11:00",
+   "t": "11:00",
+   "id": "p23"
   },
   {
    "city": "Tokyo",
@@ -2395,71 +2443,10 @@
    "imp": 2,
    "desc": "Parte degli antichi terreni del Castello di Edo, è un’oasi di tranquillità nel centro della città, con giardini curati, resti storici e paesaggi tipicamente giapponesi.",
    "price": 0,
-   "id": "p27"
-  },
-  {
-   "city": "Tokyo",
-   "name": "Giardino Hama - Rikyū",
-   "imp": 1,
-   "desc": "Un elegante giardino storico affacciato sulla baia di Tokyo, famoso per i laghetti, i ponti tradizionali e la casa da tè. Il contrasto tra natura e grattacieli crea uno degli scenari più particolari della città.",
-   "price": 2,
-   "id": "p28"
-  },
-  {
-   "city": "Tokyo",
-   "name": "Farmers Market @ UNU",
-   "imp": 1,
-   "desc": "Un mercato all’aperto vicino all’Università delle Nazioni Unite, dove produttori locali propongono frutta, verdura, specialità gastronomiche e prodotti artigianali. Un’occasione per scoprire il lato più sostenibile della città.",
-   "price": 0,
-   "id": "p29"
-  },
-  {
-   "city": "Tokyo",
-   "name": "Tomba di Hachikō",
-   "imp": 1,
-   "desc": "Un luogo legato alla storia del celebre cane Hachikō, simbolo di fedeltà e devozione. La sua storia è ricordata soprattutto dalla famosa statua davanti alla stazione di Shibuya.",
-   "price": 0,
-   "id": "p30"
-  },
-  {
-   "city": "Tokyo",
-   "name": "Sumida Aquarium",
-   "imp": 1,
-   "desc": "Situato nel complesso della Tokyo Skytree, è un acquario moderno noto per le vasche scenografiche, i pinguini e le meduse, con un percorso raccolto e curato.",
-   "price": 14,
-   "id": "p31"
-  },
-  {
-   "city": "Tokyo",
-   "name": "Acquario Sunshine City",
-   "imp": 1,
-   "desc": "Un acquario urbano situato sul tetto del complesso Sunshine City a Ikebukuro. Le vasche e le esposizioni, tra cui quella dedicata ai pinguini, creano un’esperienza sorprendente nel cuore della città.",
-   "price": 18,
-   "id": "p32"
-  },
-  {
-   "city": "Tokyo",
-   "name": "Tokyo Sea Life Park",
-   "imp": 1,
-   "desc": "Un acquario affacciato sulla baia di Tokyo, riconoscibile per la sua grande cupola di vetro. Ospita numerose specie marine, tra cui pinguini e tonni, in un ambiente immerso nel verde.",
-   "price": 4,
-   "id": "p33"
-  },
-  {
-   "city": "Tokyo",
-   "name": "Capybara Cafe",
-   "imp": 1,
-   "desc": "Un locale a tema dove è possibile osservare da vicino i capibara in un ambiente dedicato. Un’esperienza insolita e rilassante, ideale per chi ama gli animali.",
-   "price": 25,
-   "id": "p34"
-  },
-  {
-   "city": "Tokyo",
-   "name": "PokéPark Kanto",
-   "imp": 1,
-   "desc": "Un’attrazione dedicata all’universo Pokémon, pensata per far vivere ai visitatori un’esperienza immersiva tra personaggi, ambientazioni e attività a tema.",
-   "price": 90,
-   "id": "p35"
+   "day": 6,
+   "o": "9:45",
+   "t": "9:45",
+   "id": "p24"
   },
   {
    "city": "Kyoto",
@@ -2467,7 +2454,10 @@
    "imp": 5,
    "desc": "Un suggestivo quartiere di Kyoto famoso per la celebre foresta di bambù, i templi e il ponte Togetsukyō. Un luogo dove immergersi nella natura e nella bellezza del Giappone tradizionale.",
    "price": null,
-   "id": "p36"
+   "day": 9,
+   "o": "7:20",
+   "t": "7:20",
+   "id": "p25"
   },
   {
    "city": "Kyoto",
@@ -2475,7 +2465,10 @@
    "imp": 5,
    "desc": "Uno dei santuari shintoisti più iconici del Giappone, famoso per i migliaia di torii rossi che formano sentieri suggestivi lungo il monte Inari. Un’esperienza unica tra spiritualità e paesaggi spettacolari.",
    "price": null,
-   "id": "p37"
+   "day": 10,
+   "o": "7:40",
+   "t": "7:40",
+   "id": "p26"
   },
   {
    "city": "Kyoto",
@@ -2483,7 +2476,10 @@
    "imp": 5,
    "desc": "Un magnifico tempio buddista di Kyoto, celebre per la sua grande terrazza in legno affacciata sulla città. Circondato da stradine tradizionali e botteghe, offre uno scorcio autentico del Giappone storico.",
    "price": null,
-   "id": "p38"
+   "day": 10,
+   "o": "10:50",
+   "t": "10:50",
+   "id": "p27"
   },
   {
    "city": "Kyoto",
@@ -2491,7 +2487,10 @@
    "imp": 5,
    "desc": "Il Padiglione d’Oro, tempio zen rivestito di foglia d’oro che si specchia nello stagno circostante. Uno dei simboli del Giappone, da abbinare al vicino santuario Kitano Tenmangu.",
    "price": null,
-   "id": "p39"
+   "day": 9,
+   "o": "14:30",
+   "t": "14:30",
+   "id": "p28"
   },
   {
    "city": "Kyoto",
@@ -2499,7 +2498,10 @@
    "imp": 5,
    "desc": "Il quartiere storico delle geishe, con case in legno, sale da tè e lanterne. Al crepuscolo si respira l’atmosfera più autentica; in alcuni vicoli privati le foto sono vietate.",
    "price": null,
-   "id": "p40"
+   "day": 8,
+   "o": "17:20",
+   "t": "17:20",
+   "id": "p29"
   },
   {
    "city": "Kyoto",
@@ -2507,7 +2509,10 @@
    "imp": 3,
    "desc": "Una via coperta lunga cinque isolati, piena di banchi di cibo: tamagoyaki, pesce, sottaceti, dolci e tè. Perfetto per un pranzo itinerante, meglio entro metà pomeriggio.",
    "price": null,
-   "id": "p41"
+   "day": 8,
+   "o": "13:10",
+   "t": "13:10",
+   "id": "p30"
   },
   {
    "city": "Kyoto",
@@ -2515,7 +2520,10 @@
    "imp": 3,
    "desc": "Residenza degli shogun Tokugawa, famosa per i pavimenti che cigolano come usignoli per segnalare gli intrusi e per i giardini. A pochi passi dall’hotel INA House Nijojo.",
    "price": null,
-   "id": "p42"
+   "day": 8,
+   "o": "11:30",
+   "t": "11:30",
+   "id": "p31"
   },
   {
    "city": "Kyoto",
@@ -2523,7 +2531,10 @@
    "imp": 3,
    "desc": "Santuario dedicato allo studio, con un grande giardino di susini: a metà marzo la fioritura dovrebbe essere al massimo. Si trova a breve distanza dal Kinkaku-ji.",
    "price": null,
-   "id": "p43"
+   "day": 9,
+   "o": "13:20",
+   "t": "13:20",
+   "id": "p32"
   },
   {
    "city": "Kyoto",
@@ -2531,7 +2542,10 @@
    "imp": 3,
    "desc": "Un vicolo stretto lungo il fiume Kamo, illuminato da lanterne e pieno di ristoranti e bar. Ideale per una cena di gruppo dopo una giornata in giro.",
    "price": null,
-   "id": "p44"
+   "day": 10,
+   "o": "18:15",
+   "t": "18:15",
+   "id": "p33"
   },
   {
    "city": "Osaka",
@@ -2539,15 +2553,10 @@
    "imp": 5,
    "desc": "Un enorme parco a tema con attrazioni spettacolari e mondi immersivi, tra cui Super Nintendo World e The Wizarding World of Harry Potter. Una giornata all’insegna del divertimento e delle esperienze indimenticabili.",
    "price": null,
-   "id": "p45"
-  },
-  {
-   "city": "Osaka",
-   "name": "Nipponbashi",
-   "imp": 1,
-   "desc": "Il quartiere di Osaka dedicato ad anime, manga, videogiochi e collezionismo, spesso paragonato ad Akihabara. Tra negozi specializzati e sale giochi, è una tappa ideale per gli appassionati di cultura pop giapponese.",
-   "price": null,
-   "id": "p46"
+   "day": 11,
+   "o": "8:50",
+   "t": "8:50",
+   "id": "p34"
   },
   {
    "city": "Osaka",
@@ -2555,7 +2564,10 @@
    "imp": 3,
    "desc": "Un grande centro di intrattenimento dove sfidarsi tra bowling, arcade, giochi musicali e altre attività. Perfetto per trascorrere qualche ora divertendosi in gruppo e vivere il lato più ludico del Giappone.",
    "price": null,
-   "id": "p47"
+   "day": 11,
+   "o": "22:00",
+   "t": "22:00",
+   "id": "p35"
   },
   {
    "city": "Osaka",
@@ -2563,15 +2575,10 @@
    "imp": 5,
    "desc": "Il cuore vivace di Osaka, famoso per le insegne luminose, il celebre cartello Glico e lo street food locale. Tra takoyaki, okonomiyaki e locali affollati, è il luogo ideale per vivere l’energia della città.",
    "price": null,
-   "id": "p48"
-  },
-  {
-   "city": "Osaka",
-   "name": "Shitennō-ji",
-   "imp": 1,
-   "desc": "Uno dei templi buddisti più antichi del Giappone, fondato nel VI secolo. Con la sua architettura tradizionale e i suoi tranquilli spazi interni, offre un’immersione nella storia spirituale del Paese.",
-   "price": null,
-   "id": "p49"
+   "day": 11,
+   "o": "20:30",
+   "t": "20:30",
+   "id": "p36"
   },
   {
    "city": "Osaka",
@@ -2579,7 +2586,7 @@
    "imp": 3,
    "desc": "Un quartiere giovane e alternativo, noto per la moda streetwear, i negozi vintage, la musica e la street art. Un punto di riferimento per scoprire le tendenze urbane e la cultura giovanile di Osaka.",
    "price": null,
-   "id": "p50"
+   "id": "p37"
   },
   {
    "city": "Nara",
@@ -2587,7 +2594,10 @@
    "imp": 5,
    "desc": "Un grande parco immerso nel verde, famoso per i cervi che girano liberamente tra i visitatori. Un’esperienza unica e divertente, dove entrare in contatto con uno dei simboli più amati di Nara.",
    "price": null,
-   "id": "p51"
+   "day": 12,
+   "o": "10:45",
+   "t": "10:45",
+   "id": "p38"
   },
   {
    "city": "Nara",
@@ -2595,7 +2605,10 @@
    "imp": 5,
    "desc": "Uno dei templi buddisti più importanti del Giappone, celebre per il Daibutsuden, l’enorme edificio in legno che ospita una gigantesca statua in bronzo del Buddha. Un luogo straordinario per scoprire la spiritualità e la storia giapponese.",
    "price": null,
-   "id": "p52"
+   "day": 12,
+   "o": "11:35",
+   "t": "11:35",
+   "id": "p39"
   },
   {
    "city": "Nara",
@@ -2603,16 +2616,10 @@
    "imp": 5,
    "desc": "Un antico santuario shintoista immerso nella foresta di Nara, famoso per le migliaia di lanterne in pietra e bronzo. Un percorso suggestivo tra natura, tradizione e spiritualità, particolarmente affascinante durante le celebrazioni illuminate.",
    "price": null,
-   "id": "p53"
-  },
-  {
-   "city": "Tashirojima",
-   "name": "Isola dei gatti",
-   "imp": 1,
-   "desc": "Un’isola giapponese famosa per la presenza di numerosi gatti che vivono liberamente tra le case e il porto. Un luogo curioso e tranquillo, ideale per gli amanti degli animali e per scoprire un Giappone lontano dalle grandi città.",
-   "price": null,
-   "other": true,
-   "id": "p54"
+   "day": 12,
+   "o": "15:00",
+   "t": "15:00",
+   "id": "p40"
   },
   {
    "city": "Shirakawa",
@@ -2621,16 +2628,7 @@
    "desc": "Il villaggio storico di Shirakawa-go è famoso per le tradizionali case gasshō-zukuri, con caratteristici tetti spioventi in paglia. Circondato da montagne e paesaggi suggestivi, conserva un’atmosfera rurale e autentica del Giappone di un tempo.",
    "price": null,
    "other": true,
-   "id": "p55"
-  },
-  {
-   "city": "Nagoya",
-   "name": "Ghibli Park",
-   "imp": 1,
-   "desc": "Un parco tematico dedicato all’universo dello Studio Ghibli, dove esplorare ambientazioni ispirate a film come Il mio vicino Totoro e La città incantata. Un’esperienza immersiva per gli appassionati di animazione giapponese e dei suoi mondi fantastici.",
-   "price": null,
-   "other": true,
-   "id": "p56"
+   "id": "p41"
   },
   {
    "city": "Nagoya",
@@ -2639,7 +2637,7 @@
    "desc": "Uno dei castelli più celebri del Giappone, riconoscibile per il tetto decorato con ornamenti dorati a forma di pesce. Simbolo della storia feudale della città, permette di approfondire l’architettura e il passato dei samurai.",
    "price": null,
    "other": true,
-   "id": "p57"
+   "id": "p42"
   },
   {
    "city": "Kamakura",
@@ -2648,7 +2646,10 @@
    "desc": "A circa un’ora da Tokyo, l’antica capitale dei samurai: il Grande Buddha all’aperto, templi zen immersi nel verde e, se resta tempo, l’isola di Enoshima. Una delle opzioni per la giornata libera del 19 marzo.",
    "price": null,
    "other": true,
-   "id": "p58"
+   "day": 14,
+   "o": "9:02",
+   "t": "9:00",
+   "id": "p43"
   },
   {
    "city": "Kyoto",
@@ -2656,7 +2657,10 @@
    "imp": 3,
    "desc": "Il tempio zen più antico di Kyoto, a due passi da Gion: giardini di sabbia e due draghi dipinti sul soffitto della sala principale.",
    "price": 4,
-   "id": "p59"
+   "day": 8,
+   "o": "15:05",
+   "t": "15:05",
+   "id": "p44"
   },
   {
    "city": "Kyoto",
@@ -2664,7 +2668,10 @@
    "imp": 3,
    "desc": "Il giardino zen di pietre più famoso del Giappone: quindici pietre su ghiaia rastrellata, disposte in modo che non si vedano mai tutte insieme.",
    "price": 3,
-   "id": "p60"
+   "day": 9,
+   "o": "15:45",
+   "t": "15:45",
+   "id": "p45"
   },
   {
    "city": "Kyoto",
@@ -2672,7 +2679,10 @@
    "imp": 3,
    "desc": "Tempio fondato dalla vedova di Toyotomi Hideyoshi, con giardini zen, sale laccate e un piccolo boschetto di bambù.",
    "price": 3,
-   "id": "p61"
+   "day": 10,
+   "o": "14:15",
+   "t": "14:15",
+   "id": "p46"
   },
   {
    "city": "Kyoto",
@@ -2680,7 +2690,10 @@
    "imp": 3,
    "desc": "Il Padiglione d'Argento, mai rivestito d'argento: giardino di sabbia scolpita e sentiero sulla collina di muschio.",
    "price": 3,
-   "id": "p62"
+   "day": 10,
+   "o": "15:35",
+   "t": "15:35",
+   "id": "p47"
   },
   {
    "city": "Kyoto",
@@ -2688,7 +2701,10 @@
    "imp": 3,
    "desc": "Due chilometri di passeggiata lungo un canale tra il Ginkaku-ji e il Nanzen-ji, con templi minori e piccoli caffè.",
    "price": 0,
-   "id": "p63"
+   "day": 10,
+   "o": "16:25",
+   "t": "16:25",
+   "id": "p48"
   },
   {
    "city": "Kyoto",
@@ -2696,7 +2712,10 @@
    "imp": 3,
    "desc": "Grande complesso zen con la porta Sanmon e un acquedotto in mattoni dell'Ottocento che attraversa il tempio.",
    "price": 0,
-   "id": "p64"
+   "day": 10,
+   "o": "17:10",
+   "t": "17:10",
+   "id": "p49"
   },
   {
    "city": "Osaka",
@@ -2704,7 +2723,10 @@
    "imp": 3,
    "desc": "La 'cucina di Osaka': 150 banchi di pesce, carne e frutta, molti con assaggi cucinati al momento. Ideale a colazione.",
    "price": null,
-   "id": "p65"
+   "day": 12,
+   "o": "8:00",
+   "t": "8:00",
+   "id": "p50"
   },
   {
    "city": "Nara",
@@ -2712,7 +2734,10 @@
    "imp": 3,
    "desc": "Sala del complesso del Tōdai-ji costruita sul pendio: dalla terrazza di legno si vede tutta Nara, gratis.",
    "price": 0,
-   "id": "p66"
+   "day": 12,
+   "o": "13:45",
+   "t": "13:45",
+   "id": "p51"
   },
   {
    "city": "Nara",
@@ -2720,7 +2745,10 @@
    "imp": 3,
    "desc": "Il quartiere storico dei mercanti, con case di legno strette e lunghe, negozi di artigianato e caffè.",
    "price": 0,
-   "id": "p67"
+   "day": 12,
+   "o": "16:00",
+   "t": "16:00",
+   "id": "p52"
   }
  ],
  "budget": [

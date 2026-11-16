@@ -1,10 +1,12 @@
 /* Giappone 2027 – logica della guida. I dati sono in data.json */
 (async () => {
-const __D = await fetch('data.json?v=202611161044', {cache:'no-cache'}).then(r => r.json());
+const __D = await fetch('data.json?v=202611161853', {cache:'no-cache'}).then(r => r.json());
 /* ====== DATI: modificabili ====== */
 const DAYS = __D.days;
 const PLACES = __D.places;
 const BUDGET = __D.budget;
+const DEADLINES = [["2026-11-30", "pass", "Controllare la validità dei passaporti", "Devono coprire tutto il soggiorno. Per turismo fino a 90 giorni gli italiani non hanno bisogno di visto"], ["2026-12-15", "ass", "Assicurazione di viaggio", "Farla presto: copre anche eventuali cancellazioni. Nel budget è ancora da pagare"], ["2027-01-09", "cena", "Cena al banco a Ebisu (9/3, per sei)", "Prenotare con 1–2 mesi d'anticipo su Tabelog o TableCheck, anche in inglese"], ["2027-01-10", "dis", "Biglietti DisneySea (10/3)", "Le vendite aprono il 10 gennaio alle 14 ora giapponese (le 6 del mattino in Italia), due mesi prima della visita. Poi, nel parco, Premier Access per Fantasy Springs dall'app"], ["2027-01-16", "usj", "Universal Studios ed Express Pass (16/3)", "Le vendite aprono circa 60 giorni prima, a mezzanotte ora giapponese (le 16 del giorno prima in Italia). L'Express Pass include l'ingresso a Super Nintendo World e va via in fretta"], ["2027-01-18", "tlb", "teamLab Borderless (18/3, verso le 15:30)", "Biglietti con data e ora sul sito ufficiale, disponibili circa due mesi prima"], ["2027-01-31", "ina1", "INA House Nijojo: reception aperta alle 6:45 del 15/3?", "Serve per spedire le valigie a Tokyo; in alternativa si spedisce da un konbini"], ["2027-01-31", "ina2", "INA House Nijojo: custodisce le valigie dal 12/3?", "Arrivano il giorno prima del check-in"], ["2027-01-31", "vin1", "Hotel Vintage: custodisce le valigie dal 16–17/3 fino al 18?", "Meglio farselo confermare per iscritto"], ["2027-01-31", "mb1", "Morning Box: tiene gli zaini dalle 8 del 16/3?", "Altrimenti armadietti a Universal City"], ["2027-01-31", "mb2", "Morning Box: capsule o camere?", "Nei capsule hotel i piani sono spesso separati tra uomini e donne"], ["2027-01-31", "mk1", "Mikasa Ryokan: orari della navetta", "Da Kintetsu-Nara la sera del 17/3 e verso la stazione la mattina del 18/3; c'è anche il giro serale sul monte Wakakusa"], ["2027-02-06", "sky", "Skytree, fascia delle 17:00 dell'8/3", "Prenotazione online con data e ora, aperta circa un mese prima"], ["2027-02-12", "bus", "Bus Shinjuku → Kawaguchiko e ritorno (12/3)", "Prenotazione circa un mese prima: andata alle 7:45, ritorno alle 16:45"], ["2027-02-13", "shk", "Shinkansen Tokyo → Kyoto (13/3)", "Le prenotazioni aprono un mese prima alle 10 ora giapponese (le 2 di notte in Italia). Posti lato E per vedere il Fuji"], ["2027-02-18", "shk2", "Shinkansen Kyoto → Tokyo (18/3)", "Stessa regola: un mese prima alle 10 ora giapponese. Posti lato A per il Fuji"], ["2027-02-20", "trk", "Localizzatori per le valigie", "Uno per ogni valigia spedita: AirTag per iPhone, Tile o compatibili con Trova il mio dispositivo per Android"], ["2027-02-26", "esim", "eSIM", "Acquistarla e installarla a casa, si attiva all'arrivo"], ["2027-03-01", "vjw", "Visit Japan Web", "Registrazione con passaporto e dati del volo: genera i QR per immigrazione e dogana da mostrare all'arrivo"], ["2027-03-03", "card", "Carte di pagamento pronte per l'estero", "Controllare i limiti e le commissioni sui prelievi; meglio due circuiti diversi"], ["2027-03-04", "sui", "Suica o PASMO nel wallet", "Apple Wallet su iPhone, Google Wallet su Android"], ["2027-03-04", "gm", "Google Maps con accesso fatto", "Serve per i pulsanti delle indicazioni nella guida"]];
+const PACK = [["Documenti", [["doc1", "Passaporto", "a testa", "Valido per tutto il viaggio"], ["doc2", "Polizza dell'assicurazione", "a testa", "In PDF sul telefono, con il numero di assistenza"], ["doc3", "Copia digitale dei documenti", "a testa", "Foto di passaporto e carte in una cartella offline"], ["doc4", "Prenotazioni offline", "1 per il gruppo", "Voli, hotel e biglietti salvati sul telefono di almeno due persone"]]], ["Soldi e pagamenti", [["sol1", "Carta senza commissioni all'estero", "a testa", "Meglio una seconda carta di un circuito diverso"], ["sol2", "Borsellino per le monete", "a testa", "In Giappone si accumulano tante monete"], ["sol3", "Un po' di contanti in euro", "a testa", "Per il rientro in Italia"]]], ["Elettronica", [["ele1", "Adattatore per prese di tipo A", "1 a testa", "Due lamelle piatte, 100V: i caricabatterie vanno bene, phon e piastre da 230V no"], ["ele2", "Caricatore USB multiplo", "1 per camera", "Così basta un adattatore per più telefoni"], ["ele3", "Power bank", "a testa", "Solo nel bagaglio a mano, mai in stiva"], ["ele4", "Cavi di ricarica", "a testa", ""], ["ele5", "Localizzatori GPS", "1 per valigia spedita", "AirTag, Tile o simili: le valigie viaggiano da sole tra le città"], ["ele6", "Auricolari", "a testa", "Per treni e Shinkansen"]]], ["Salute", [["sal1", "Farmaci personali con ricetta", "a testa", "Attenzione ad alcuni farmaci da banco con pseudoefedrina o codeina: in Giappone possono essere vietati"], ["sal2", "Kit di primo soccorso", "1 per il gruppo", "Cerotti per vesciche, antidolorifici, antidiarroici"], ["sal3", "Gel disinfettante per le mani", "a testa", ""]]], ["Abbigliamento (marzo, 5–15 °C)", [["abb1", "Vestiti a strati e giacca leggera impermeabile", "a testa", ""], ["abb2", "Scarpe comode già rodate", "a testa", "Si camminano 15–20 km al giorno"], ["abb3", "Calzini in buono stato", "a testa", "Ci si toglie spesso le scarpe: templi, ryokan, alcuni ristoranti"], ["abb4", "Ombrello pieghevole", "a testa", "Oppure si compra al konbini all'occorrenza"]]], ["Ryokan e onsen", [["ryo1", "Niente da portare per il bagno", "—", "Yukata e asciugamani li dà il ryokan; nell'onsen si entra senza costume"]]], ["Varie", [["var1", "Asciugamano piccolo o fazzoletto di stoffa", "a testa", "Molti bagni pubblici non hanno salviette per le mani"], ["var2", "Sacchetto per i rifiuti", "a testa", "I cestini sono quasi introvabili"], ["var3", "Zaino giornaliero", "a testa", ""], ["var4", "Borsa pieghevole per i souvenir", "a testa", ""], ["var5", "Lucchetto per la valigia", "a testa", ""]]], ["Zaino per i giorni senza valigie", [["zai1", "Cambio per due notti (11–13/3)", "a testa", "Le valigie partono per Kyoto l'11 mattina"], ["zai2", "Cambio per tre notti (15–18/3)", "a testa", "Le valigie partono per Tokyo il 15; all'INA House c'è la lavatrice"], ["zai3", "Spazzolino, caricabatterie e medicine", "a testa", "Sempre nello zaino, mai nella valigia spedita"]]]];
 const PEOPLE = 6;
 const DEFAULT_RATE = 180;
 const CITIES = {
@@ -148,6 +150,8 @@ function flightTo(animate){
 
 /* ====== giorni ====== */
 const PTYPE = {"Trasferimento":["move","Spostamento"],"Visita":["visit","Visita"],"Di passaggio":["walk","Di passaggio"],"Panorama":["view","Panorama"],"Pasto":["food","Pasto"],"Hotel":["hotel","Hotel"]};
+const IC_PIN = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>`;
+const IC_CAM = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>`;
 const IC_WALK = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M10 21l2-6 3 3v4M8 12l2-4 4 1 2 4 3 1M10 8l-2 5"/></svg>`;
 const IC_TRAIN = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="13" rx="3"/><path d="M5 10h14M9 20l-2 2M15 20l2 2M8.5 13.5h.01M15.5 13.5h.01"/></svg>`;
 function gmapsURL(nv){
@@ -155,11 +159,18 @@ function gmapsURL(nv){
   if (nv.v && nv.v.length && nv.m !== "transit") p.set("waypoints", nv.v.join("|"));
   return "https://www.google.com/maps/dir/?" + p.toString();
 }
+function photoQ(s, city){
+  if (!["Visita","Panorama","Di passaggio"].includes(s.k)) return null;
+  if (/Shinkansen|Linea|Tram|Navetta|Opzione|Karaoke|Pausa|Shopping|Vie di|Via principale|via dei venditori/i.test(s.n)) return null;
+  const g = s.nav && s.nav.g;
+  return (g && !/Station|Hotel|Ryokan|Busta/i.test(g)) ? g : s.n.replace(/\(.*?\)/g,"").trim() + ", " + (city || "") + ", Japan";
+}
+function phBtn(q){ return `<a class="navbtn ph" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}" target="_blank" rel="noopener">${IC_CAM}<span>Foto</span></a>`; }
 function navBtn(nv){
   const walk = nv.m === "walking";
   return `<a class="navbtn${walk?"":" tr"}" href="${gmapsURL(nv)}" target="_blank" rel="noopener">${walk?IC_WALK:IC_TRAIN}<span>${walk ? (nv.v && nv.v.length ? "Percorso a piedi (il nostro)" : "Percorso a piedi") : "Indicazioni con i mezzi"}</span></a>`;
 }
-function planHTML(plan){
+function planHTML(plan, city){
   const hide = store.get("hideOpt", false);
   let last = null;
   const navs = plan.map(s => { if (!s.nav) return null; const o = s.nav.o || last; last = s.nav.g; return (o && o !== s.nav.g) ? {...s.nav, o} : null; });
@@ -168,7 +179,7 @@ function planHTML(plan){
     const pr = s.p==="Imperdibile" ? `<span class="pr imp">Imperdibile</span>` : s.p==="Opzionale" ? `<span class="pr opt">Opzionale</span>` : "";
     return `<li class="pl ${c}${s.p==="Opzionale"?" isopt":""}"><time>${esc(s.t)}</time><div class="pc">
       <p class="pn">${esc(s.n)}</p><div class="pm"><span>${l}</span>${s.d && s.d!=="—" ? `<span>${esc(s.d)}</span>` : ""}${pr}</div>
-      ${s.x ? `<p class="px">${esc(s.x)}</p>` : ""}${nv ? navBtn(nv) : ""}</div></li>`;
+      ${s.x ? `<p class="px">${esc(s.x)}</p>` : ""}${(nv || photoQ(s, city)) ? `<div class="plbtns">${nv ? navBtn(nv) : ""}${photoQ(s, city) ? phBtn(photoQ(s, city)) : ""}</div>` : ""}</div></li>`;
   }).join("");
   return `<div class="plantools"><span>Tappa per tappa</span><label class="toggle"><input type="checkbox" id="hideOpt"${hide?" checked":""}> Nascondi opzionali</label></div><ol class="plan">${items}</ol>`;
 }
@@ -208,7 +219,7 @@ function showDay(i){
       <h2 aria-live="polite">${esc(d.title)}</h2><p>${GG[dt.getDay()]} ${dt.getDate()} marzo · giorno ${i+1} di ${DAYS.length}</p>
       <div class="dayinfo" id="dayinfo"></div>
     </div>
-    ${d.plan ? planHTML(d.plan) : `<ul class="slots">${slots.map(s=>`<li><h3>${s[0]}</h3><p>${esc(s[1])}</p></li>`).join("")}</ul>`}
+    ${d.plan ? planHTML(d.plan, d.city) : `<ul class="slots">${slots.map(s=>`<li><h3>${s[0]}</h3><p>${esc(s[1])}</p></li>`).join("")}</ul>`}
     ${ROUTES.some(r=>r.day===i+1) ? ROUTES.filter(r=>r.day===i+1 && (r.city!=="Japan" || r.card)).sort((a,b)=>((b.city==="Japan")-(a.city==="Japan")) || ((a.city===d.city)-(b.city===d.city))).map(r=>r.city).filter((c,k,a)=>a.indexOf(c)===k).map(c=>`<div class="daymap" data-city="${c}">${c==="Japan" ? mapSVG(c,{day:i+1, mode:"day", animate:true}) : mapZoomSVG(c, i+1, true)}</div>`).join("").replace(/^/,'<div class="daymaps">').replace(/$/,'</div>') : ""}
     ${d.n ? `<p class="note${d.alert?" alert":d.decide?" decide":""}">${esc(d.n)}</p>` : ""}
     ${d.hotel ? `<div class="sleep"><span>Stanotte: <a class="hlink" href="#hotel" data-h="${esc(d.hotel)}"><b>${esc(d.hotel)}</b></a></span><a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(HOTEL_Q[d.hotel]||d.hotel+" "+d.city)}" target="_blank" rel="noopener">Mappa</a></div>` : ""}
@@ -233,9 +244,10 @@ function showDay(i){
   const sc = $("#seeCity"); if (sc) sc.onclick = () => { state.city = d.city; store.set("city", d.city); state.zone = null; state.focusDay = i+1; state._anim = true; location.hash = "luoghi"; };
 }
 
-/* ====== luoghi ====== */
-let done = new Set(store.get("done", []));
-const state = { city: store.get("city","Tutte"), imp: "all", q: "", zone: null, focusDay: null };
+/* ====== luoghi: programmati per giorno, opzionali, selezione in mappa ====== */
+let done = new Set();
+const state = { city: store.get("city","Tutte"), ps: "all", q: "", zone: null, focusDay: null };
+let off = new Set(store.get("mapoff", []));
 const cityList = ["Tutte","Tokyo","Kyoto","Osaka","Nara","Altre"];
 function renderChips(){
   $("#chips").innerHTML = cityList.map(n => {
@@ -244,44 +256,51 @@ function renderChips(){
   }).join("");
 }
 $("#chips").addEventListener("click", e => { const b=e.target.closest(".chip"); if(!b) return; state.city=b.dataset.city; state.zone=null; state.focusDay=null; store.set("city",state.city); renderChips(); renderMap(); renderPlaces(); setBackdrop(CITIES[state.city] ? state.city : "neutral"); });
-$("#seg").addEventListener("click", e => { const b=e.target.closest("button"); if(!b) return; state.imp=b.dataset.imp; $("#seg").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b)); renderPlaces(); });
+$("#seg").addEventListener("click", e => { const b=e.target.closest("button"); if(!b) return; state.ps=b.dataset.ps; $("#seg").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b)); renderPlaces(); });
 $("#q").addEventListener("input", e => { state.q = e.target.value.trim().toLowerCase(); renderPlaces(); });
-$("#hideDone").checked = store.get("hide", false);
-$("#hideDone").addEventListener("change", e => { store.set("hide", e.target.checked); renderPlaces(); });
-
+$("#selAll").addEventListener("click", () => { off = new Set(); store.set("mapoff", []); renderMap(); renderPlaces(); });
+const inScope = p => state.city==="Altre" ? p.other : (state.city==="Tutte" || p.city===state.city);
+const tmin = s => { const [h,m] = s.split(":"); return +h*60 + +m; };
 function renderPlaces(){
-  const hide = $("#hideDone").checked;
-  let list = PLACES.filter(p => {
-    if (state.city==="Altre" ? !p.other : (state.city!=="Tutte" && p.city!==state.city)) return false;
+  const list = PLACES.filter(p => {
+    if (!inScope(p)) return false;
     if (state.zone && !zoneById(state.zone).pl.includes(p.name)) return false;
-    if (state.imp!=="all" && !state.imp.includes(String(p.imp))) return false;
+    if (state.focusDay && p.day !== state.focusDay) return false;
+    if (state.ps === "prog" && !p.day) return false;
+    if (state.ps === "opt" && p.day) return false;
     if (state.q && !(p.name+" "+(p.desc||"")+" "+p.city).toLowerCase().includes(state.q)) return false;
-    if (hide && done.has(p.id)) return false;
     return true;
-  }).sort((a,b) => b.imp - a.imp);
-  const scope = PLACES.filter(p => state.city==="Altre" ? p.other : (state.city==="Tutte" || p.city===state.city));
-  const seen = scope.filter(p => done.has(p.id)).length;
-  $("#pstat").textContent = `${list.length} luoghi mostrati · visti ${seen} su ${scope.length}`;
-  $("#plist").innerHTML = list.length ? list.map(p => {
-    const c = cityOf(p.city).c;
+  }).sort((a,b) => (a.day||99) - (b.day||99) || tmin(a.o||"23:59") - tmin(b.o||"23:59"));
+  const shown = list.filter(p => !off.has(p.id)).length;
+  $("#pstat").textContent = `${list.length} luoghi · ${shown} visibili in mappa`;
+  let html = "", lastDay = -1;
+  list.forEach(p => {
+    const dk = p.day || 0;
+    if (dk !== lastDay) { lastDay = dk;
+      if (dk) { const d = DAYS[dk-1], c = cityOf(d.city).c;
+        html += `<li class="dayhdr" style="--c:${c};--cf:${fillOf(c)}"><span class="dnb">${String(dk).padStart(2,"0")}</span><b>${dayLabel(dk)} · ${esc(d.title)}</b><button data-goday="${dk}">Apri il giorno ›</button></li>`; }
+      else html += `<li class="dayhdr" style="--c:var(--line)"><b>Opzionali · senza un giorno fisso</b></li>`;
+    }
+    const c = cityOf(p.city).c, sel = !off.has(p.id);
     const price = p.price === null || p.price === undefined ? "" : (p.price===0 ? "Gratis" : `~${p.price} €`);
-    return `<li class="place${done.has(p.id)?" done":""}${p.imp<=1?" scart":""}" style="--c:${c}">
-      <button class="tick" data-id="${p.id}" aria-label="Segna ${esc(p.name)} come visto" aria-pressed="${done.has(p.id)}"><span class="tc"><svg viewBox="0 0 24 24" fill="none" stroke="var(--surface)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span></button>
+    html += `<li class="place${sel?" done":" off"}" style="--c:${c}">
+      <button class="tick" data-id="${p.id}" aria-label="${sel?"Nascondi":"Mostra"} ${esc(p.name)} sulla mappa" aria-pressed="${sel}"><span class="tc"><svg viewBox="0 0 24 24" fill="none" stroke="var(--surface)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span></button>
       <div>
         <p class="pname">${esc(p.name)}</p>
-        <div class="meta"><span class="cityname">${esc(p.city)}</span>
-          ${p.imp>=5 ? `<span class="pr imp">Imperdibile</span>` : p.imp>=2 ? `<span class="pr opt">Opzionale</span>` : `<span class="pr off">Scartato</span>`}
-          ${price?`<span>${price}</span>`:""}${p.added?`<span class="newtag">suggerito</span>`:""}</div>
+        <div class="meta">${p.t ? `<span class="ptime">${esc(p.t)}</span>` : ""}<span class="cityname">${esc(p.city)}</span>
+          ${p.imp>=5 ? `<span class="pr imp">Imperdibile</span>` : ""}${price?`<span>${price}</span>`:""}</div>
       </div>
-      <details><summary>Dettagli</summary><p>${esc(p.desc)}</p>
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name+" "+p.city+" Japan")}" target="_blank" rel="noopener">Apri in Maps</a></details>
+      <div class="pbtns"><a class="navbtn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name+" "+p.city+" Japan")}" target="_blank" rel="noopener">${IC_PIN}<span>Apri in Maps</span></a></div>
+      <details><summary>Descrizione</summary><p>${esc(p.desc)}</p></details>
     </li>`;
-  }).join("") : `<li class="empty">Nessun luogo con questi filtri. Prova “Tutti” o svuota la ricerca.</li>`;
+  });
+  $("#plist").innerHTML = html || `<li class="empty">Nessun luogo con questi filtri.</li>`;
 }
 $("#plist").addEventListener("click", e => {
+  const g = e.target.closest("[data-goday]"); if (g) { cur = +g.dataset.goday - 1; location.hash = "giorni"; return; }
   const b = e.target.closest(".tick"); if(!b) return;
-  const id = b.dataset.id; done.has(id) ? done.delete(id) : done.add(id);
-  store.set("done", [...done]); renderPlaces(); renderMap();
+  const id = b.dataset.id; off.has(id) ? off.delete(id) : off.add(id);
+  store.set("mapoff", [...off]); renderPlaces(); renderMap();
 });
 
 /* ====== mappe stilizzate ======
@@ -519,13 +538,13 @@ function curve(pts, bend=0.18){
   return d;
 }
 /* disegna la mappa: mode "day" (un giorno in evidenza) o "all" (tutti i percorsi, giorno opzionale in evidenza) */
-function mapSVG(city, {day=null, sel=null, mode="all", animate=false, hotel=null} = {}){
+function mapSVG(city, {day=null, sel=null, mode="all", animate=false, hotel=null, hide=null, nofocus=false, clean=false} = {}){
   const m = MAPS[city], col = (CITIES[city]||{}).c || "var(--alert)", B = m.bend ?? 0.18;
   const routes = hotel ? [] : ROUTES.filter(r => r.city===city);
-  const focus = routes.filter(r => r.day===day);
+  const dayR = routes.filter(r => r.day===day), focus = nofocus ? [] : dayR;
   const onRoute = new Set(routes.flatMap(r => r.opt ? [] : r.s));
   const onOpt = new Set(routes.flatMap(r => r.opt ? r.s : []));
-  const onFocus = new Set(focus.flatMap(r => r.s));
+  const onFocus = new Set(dayR.flatMap(r => r.s));
   const P = r => r.s.map(n => m.pts[n]).filter(Boolean);
   const back = routes.filter(r => !focus.includes(r)).map(r =>
     `<path class="rt ${day?"faint":"all"}${r.opt?" opt":""}${r.fly?" fly":""}" d="${curve(P(r),B)}"/>`).join("");
@@ -536,6 +555,7 @@ function mapSVG(city, {day=null, sel=null, mode="all", animate=false, hotel=null
     return `<text class="n" x="${o[0]}" y="${o[1]}" text-anchor="${o[2]}">${esc(n)}</text>`;
   };
   const stops = m.zones.map(z => {
+    if (hide && hide.has(z.n)) return "";
     const route = onRoute.has(z.n), opt = !route && onOpt.has(z.n), hot = onFocus.has(z.n);
     const all = z.pl.length && z.pl.every(n => { const p = PLACES.find(p=>p.name===n); return p && done.has(p.id); });
     const cls = ["st", z.go?"city":"", (route||z.go||hotel)?"route":opt?"opt":"off", hot?"hot":"", sel===z.id?"sel":"", ((day && !hot && !z.go) || hotel)?"dim":""].join(" ");
@@ -553,7 +573,7 @@ function mapSVG(city, {day=null, sel=null, mode="all", animate=false, hotel=null
   const badges = focus.filter(r=>!r.opt).slice(0,1).map(r => { const p = r.s.map(n => m.pts[n]).find(q => q && !q.edge); if (!p) return "";
     const bx = Math.min(Math.max(p.x-24, 2), m.w-26), by = Math.max(p.y-30, 2);
     return `<g class="dnum"><rect x="${bx}" y="${by}" width="24" height="18" rx="5"/><text x="${bx+12}" y="${by+13}">${String(r.day).padStart(2,"0")}</text></g>`; }).join("");
-  return `<svg viewBox="0 0 ${m.w} ${m.h}" style="--c:${col};--cf:${fillOf(col)}" role="group" aria-label="Mappa stilizzata di ${city==="Japan"?"Giappone":esc(city)}${day?", percorso del giorno "+day:""}"><rect class="${m.sea?"water":"land"}" width="${m.w}" height="${m.h}"/>${m.base}${back}${front}${lms}${hots}${edges}${stops}${badges}${scale}${north}</svg>`;
+  return `<svg${clean?` class="clean"`:""} viewBox="0 0 ${m.w} ${m.h}" style="--c:${col};--cf:${fillOf(col)}" role="group" aria-label="Mappa stilizzata di ${city==="Japan"?"Giappone":esc(city)}${day?", percorso del giorno "+day:""}"><rect class="${m.sea?"water":"land"}" width="${m.w}" height="${m.h}"/>${m.base}${back}${front}${lms}${hots}${edges}${stops}${badges}${scale}${north}</svg>`;
 }
 
 /* mappa "zoom" del giorno: inquadra solo il percorso, con tappe di dettaglio */
@@ -632,7 +652,10 @@ function renderMap(){
   card.hidden = false;
   const col = (CITIES[key]||{}).c || "var(--alert)";
   const fd = state.focusDay;
-  $("#map").innerHTML = mapSVG(key, {day: fd, sel: state.zone, mode: "all", animate: state._anim});
+  const hide = new Set(), live = n => PLACES.find(p => p.name === n);
+  m.zones.forEach(z => { const ps = z.pl.map(live).filter(Boolean); if (ps.length && ps.every(p => off.has(p.id))) hide.add(z.n); });
+  const dayOff = fd ? PLACES.some(p => p.day === fd && off.has(p.id)) : false;
+  $("#map").innerHTML = mapSVG(key, {day: fd, sel: state.zone, mode: "all", animate: state._anim, hide, nofocus: dayOff, clean: true});
   state._anim = false;
   const dp = $("#daypick"); dp.style.setProperty("--c", col); dp.style.setProperty("--cf", fillOf(col));
   dp.innerHTML = `<button data-d="" aria-pressed="${!fd}">Tutti</button>` + cityDays(key).map(n =>
@@ -642,16 +665,16 @@ function renderMap(){
   const zi = $("#zinfo");
   if (state.zone) {
     const z = zoneById(state.zone);
-    const inZone = PLACES.filter(p => z.pl.includes(p.name)), seen = inZone.filter(p => done.has(p.id)).length;
+    const inZone = PLACES.filter(p => z.pl.includes(p.name));
     const dd = z.d.map(n=>`<button class="btn" data-day="${n}">Giorno ${n}, ${dayLabel(n)}</button>`).join("")
              + z.opt.map(n=>`<button class="btn" data-day="${n}">Giorno ${n} (da decidere)</button>`).join("");
-    zi.innerHTML = `<h3>${esc(z.n)}</h3><p>${z.d.length||z.opt.length ? "" : "Non è nel programma. "}${inZone.length} luoghi, visti ${seen}</p>
+    zi.innerHTML = `<h3>${esc(z.n)}</h3><p>${z.d.length||z.opt.length ? "" : "Non è nel programma. "}${inZone.length} luoghi</p>
       <div class="zbtns">${dd}<button class="btn" id="zall">${key==="Japan"?"Mostra tutto":"Tutta "+esc(state.city)}</button></div>`;
   } else if (fd) {
     const d = DAYS[fd-1];
-    zi.innerHTML = `<p>Giorno ${fd}, ${dayLabel(fd)}: ${esc(d.title)}. Tocca una fermata per vedere i luoghi.</p><div class="zbtns"><button class="btn" data-day="${fd}">Apri il giorno ${fd}</button></div>`;
+    zi.innerHTML = `<p>Giorno ${fd}, ${dayLabel(fd)}: ${esc(d.title)}.${dayOff ? " Il percorso è nascosto perché alcuni luoghi della giornata non sono selezionati." : ""}</p><div class="zbtns"><button class="btn" data-day="${fd}">Apri il giorno ${fd}</button></div>`;
   } else {
-    zi.innerHTML = `<p>Scegli un giorno per evidenziarne il percorso, oppure tocca una fermata per vedere i luoghi che contiene.</p>`;
+    zi.innerHTML = `<p>Scegli un giorno per vederne il percorso e i luoghi, oppure tocca una fermata.</p>`;
   }
 }
 function pickZone(id){
@@ -695,7 +718,7 @@ fromYen();
 
 /* ====== info ====== */
 $("#phr").innerHTML = PHRASES.map(p=>`<div>${esc(p[0])}</div><div>${esc(p[1])}</div>`).join("");
-$("#reset").onclick = () => { if (confirm("Azzerare tutti i luoghi segnati come visti?")) { done = new Set(); store.set("done", []); renderPlaces(); } };
+
 $("#theme").onclick = () => {
   const r = document.documentElement, darkNow = r.dataset.theme ? r.dataset.theme==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
   r.dataset.theme = darkNow ? "light" : "dark"; store.set("theme", r.dataset.theme);
@@ -784,14 +807,17 @@ function petals(){
 }
 
 /* ====== router ====== */
-const VIEWS = ["giorni","luoghi","hotel","soldi","info"];
+const VIEWS = ["giorni","luoghi","hotel","scadenze","valigia","info"];
 function route(){
-  const v = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "giorni";
+  const hv = location.hash.slice(1) === "soldi" ? "info" : location.hash.slice(1);
+  const v = VIEWS.includes(hv) ? hv : "giorni";
   VIEWS.forEach(x => $("#v-"+x).hidden = x!==v);
   document.querySelectorAll("nav.tabs a").forEach(a => a.dataset.v===v ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current"));
   if (v==="luoghi"){ renderChips(); renderMap(); renderPlaces(); }
-  if (v==="soldi") renderMoney();
-  if (v==="soldi" || v==="info") setBackdrop("neutral");
+  if (v==="info") renderMoney();
+  if (v==="scadenze") renderDeadlines();
+  if (v==="valigia") renderPack();
+  if (v==="scadenze" || v==="valigia" || v==="info") setBackdrop("neutral");
   if (v==="info") { store.set("seenVer", APPVER); $("#newdot").hidden = true; }
   if (v==="luoghi") setBackdrop(CITIES[state.city] ? state.city : "neutral");
   if (v==="hotel") { if (state.hotelJump) { const hh = HOTELS.find(h=>h.n===state.hotelJump); if (hh) state.hcity = hh.city; } renderHotels(); if (state.hotelJump) { const k = HOTELS.findIndex(h=>h.n===state.hotelJump); state.hotelJump = null; if (k>=0) { setTimeout(()=>document.getElementById("h"+k).scrollIntoView({block:"start"}), 0); return; } } }
@@ -866,8 +892,8 @@ function swipeTo(i){ showDay(i); SC().scrollTo(0, 0); }
 })();
 
 /* ====== versioni e novità ====== */
-const APPVER = "2.1.0";
-const CHANGES = [{"v": "2.1.0", "d": "16 novembre 2026", "t": "Novità della guida", "items": ["Nella sezione Info, le novità di ogni versione e lo storico completo", "Un pallino rosso sul menu Info avvisa quando c'è un aggiornamento"]}, {"v": "2.0.1", "d": "16 novembre 2026", "t": "Menu sempre visibile e aggiornamenti immediati", "items": ["Il menu in basso resta sempre al suo posto anche su Android, quando ricompare la barra del browser", "Ogni aggiornamento arriva subito sul telefono, senza file vecchi rimasti in memoria"]}, {"v": "2.0.0", "d": "16 novembre 2026", "t": "Versione per computer", "items": ["Su schermi larghi la guida si dispone su due colonne: programma a sinistra, mappa grande e fissa a destra", "Luoghi con mappa sempre in vista, Hotel affiancati, Soldi e Info su due colonne", "Menu in alto e frecce ← → della tastiera per cambiare giorno, comodo per presentare il viaggio", "Sul telefono non cambia nulla"]}, {"v": "1.10.1", "d": "16 novembre 2026", "t": "Più fluida", "items": ["Sfondo alleggerito: meno consumo di batteria e scorrimento più stabile"]}, {"v": "1.10.0", "d": "16 novembre 2026", "t": "Sfondi giapponesi", "items": ["Nell'intestazione il panorama della città del giorno: Tokyo, Kyoto, Osaka, Nara, il Fuji e Milano", "Motivi tradizionali in filigrana per ogni città: onde, foglia di canapa, esagoni, cerchi", "Petali di susino che cadono all'apertura"]}, {"v": "1.9.1", "d": "15 novembre 2026", "t": "Swipe più comodo", "items": ["Con lo swipe si torna in cima alla giornata; con i pulsanti Prima/Dopo si resta in fondo"]}, {"v": "1.9.0", "d": "15 novembre 2026", "t": "Swipe, meteo e tema nero", "items": ["Swipe a destra e sinistra sulla scheda per cambiare giorno", "Ora locale e ora di Milano nella scheda del giorno; meteo previsto da metà febbraio, visibile anche offline", "Tema scuro a nero pieno", "Testi più leggibili, colori a contrasto più alto e spunte più facili da toccare", "App più veloce: font salvati sul telefono e funzionamento offline completo"]}, {"v": "1.8.1", "d": "15 novembre 2026", "t": "Pulsanti Prima/Dopo", "items": ["Cambiando giorno i pulsanti restano sotto il dito e la mappa resta in vista"]}, {"v": "1.8.0", "d": "15 novembre 2026", "t": "Checklist prima di partire", "items": ["Nella sezione Info, l'elenco di cosa verificare con gli hotel e cosa prenotare, con le spunte"]}, {"v": "1.7.0", "t": "Kyoto, Osaka e Nara tappa per tappa", "items": ["Programma dettagliato con orari, durate e pulsanti di Google Maps anche per Kyoto, Osaka e Nara", "Arashiyama all'alba, tram storico Randen, Fushimi Inari presto, Gion al tramonto, serata al ryokan", "Nove nuovi luoghi opzionali, dal Ryōan-ji al Sentiero del Filosofo"]}, {"v": "1.6.0", "t": "Indicazioni con Google Maps", "items": ["Su ogni tappa un pulsante che apre Google Maps con il tragitto già impostato", "A piedi Google segue il nostro percorso panoramico; per i treni propone i mezzi", "Conto alla rovescia in mesi e giorni, poi giorni, ore e minuti, infine ore e minuti"]}, {"v": "1.5.1", "t": "Primo giorno", "items": ["Ripristinata la pausa in hotel il giorno dell'arrivo"]}, {"v": "1.5.0", "t": "Mappa zoom e cena al banco", "items": ["Aprendo un giorno, una mappa ingrandita sul percorso con le tappe di dettaglio", "Etichette a tre livelli nei Luoghi: imperdibile, opzionale, scartato", "Cena al banco a Ebisu (ti cucinano davanti) e un solo karaoke d'addio la sera del 19", "Giornate senza pause: si spinge forte"]}, {"v": "1.4.0", "t": "Tokyo tappa per tappa", "items": ["Itinerario di Tokyo con orari, durate e tipo di tappa, con partenza sempre dall'hotel", "Interruttore \"Nascondi opzionali\" per vedere solo l'essenziale", "Ghibli Park tolto dal programma"]}, {"v": "1.3.0", "t": "Tokyo rivista", "items": ["Luoghi divisi in imperdibili, opzionali e scartati", "Skytree unica torre a pagamento; il 19 è una giornata libera da decidere sul posto"]}, {"v": "1.2.1", "t": "Animazione", "items": ["L'animazione d'apertura parte a ogni avvio dell'app"]}, {"v": "1.2.0", "t": "Animazione d'apertura", "items": ["Sole, kanji, linea della metro e aereo che atterra nella barra del conto alla rovescia", "Tornando sull'app, l'aereo riparte lungo la barra"]}, {"v": "1.1.0", "t": "Computer", "items": ["Le file di date e città si scorrono con la rotellina del mouse"]}, {"v": "1.0.0", "t": "Prima versione ufficiale: l'app", "items": ["La guida diventa un'app da installare sul telefono, con icona sulla schermata Home", "Funziona anche senza connessione, una volta aperta con internet", "Online su GitHub per tutto il gruppo, con QR code per condividerla"]}, {"v": "0.6.0-beta", "t": "Hotel", "items": ["Nuova sezione Hotel: descrizione, posizione sulla mappa, check-in e check-out, link alle foto", "Hotel divisi per città"]}, {"v": "0.5.0-beta", "t": "Mappa del Giappone e budget completo", "items": ["Mappa del Giappone con il percorso del viaggio e i luoghi fuori città", "Budget con le spese stimate: Universal Studios, ingressi, pasti, tasse e imprevisti", "Colonna \"Da pagare a testa\" nella sezione Soldi"]}, {"v": "0.4.0-alpha", "t": "Mappe dettagliate", "items": ["Mappe costruite sulle posizioni reali: treni, fiumi, parchi, scala e nord", "Ogni percorso parte dall'hotel"]}, {"v": "0.3.0-alpha", "t": "Percorsi sulle mappe", "items": ["Il percorso di ogni giorno disegnato come una linea della metro"]}, {"v": "0.2.0-alpha", "t": "Mappe e conto alla rovescia", "items": ["Mappe stilizzate di ogni città con le zone del viaggio", "Barra del conto alla rovescia con l'aereo da Milano a Tokyo"]}, {"v": "0.1.0-alpha", "t": "La prima guida", "items": ["Itinerario giorno per giorno con le fermate in stile metro", "Luoghi filtrabili con le spunte \"visto\", budget e convertitore yen-euro", "Alloggi, consigli pratici, frasi utili e numeri di emergenza"]}];
+const APPVER = "2.2.0";
+const CHANGES = [{"v": "2.2.0", "d": "16 novembre 2026", "t": "Scadenze, Valigia e Luoghi rinnovati", "items": ["Nuova sezione Scadenze: tutto quello da prenotare e verificare prima di partire, in ordine di data, con i pulsanti per aggiungerlo a Google Calendar o al calendario di iPhone", "Nuova sezione Valigia: le cose da portare per categorie, con le quantità per il gruppo e i consigli per il Giappone", "Luoghi rinnovati: i luoghi in programma sono in ordine di giorno e orario, con il collegamento alla giornata; gli opzionali stanno in fondo", "In Luoghi puoi scegliere quali luoghi vedere sulla mappa; la mappa è più pulita e, su computer, molto più grande", "Pulsante Foto sulle tappe: apre Google Maps sulle foto del luogo", "Soldi spostati in Info: convertitore e totali in evidenza, dettaglio del budget a scomparsa"]}, {"v": "2.1.0", "d": "16 novembre 2026", "t": "Novità della guida", "items": ["Nella sezione Info, le novità di ogni versione e lo storico completo", "Un pallino rosso sul menu Info avvisa quando c'è un aggiornamento"]}, {"v": "2.0.1", "d": "16 novembre 2026", "t": "Menu sempre visibile e aggiornamenti immediati", "items": ["Il menu in basso resta sempre al suo posto anche su Android, quando ricompare la barra del browser", "Ogni aggiornamento arriva subito sul telefono, senza file vecchi rimasti in memoria"]}, {"v": "2.0.0", "d": "16 novembre 2026", "t": "Versione per computer", "items": ["Su schermi larghi la guida si dispone su due colonne: programma a sinistra, mappa grande e fissa a destra", "Luoghi con mappa sempre in vista, Hotel affiancati, Soldi e Info su due colonne", "Menu in alto e frecce ← → della tastiera per cambiare giorno, comodo per presentare il viaggio", "Sul telefono non cambia nulla"]}, {"v": "1.10.1", "d": "16 novembre 2026", "t": "Più fluida", "items": ["Sfondo alleggerito: meno consumo di batteria e scorrimento più stabile"]}, {"v": "1.10.0", "d": "16 novembre 2026", "t": "Sfondi giapponesi", "items": ["Nell'intestazione il panorama della città del giorno: Tokyo, Kyoto, Osaka, Nara, il Fuji e Milano", "Motivi tradizionali in filigrana per ogni città: onde, foglia di canapa, esagoni, cerchi", "Petali di susino che cadono all'apertura"]}, {"v": "1.9.1", "d": "15 novembre 2026", "t": "Swipe più comodo", "items": ["Con lo swipe si torna in cima alla giornata; con i pulsanti Prima/Dopo si resta in fondo"]}, {"v": "1.9.0", "d": "15 novembre 2026", "t": "Swipe, meteo e tema nero", "items": ["Swipe a destra e sinistra sulla scheda per cambiare giorno", "Ora locale e ora di Milano nella scheda del giorno; meteo previsto da metà febbraio, visibile anche offline", "Tema scuro a nero pieno", "Testi più leggibili, colori a contrasto più alto e spunte più facili da toccare", "App più veloce: font salvati sul telefono e funzionamento offline completo"]}, {"v": "1.8.1", "d": "15 novembre 2026", "t": "Pulsanti Prima/Dopo", "items": ["Cambiando giorno i pulsanti restano sotto il dito e la mappa resta in vista"]}, {"v": "1.8.0", "d": "15 novembre 2026", "t": "Checklist prima di partire", "items": ["Nella sezione Info, l'elenco di cosa verificare con gli hotel e cosa prenotare, con le spunte"]}, {"v": "1.7.0", "t": "Kyoto, Osaka e Nara tappa per tappa", "items": ["Programma dettagliato con orari, durate e pulsanti di Google Maps anche per Kyoto, Osaka e Nara", "Arashiyama all'alba, tram storico Randen, Fushimi Inari presto, Gion al tramonto, serata al ryokan", "Nove nuovi luoghi opzionali, dal Ryōan-ji al Sentiero del Filosofo"]}, {"v": "1.6.0", "t": "Indicazioni con Google Maps", "items": ["Su ogni tappa un pulsante che apre Google Maps con il tragitto già impostato", "A piedi Google segue il nostro percorso panoramico; per i treni propone i mezzi", "Conto alla rovescia in mesi e giorni, poi giorni, ore e minuti, infine ore e minuti"]}, {"v": "1.5.1", "t": "Primo giorno", "items": ["Ripristinata la pausa in hotel il giorno dell'arrivo"]}, {"v": "1.5.0", "t": "Mappa zoom e cena al banco", "items": ["Aprendo un giorno, una mappa ingrandita sul percorso con le tappe di dettaglio", "Etichette a tre livelli nei Luoghi: imperdibile, opzionale, scartato", "Cena al banco a Ebisu (ti cucinano davanti) e un solo karaoke d'addio la sera del 19", "Giornate senza pause: si spinge forte"]}, {"v": "1.4.0", "t": "Tokyo tappa per tappa", "items": ["Itinerario di Tokyo con orari, durate e tipo di tappa, con partenza sempre dall'hotel", "Interruttore \"Nascondi opzionali\" per vedere solo l'essenziale", "Ghibli Park tolto dal programma"]}, {"v": "1.3.0", "t": "Tokyo rivista", "items": ["Luoghi divisi in imperdibili, opzionali e scartati", "Skytree unica torre a pagamento; il 19 è una giornata libera da decidere sul posto"]}, {"v": "1.2.1", "t": "Animazione", "items": ["L'animazione d'apertura parte a ogni avvio dell'app"]}, {"v": "1.2.0", "t": "Animazione d'apertura", "items": ["Sole, kanji, linea della metro e aereo che atterra nella barra del conto alla rovescia", "Tornando sull'app, l'aereo riparte lungo la barra"]}, {"v": "1.1.0", "t": "Computer", "items": ["Le file di date e città si scorrono con la rotellina del mouse"]}, {"v": "1.0.0", "t": "Prima versione ufficiale: l'app", "items": ["La guida diventa un'app da installare sul telefono, con icona sulla schermata Home", "Funziona anche senza connessione, una volta aperta con internet", "Online su GitHub per tutto il gruppo, con QR code per condividerla"]}, {"v": "0.6.0-beta", "t": "Hotel", "items": ["Nuova sezione Hotel: descrizione, posizione sulla mappa, check-in e check-out, link alle foto", "Hotel divisi per città"]}, {"v": "0.5.0-beta", "t": "Mappa del Giappone e budget completo", "items": ["Mappa del Giappone con il percorso del viaggio e i luoghi fuori città", "Budget con le spese stimate: Universal Studios, ingressi, pasti, tasse e imprevisti", "Colonna \"Da pagare a testa\" nella sezione Soldi"]}, {"v": "0.4.0-alpha", "t": "Mappe dettagliate", "items": ["Mappe costruite sulle posizioni reali: treni, fiumi, parchi, scala e nord", "Ogni percorso parte dall'hotel"]}, {"v": "0.3.0-alpha", "t": "Percorsi sulle mappe", "items": ["Il percorso di ogni giorno disegnato come una linea della metro"]}, {"v": "0.2.0-alpha", "t": "Mappe e conto alla rovescia", "items": ["Mappe stilizzate di ogni città con le zone del viaggio", "Barra del conto alla rovescia con l'aereo da Milano a Tokyo"]}, {"v": "0.1.0-alpha", "t": "La prima guida", "items": ["Itinerario giorno per giorno con le fermate in stile metro", "Luoghi filtrabili con le spunte \"visto\", budget e convertitore yen-euro", "Alloggi, consigli pratici, frasi utili e numeri di emergenza"]}];
 function renderNews(){
   const [last, ...old] = CHANGES;
   $("#verTag").textContent = "v" + APPVER; $("#verFoot").textContent = APPVER;
@@ -877,44 +903,52 @@ function renderNews(){
   $("#newdot").hidden = store.get("seenVer", "") === APPVER;
 }
 renderNews();
-/* ====== prima di partire: verifiche e prenotazioni ====== */
-const TODO = [
-  ["Da verificare con gli hotel", [
-    ["ina1","INA House Nijojo: la reception è aperta alle 6:45 del 15/3?","Serve per spedire le valigie a Tokyo; in alternativa si spedisce da un konbini"],
-    ["ina2","INA House Nijojo: custodisce le valigie arrivate il 12/3 fino al check-in del 13?",""],
-    ["vin1","Hotel Vintage: custodisce le valigie in arrivo il 16–17/3 fino al check-in del 18?","Meglio farselo confermare per iscritto"],
-    ["mb1","Morning Box: tiene gli zaini dalle 8 del 16/3, prima del check-in?","Altrimenti armadietti a Universal City"],
-    ["mb2","Morning Box: avete prenotato capsule o camere?","Nei capsule hotel i piani sono spesso separati tra uomini e donne"],
-    ["mk1","Mikasa Ryokan: orari della navetta da Kintetsu-Nara (17/3 sera e 18/3 mattina)","E il giro serale gratuito sul monte Wakakusa"]
-  ]],
-  ["Da prenotare", [
-    ["dis","Biglietti DisneySea per il 10/3","A data fissa; poi Premier Access per Fantasy Springs dall'app"],
-    ["usj","Universal Studios e Express Pass per il 16/3","L'Express Pass include l'ingresso a Super Nintendo World"],
-    ["sky","Skytree, fascia delle 17:00 dell'8/3","Per il tramonto"],
-    ["tlb","teamLab Borderless, 18/3 verso le 15:30",""],
-    ["cena","Cena al banco a Ebisu, 9/3 sera, per sei","Tabelog o TableCheck, 1–2 mesi prima"],
-    ["bus","Bus Shinjuku → Kawaguchiko e ritorno, 12/3",""],
-    ["shk","Shinkansen: 13/3 posti lato E, 18/3 posti lato A","Per vedere il Fuji in entrambi i viaggi"]
-  ]],
-  ["Sul telefono", [
-    ["sui","Suica o PASMO nel wallet",""],
-    ["esim","eSIM attivata",""],
-    ["gm","Google Maps installato e accesso fatto","Per i pulsanti delle indicazioni"]
-  ]]
-];
-function renderTodo(){
-  const done = new Set(store.get("todo", []));
-  const all = TODO.flatMap(g => g[1]);
-  $("#todostat").textContent = `${all.filter(t => done.has(t[0])).length} su ${all.length} fatti. Le spunte restano salvate su questo telefono.`;
-  $("#todo").innerHTML = TODO.map(([title, items]) => `<div class="todo"><h3>${title}</h3>${items.map(([id, txt, note]) =>
-    `<label class="${done.has(id)?"ok":""}"><input type="checkbox" data-t="${id}"${done.has(id)?" checked":""}><span>${esc(txt)}${note?`<small>${esc(note)}</small>`:""}</span></label>`).join("")}</div>`).join("");
+/* ====== scadenze pre-viaggio e valigia ====== */
+const MESI = ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"];
+const ymd = s => s.replace(/-/g,"");
+const nextDay = s => { const d = parse(s); d.setDate(d.getDate()+1); return `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,"0")}${String(d.getDate()).padStart(2,"0")}`; };
+function gcalURL(x){ const p = new URLSearchParams({action:"TEMPLATE", text:"Giappone ’27: " + x[2], dates:`${ymd(x[0])}/${nextDay(x[0])}`, details:x[3] + "\n\nDalla guida Giappone ’27"}); return "https://calendar.google.com/calendar/render?" + p.toString(); }
+function icsFile(x){
+  const esc2 = s => s.replace(/[\\,;]/g, m => "\\" + m).replace(/\n/g,"\\n");
+  const body = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Giappone27//IT","BEGIN:VEVENT",`UID:${x[1]}@giappone27`,`DTSTAMP:${ymd(new Date().toISOString().slice(0,10))}T000000Z`,
+    `DTSTART;VALUE=DATE:${ymd(x[0])}`,`DTEND;VALUE=DATE:${nextDay(x[0])}`,`SUMMARY:${esc2("Giappone ’27: " + x[2])}`,`DESCRIPTION:${esc2(x[3])}`,"BEGIN:VALARM","TRIGGER:-PT9H","ACTION:DISPLAY","DESCRIPTION:Promemoria","END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n");
+  return "data:text/calendar;charset=utf-8," + encodeURIComponent(body);
 }
-document.getElementById("todo").addEventListener("change", e => {
+function renderDeadlines(){
+  const ok = new Set(store.get("todo", [])), now = new Date(); now.setHours(0,0,0,0);
+  let html = "", lastM = "";
+  DEADLINES.forEach(x => {
+    const d = parse(x[0]), m = MESI[d.getMonth()] + " " + d.getFullYear(), days = Math.round((d - now)/864e5), done = ok.has(x[1]);
+    if (m !== lastM) { lastM = m; html += `<h2 class="dmonth">${m[0].toUpperCase() + m.slice(1)}</h2>`; }
+    const when = done ? "fatto" : days > 1 ? `tra ${days} giorni` : days === 1 ? "domani" : days === 0 ? "oggi" : `scaduta da ${-days} ${days===-1?"giorno":"giorni"}`;
+    html += `<div class="dl${done?" ok":""}${!done && days < 0 ? " late" : ""}"><input type="checkbox" data-t="${x[1]}"${done?" checked":""} aria-label="Fatto: ${esc(x[2])}">
+      <div><p class="dt"><b>${GG[d.getDay()].slice(0,3)} ${d.getDate()} ${MESI[d.getMonth()]}</b> · ${when}</p><p class="tt">${esc(x[2])}</p><p class="nt">${esc(x[3])}</p></div>
+      <div class="cal"><a class="btn" href="${gcalURL(x)}" target="_blank" rel="noopener">Google Calendar</a><a class="btn" href="${icsFile(x)}" download="giappone27-${x[1]}.ics">File .ics</a></div></div>`;
+  });
+  $("#dlist").innerHTML = html;
+  const n = DEADLINES.filter(x => ok.has(x[1])).length;
+  $("#dlstat").textContent = `${n} su ${DEADLINES.length} fatte. Le spunte restano salvate su questo telefono.`;
+  const soon = DEADLINES.some(x => !ok.has(x[1]) && (parse(x[0]) - now)/864e5 <= 7);
+  $("#dldot").hidden = !soon;
+}
+document.getElementById("dlist").addEventListener("change", e => {
   const id = e.target.dataset.t; if (!id) return;
-  const done = new Set(store.get("todo", [])); e.target.checked ? done.add(id) : done.delete(id);
-  store.set("todo", [...done]); renderTodo();
+  const ok = new Set(store.get("todo", [])); e.target.checked ? ok.add(id) : ok.delete(id);
+  store.set("todo", [...ok]); renderDeadlines();
 });
-renderTodo();
+function renderPack(){
+  const ok = new Set(store.get("pack", []));
+  const all = PACK.flatMap(g => g[1]);
+  $("#pkstat").textContent = `${all.filter(x => ok.has(x[0])).length} su ${all.length} pronte. Ognuno spunta la sua valigia: restano salvate su questo telefono.`;
+  $("#pklist").innerHTML = PACK.map(([title, items]) => `<div class="pk"><h3>${esc(title)}</h3>${items.map(([id, txt, q, note]) =>
+    `<label class="${ok.has(id)?"ok":""}"><input type="checkbox" data-p="${id}"${ok.has(id)?" checked":""}><span class="tx">${esc(txt)}${note?`<small>${esc(note)}</small>`:""}</span><span class="q">${esc(q)}</span></label>`).join("")}</div>`).join("");
+}
+document.getElementById("pklist").addEventListener("change", e => {
+  const id = e.target.dataset.p; if (!id) return;
+  const ok = new Set(store.get("pack", [])); e.target.checked ? ok.add(id) : ok.delete(id);
+  store.set("pack", [...ok]); renderPack();
+});
+renderDeadlines(); renderPack();
 /* tastiera: frecce ← → per cambiare giorno nella vista Giorni */
 addEventListener("keydown", e => {
   if ($("#v-giorni").hidden || e.altKey || e.ctrlKey || e.metaKey) return;

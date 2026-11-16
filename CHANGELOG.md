@@ -1,6 +1,14 @@
 # Giappone 2027 – Novità della guida
 
-Versione attuale: **2.1.0**
+Versione attuale: **2.2.0**
+
+## 2.2.0 — Scadenze, Valigia e Luoghi rinnovati (16 novembre 2026)
+- Nuova sezione Scadenze: tutto quello da prenotare e verificare prima di partire, in ordine di data, con i pulsanti per aggiungerlo a Google Calendar o al calendario di iPhone
+- Nuova sezione Valigia: le cose da portare per categorie, con le quantità per il gruppo e i consigli per il Giappone
+- Luoghi rinnovati: i luoghi in programma sono in ordine di giorno e orario, con il collegamento alla giornata; gli opzionali stanno in fondo
+- In Luoghi puoi scegliere quali luoghi vedere sulla mappa; la mappa è più pulita e, su computer, molto più grande
+- Pulsante Foto sulle tappe: apre Google Maps sulle foto del luogo
+- Soldi spostati in Info: convertitore e totali in evidenza, dettaglio del budget a scomparsa
 
 ## 2.1.0 — Novità della guida (16 novembre 2026)
 - Nella sezione Info, le novità di ogni versione e lo storico completo

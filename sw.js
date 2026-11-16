@@ -1,13 +1,13 @@
 // Service worker: la guida funziona anche senza connessione.
 // Pagina, codice e dati: prima la rete (versione sempre aggiornata), poi la copia salvata.
 // Font e icone: prima la copia salvata.
-const CACHE = "giappone27-202611161044";
+const CACHE = "giappone27-202611161853";
 const CORE = [
   "./",
   "./index.html",
-  "./style.css?v=202611161044",
-  "./app.js?v=202611161044",
-  "./data.json?v=202611161044",
+  "./style.css?v=202611161853",
+  "./app.js?v=202611161853",
+  "./data.json?v=202611161853",
   "./manifest.webmanifest",
   "./icon-192.png",
   "./icon-512.png",
