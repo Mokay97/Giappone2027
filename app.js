@@ -49,6 +49,7 @@ const HOTELS = [
 ];
 function renderHotels(){
   const sel = state.hcity || store.get("hcity","Tutte");
+  setBackdrop(CITIES[sel] ? sel : "neutral");
   $("#hchips").innerHTML = ["Tutte","Tokyo","Kyoto","Osaka","Nara"].map(n => {
     const c = CITIES[n] ? CITIES[n].c : "", cnt = n==="Tutte" ? HOTELS.length : HOTELS.filter(h=>h.city===n).length;
     return `<button class="chip" ${c?`style="--c:${c};--cf:${fillOf(c)}"`:""} data-hc="${n}" aria-pressed="${sel===n}">${n} <span class="cnt">${cnt}</span></button>`;
@@ -217,6 +218,7 @@ function showDay(i){
     </div>`;
   fixZoom(el);
   $("#dayLive").textContent = `Giorno ${i+1}, ${d.title}, ${dt.getDate()} marzo`;
+  if (!$("#v-giorni").hidden) setBackdrop(dayBackdrop(d));
   renderDayInfo();
   el.querySelectorAll(".daymap").forEach(dm => dm.addEventListener("click", e => {
     const g = e.target.closest(".st"); if (!g) return;
@@ -240,7 +242,7 @@ function renderChips(){
     return `<button class="chip" ${c?`style="--c:${c};--cf:${fillOf(c)}"`:""} data-city="${n}" aria-pressed="${state.city===n}">${n}</button>`;
   }).join("");
 }
-$("#chips").addEventListener("click", e => { const b=e.target.closest(".chip"); if(!b) return; state.city=b.dataset.city; state.zone=null; state.focusDay=null; store.set("city",state.city); renderChips(); renderMap(); renderPlaces(); });
+$("#chips").addEventListener("click", e => { const b=e.target.closest(".chip"); if(!b) return; state.city=b.dataset.city; state.zone=null; state.focusDay=null; store.set("city",state.city); renderChips(); renderMap(); renderPlaces(); setBackdrop(CITIES[state.city] ? state.city : "neutral"); });
 $("#seg").addEventListener("click", e => { const b=e.target.closest("button"); if(!b) return; state.imp=b.dataset.imp; $("#seg").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", x===b)); renderPlaces(); });
 $("#q").addEventListener("input", e => { state.q = e.target.value.trim().toLowerCase(); renderPlaces(); });
 $("#hideDone").checked = store.get("hide", false);
@@ -655,7 +657,7 @@ function pickZone(id){
   state.zone = state.zone===id ? null : id;
   renderMap(); renderPlaces();
 }
-function goCity(c){ state.city = c; state.zone = null; state.focusDay = null; store.set("city", c); renderChips(); renderMap(); renderPlaces(); window.scrollTo(0,0); }
+function goCity(c){ state.city = c; state.zone = null; state.focusDay = null; store.set("city", c); renderChips(); renderMap(); renderPlaces(); setBackdrop(c); window.scrollTo(0,0); }
 $("#map").addEventListener("click", e => { const g = e.target.closest(".st"); if (!g) return; g.dataset.go ? goCity(g.dataset.go) : pickZone(g.dataset.z); });
 $("#map").addEventListener("keydown", e => { const g = e.target.closest(".st"); if (g && (e.key==="Enter"||e.key===" ")) { e.preventDefault(); g.dataset.go ? goCity(g.dataset.go) : pickZone(g.dataset.z); } });
 $("#daypick").addEventListener("click", e => { const b = e.target.closest("button"); if (!b) return; state.focusDay = b.dataset.d ? +b.dataset.d : null; state.zone = null; state._anim = true; renderMap(); renderPlaces(); });
@@ -699,6 +701,87 @@ $("#theme").onclick = () => {
 };
 const th = store.get("theme", null); if (th) document.documentElement.dataset.theme = th;
 
+/* ====== sfondo: panorama della città e motivi tradizionali ====== */
+const SKY = (() => {
+  const G = "M0 176 H720";
+  const pagoda = (cx, base, n, w0, step, tier) => { let d = "", prev = base;
+    for (let k = 0; k < n; k++) { const y = base - 14 - tier*k, w = w0 - step*k, b = Math.max(6, w*0.42);
+      d += `M${cx-b} ${prev} V${y} M${cx+b} ${prev} V${y} M${cx-w} ${y} Q${cx-w*0.55} ${y-2} ${cx} ${y-9} Q${cx+w*0.55} ${y-2} ${cx+w} ${y} `; prev = y-7; }
+    const top = base - 14 - tier*(n-1) - 9; d += `M${cx} ${top} V${top-40} `;
+    for (let r = 0; r < 5; r++) d += `M${cx-6+r} ${top-6-6*r} H${cx+6-r} `;
+    return d; };
+  const castle = (cx) => { let d = `M${cx-60} 176 L${cx-48} 140 H${cx+48} L${cx+60} 176 `; const roofs = [138,118,100,84,70], ws = [56,48,40,32,24];
+    roofs.forEach((y,k) => { const w = ws[k]; d += `M${cx-w} ${y} Q${cx-w+8} ${y-4} ${cx-w+12} ${y-6} H${cx+w-12} Q${cx+w-8} ${y-4} ${cx+w} ${y} `;
+      const yl = k ? roofs[k-1]-6 : 140; d += `M${cx-w+14} ${yl} V${y-6} M${cx+w-14} ${yl} V${y-6} `; });
+    return d + `M${cx-24} 64 Q${cx} 46 ${cx+24} 64 M${cx-22} 60 l-4 -6 M${cx+22} 60 l4 -6`; };
+  const lantern = (x) => `M${x-12} 176 H${x+12} M${x-8} 176 V170 H${x+8} V176 M${x-4} 170 V140 M${x+4} 170 V140 M${x-10} 140 H${x+10} V122 H${x-10} Z M${x-4} 136 H${x+4} V126 H${x-4} Z M${x-16} 122 Q${x} 108 ${x+16} 122 M${x} 112 V104 M${x-3} 104 H${x+3}`;
+  const spires = () => { let d = ""; const gy = x => x < 360 ? 110 - (x-260)*0.4 : 70 + (x-360)*0.4;
+    [262,300,334,386,420,458].forEach(x => { const b = gy(x); d += `M${x-3} ${b} V${b-26} L${x} ${b-38} L${x+3} ${b-26} V${b} `; }); return d; };
+  return {
+    Tokyo: `${G} M40 176 V120 H62 V176 M70 176 V96 H96 V176 M110 176 V70 H124 V58 H132 V70 H150 V58 H158 V70 H172 V176 M110 100 H172 M186 176 V100 C186 70 214 70 214 100 V176 M192 150 C196 122 204 122 208 150 M222 176 V110 H246 V176 M252 176 V140 H272 V176
+      M392 176 L412 96 L415 70 L418 52 M448 176 L428 96 L425 70 L422 52 M418 52 L420 40 L422 52 M420 40 V22 M406 108 H434 M411 92 H429 V100 H411 Z M415 66 H425 V72 H415 Z M398 150 H442 M400 150 L420 128 L440 150 M404 128 H436 M406 128 L420 112 L434 128
+      M563 176 C568 130 572 90 575 66 M597 176 C592 130 588 90 585 66 M569 66 H591 V56 H569 Z M575 56 L576 40 M585 56 L584 40 M572 40 H588 V33 H572 Z M578 33 L579 14 M582 33 L581 14 M580 14 V2 M566 150 L594 120 M594 150 L566 120
+      M620 176 V156 L634 146 L648 156 V176 M656 176 V150 H690 V176 M696 176 V160 H720`,
+    Kyoto: `${G} M0 120 C80 96 150 104 220 112 C300 120 360 86 450 92 C540 98 600 80 720 96 M156 176 V96 M204 176 V96 M138 92 C160 84 200 84 222 92 M142 98 H218 M150 116 H210 M180 98 V116
+      M282 176 V150 H378 V176 M270 150 Q300 148 330 122 Q360 148 390 150 ${pagoda(540,176,5,46,4,22)} M600 176 V158 L620 150 L640 158 V176 M650 176 V160 L668 152 L686 160 V176 M690 176 V164 H720`,
+    Osaka: `${G} M0 166 H120 M20 166 Q70 136 120 166 M222 176 L230 120 M258 176 L250 120 M230 120 V60 H250 V120 M226 64 H254 V52 H226 Z M234 52 V40 H246 V52 M240 40 V14 M226 150 Q240 136 254 150
+      M290 176 V128 H318 V176 M326 176 V110 H350 V176 ${castle(500)} M600 176 V150 H640 V176 M650 176 V136 H676 V176 M684 176 V156 H720`,
+    Nara: `${G} M0 118 C120 100 240 116 360 104 C480 92 600 108 720 96 M120 140 C120 128 168 128 176 136 C182 142 178 150 170 150 L126 150 C120 150 118 146 120 140 Z M168 134 L180 108 M176 104 L190 104 L186 112 L180 112 M180 104 L176 98 M182 102 L184 88 L178 80 M184 88 L190 82 M186 100 L194 90 L192 82 M194 90 L200 86 M128 150 V176 M136 150 V176 M164 150 V176 M172 150 V176 M120 138 L114 134
+      ${lantern(320)} M390 176 V146 H570 V176 M420 176 V146 M450 176 V146 M480 176 V156 M510 176 V146 M540 176 V146 M376 146 Q400 140 410 124 H550 Q560 140 584 146 M410 124 Q440 112 450 100 H510 Q520 112 550 124 M450 100 Q446 90 452 88 M510 100 Q514 90 508 88 M466 146 Q480 136 494 146 ${lantern(640)}`,
+    Fuji: `${G} M150 176 C260 120 320 60 350 40 H390 C420 60 480 120 600 176 M330 56 L344 66 L356 58 L368 70 L380 60 L392 68 L404 58 ${pagoda(110,176,5,30,3,16)} M520 74 Q540 62 560 72 Q580 64 604 74 <circle cx="620" cy="46" r="16"/>`,
+    Milano: `${G} M260 176 V110 L360 70 L460 110 V176 M330 176 V140 Q360 124 390 140 V176 M286 176 V150 Q298 142 310 150 V176 M410 176 V150 Q422 142 434 150 V176 M360 70 V16 M356 16 L360 6 L364 16 ${spires()} M0 176 V140 H120 V176 M130 176 V150 H200 V176 M600 176 V136 H720`
+  };
+})();
+const skySVG = k => { const s = SKY[k]; if (!s) return ""; const [p, extra=""] = s.split(/(?=<circle)/);
+  return `<svg viewBox="0 0 720 180" preserveAspectRatio="xMidYMax slice"><path d="${p.replace(/\s+/g," ").trim()}"/>${extra}</svg>`; };
+const PAT = (() => {
+  const svg = (w, h, d) => ({w, h, url: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}"><path d="${d}" fill="none" stroke="#000" stroke-width="1"/></svg>`)}")`});
+  // seigaiha (onde)
+  let s = ""; [[20,20],[0,10],[40,10]].forEach(([cx,cy]) => [18,13,8,3].forEach(r => { s += `M${cx-r} ${cy} A${r} ${r} 0 0 1 ${cx+r} ${cy} `; }));
+  // asanoha (foglia di canapa) su griglia triangolare
+  const S = 28, H = S*Math.sqrt(3)/2; let a = "";
+  for (let j = -1; j < 3; j++) for (let i = -1; i < 3; i++) { const off = (j%2+2)%2 ? S/2 : 0, x = i*S + off, y = j*H;
+    const tris = [[[x,y],[x+S,y],[x+S/2,y+H]], [[x+S/2,y+H],[x+S*1.5,y+H],[x+S,y]]];
+    tris.forEach(T => { const gx = (T[0][0]+T[1][0]+T[2][0])/3, gy = (T[0][1]+T[1][1]+T[2][1])/3;
+      a += `M${T[0][0]} ${T[0][1]} L${T[1][0]} ${T[1][1]} L${T[2][0]} ${T[2][1]} Z `; T.forEach(v => { a += `M${v[0]} ${v[1]} L${gx.toFixed(2)} ${gy.toFixed(2)} `; }); }); }
+  // kikkō (esagoni)
+  const R = 11, HX = Math.sqrt(3)*R; let k = "";
+  for (let i = -1; i < 4; i++) for (let j = -1; j < 3; j++) { const cx = i*1.5*R, cy = j*HX + ((i%2+2)%2 ? HX/2 : 0);
+    k += "M" + [0,1,2,3,4,5,0].map(n => { const t = Math.PI/3*n; return `${(cx+R*Math.cos(t)).toFixed(2)} ${(cy+R*Math.sin(t)).toFixed(2)}`; }).join(" L") + " "; }
+  // shippō (cerchi intrecciati)
+  const c = (x,y,r) => `M${x-r} ${y} A${r} ${r} 0 1 0 ${x+r} ${y} A${r} ${r} 0 1 0 ${x-r} ${y} `;
+  const sh = c(0,0,12)+c(24,0,12)+c(0,24,12)+c(24,24,12)+c(12,12,12);
+  return { Tokyo: svg(40,20,s), Fuji: svg(40,20,s), Kyoto: svg(S, 2*H, a), Osaka: svg(3*R, HX, k), Nara: svg(24,24,sh), Milano: svg(24,24,sh),
+           neutral: svg(22,22,"M0 0.5 H22 M0.5 0 V22") };
+})();
+let BG = null, bgFlip = 0;
+function setBackdrop(key){
+  if (!PAT[key] && key !== "neutral") key = "neutral";
+  if (key === BG) return; BG = key; bgFlip ^= 1;
+  const L = document.querySelectorAll("#bgpat i"), S = document.querySelectorAll("#sky > div");
+  const p = PAT[key], li = L[bgFlip], si = S[bgFlip];
+  li.style.webkitMaskImage = li.style.maskImage = p.url; li.style.webkitMaskSize = li.style.maskSize = `${p.w}px ${p.h}px`;
+  si.innerHTML = skySVG(key);
+  li.classList.add("on"); L[bgFlip^1].classList.remove("on");
+  si.classList.toggle("on", !!SKY[key]); S[bgFlip^1].classList.remove("on");
+}
+const dayBackdrop = d => d.date === "2027-03-12" ? "Fuji" : d.city;
+
+/* ====== petali di susino all'apertura ====== */
+function petals(){
+  if (REDUCED) return;
+  const box = document.createElement("div"); box.id = "petals"; box.setAttribute("aria-hidden","true");
+  const cols = ["#F4B3C2","#F7C9D3","#EC9AB0","#FBE0E6"];
+  let html = "";
+  for (let n = 0; n < 16; n++) {
+    const sz = 9 + Math.random()*8, x = Math.random()*100, dur = 6 + Math.random()*4, del = Math.random()*2.6, sway = 1.6 + Math.random()*1.4;
+    html += `<span class="pf" style="left:${x.toFixed(1)}vw;animation-duration:${dur.toFixed(1)}s;animation-delay:${del.toFixed(1)}s"><span class="ps" style="animation-duration:${sway.toFixed(1)}s">
+      <svg width="${sz.toFixed(0)}" height="${sz.toFixed(0)}" viewBox="-7 -7 14 14"><path d="M0 -6 C4 -6 6.5 -2 4.5 2 C3.2 4.3 1.2 5.6 0 6.5 C-1.2 5.6 -3.2 4.3 -4.5 2 C-6.5 -2 -4 -6 0 -6 Z" fill="${cols[n%4]}"/><path d="M0 -3.5 V1.5" stroke="#fff" stroke-opacity=".6" stroke-width=".7"/></svg></span></span>`;
+  }
+  box.innerHTML = html; document.body.appendChild(box);
+  setTimeout(() => box.remove(), 13500);
+}
+
 /* ====== router ====== */
 const VIEWS = ["giorni","luoghi","hotel","soldi","info"];
 function route(){
@@ -707,6 +790,8 @@ function route(){
   document.querySelectorAll("nav.tabs a").forEach(a => a.dataset.v===v ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current"));
   if (v==="luoghi"){ renderChips(); renderMap(); renderPlaces(); }
   if (v==="soldi") renderMoney();
+  if (v==="soldi" || v==="info") setBackdrop("neutral");
+  if (v==="luoghi") setBackdrop(CITIES[state.city] ? state.city : "neutral");
   if (v==="hotel") { if (state.hotelJump) { const hh = HOTELS.find(h=>h.n===state.hotelJump); if (hh) state.hcity = hh.city; } renderHotels(); if (state.hotelJump) { const k = HOTELS.findIndex(h=>h.n===state.hotelJump); state.hotelJump = null; if (k>=0) { setTimeout(()=>document.getElementById("h"+k).scrollIntoView({block:"start"}), 0); return; } } }
   if (v==="giorni") showDay(cur);
   window.scrollTo(0,0);
@@ -829,6 +914,7 @@ function wheelScroll(el){
 ["#route","#chips","#hchips","#daypick"].forEach(s => { const el = $(s); if (el) wheelScroll(el); });
 addEventListener("hashchange", route);
 route();
+
 /* ====== animazione di apertura ======
    - ogni apertura dell'app: sole, kanji, linea della metro, aereo che atterra nella barra
    - ritorno dall'app in background: solo l'aereo che scorre lungo la barra */
@@ -880,7 +966,7 @@ function playIntro(){
   timers.push(setTimeout(finish, 2400));
 }
 (function startup(){
-  if (!REDUCED) playIntro();
+  if (!REDUCED) { playIntro(); petals(); }
   else flightTo(true);
   let hiddenAt = 0;
   document.addEventListener("visibilitychange", () => {

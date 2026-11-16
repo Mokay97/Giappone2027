@@ -33,7 +33,27 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 button,input{font:inherit;color:inherit}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--tokyo);outline-offset:2px;border-radius:4px}
-.wrap{max-width:720px;margin:0 auto;padding:0 18px 110px}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px 110px;position:relative}
+/* sfondo: motivi tradizionali in filigrana e panorama della città */
+#bgpat{position:fixed;inset:0;z-index:-1;pointer-events:none}
+#bgpat i{position:absolute;inset:0;background:var(--ink);opacity:0;transition:opacity .6s ease;-webkit-mask-repeat:repeat;mask-repeat:repeat}
+#bgpat i.on{opacity:var(--pat-o,.06)}
+#sky{position:absolute;left:0;right:0;top:0;height:128px;pointer-events:none;z-index:0;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 40%);mask-image:linear-gradient(to bottom,transparent 0,#000 40%)}
+#sky>div{position:absolute;inset:0;opacity:0;transition:opacity .6s ease;color:var(--ink)}
+#sky>div.on{opacity:var(--sky-o,.13)}
+#sky svg{position:absolute;left:-18px;bottom:0;width:calc(100% + 36px);height:100%}
+#sky path,#sky circle{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+header,.flight,main{position:relative;z-index:1}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--pat-o:.08;--sky-o:.2}}
+:root[data-theme="dark"]{--pat-o:.08;--sky-o:.2}
+/* petali di susino all'apertura */
+#petals{position:fixed;inset:0;z-index:102;pointer-events:none;overflow:hidden}
+#petals .pf{position:absolute;top:-24px;animation:pFall linear forwards}
+#petals .ps{display:block;animation:pSway ease-in-out infinite alternate}
+#petals svg{display:block}
+@keyframes pFall{0%{transform:translateY(0);opacity:0}8%{opacity:.9}85%{opacity:.85}100%{transform:translateY(105vh);opacity:0}}
+@keyframes pSway{from{transform:translateX(-18px) rotate(-25deg)}to{transform:translateX(18px) rotate(35deg)}}
 
 /* header */
 header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding:22px 0 14px}
