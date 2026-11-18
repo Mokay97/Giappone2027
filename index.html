@@ -14,14 +14,14 @@
 <meta name="apple-mobile-web-app-title" content="Giappone ’27">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preload" href="fonts/ZenKakuGothicNew-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=202611162256">
+<link rel="stylesheet" href="style.css?v=202611181610">
 </head>
 <body>
 <div id="bgpat" aria-hidden="true"><i></i><i></i></div>
 <div id="scene" aria-hidden="true"><div></div><div></div></div>
 <div id="scroller">
 <div class="wrap">
-  <div id="sky" aria-hidden="true"><div></div><div></div></div>
+  <div id="sky" aria-hidden="true"><div id="skytint"></div><div></div><div></div><div id="skyfx"></div></div>
   <header>
     <div class="brand"><b>日本</b><span>Giappone ’27</span></div>
   </header>
@@ -37,6 +37,7 @@
 
   <main>
     <section id="v-giorni">
+      <h1 class="vt">Giorni <span lang="ja">日程</span><button class="btn small present" id="presentBtn">Presenta il viaggio ▶</button></h1>
       <div class="route" id="route"><div class="track" id="track"></div></div>
       <div class="legend" id="legend"></div>
       <article class="day" id="day"></article>
@@ -44,6 +45,7 @@
     </section>
 
     <section id="v-luoghi" hidden>
+      <h1 class="vt">Luoghi <span lang="ja">名所</span></h1>
       <div class="tools">
         <div class="chips" id="chips"></div>
       </div>
@@ -70,30 +72,41 @@
       <ul class="plist" id="plist"></ul>
     </section>
 
-    <section id="v-scadenze" hidden>
-      <p class="hintro" id="dlstat"></p>
-      <div id="dlist"></div>
-      <p class="foot">Date di apertura delle vendite verificate a novembre 2026: controllate sempre il sito ufficiale prima di comprare.</p>
-    </section>
-
-    <section id="v-valigia" hidden>
-      <p class="hintro" id="pkstat"></p>
-      <div id="pklist"></div>
-    </section>
-
-    <section id="v-hotel" hidden>
-      <div class="tools"><div class="chips" id="hchips"></div></div>
-      <p class="hintro" id="hintro"></p>
-      <div id="hlist"></div>
-    </section>
-
-    <section id="v-info" hidden>
-      <h2 class="sec colL">Soldi</h2>
-      <div class="big colL">
-        <div><small>Costo totale a testa</small><strong id="perHead"></strong></div>
-        <div><small>Ancora da pagare a testa</small><strong id="left"></strong><div class="bar"><i id="paidbar"></i></div></div>
+    <section id="v-preparativi" hidden>
+      <h1 class="vt">Preparativi <span lang="ja">準備</span></h1>
+      <div class="seg subseg" id="prepseg">
+        <button data-sub="scadenze" aria-pressed="true">Scadenze</button>
+        <button data-sub="valigia">Valigia</button>
+        <button data-sub="budget">Budget</button>
       </div>
-      <div class="conv colL">
+      <div class="sub" id="sub-scadenze">
+        <p class="hintro" id="dlstat"></p>
+        <div id="dlist"></div>
+        <p class="foot">Date di apertura delle vendite verificate a novembre 2026: controllate sempre il sito ufficiale prima di comprare.</p>
+      </div>
+      <div class="sub" id="sub-valigia" hidden>
+        <p class="hintro" id="pkstat"></p>
+        <div id="pklist"></div>
+      </div>
+      <div class="sub" id="sub-budget" hidden>
+        <div class="big">
+          <div><small>Costo totale a testa</small><strong id="perHead"></strong></div>
+          <div><small>Ancora da pagare a testa</small><strong id="left"></strong><div class="bar"><i id="paidbar"></i></div></div>
+        </div>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Voce</th><th class="num">Totale</th><th class="num">A testa</th><th class="num due">Da pagare<br>a testa</th></tr></thead>
+          <tbody id="btable"></tbody>
+        </table></div>
+        <p class="foot">Trasporti e bagagli sono stime con margine del 10%; USJ, ingressi, pasti e imprevisti sono stime. Non inclusi: Kamakura (si decide sul posto), shopping e souvenir.</p>
+      </div>
+    </section>
+
+    <section id="v-viaggio" hidden>
+      <h1 class="vt">In viaggio <span lang="ja">旅</span></h1>
+      <h2 class="sec colL">Libretto dei timbri</h2>
+      <p class="hintro colL" id="ststat"></p>
+      <div class="stamps colL" id="stamps"></div>
+      <div class="conv">
         <h2>Convertitore</h2>
         <div class="convrow">
           <div><label for="yen">Yen</label><input id="yen" inputmode="decimal" value="1000"></div>
@@ -103,18 +116,24 @@
         <div class="quick" id="quick"></div>
         <div class="rate"><label for="rate">Cambio: 1 € =</label><input id="rate" inputmode="decimal"><span>yen</span></div>
       </div>
-      <details class="budgetd colL"><summary>Dettaglio budget</summary>
-        <div class="tablewrap"><table>
-          <thead><tr><th>Voce</th><th class="num">Totale</th><th class="num">A testa</th><th class="num due">Da pagare<br>a testa</th></tr></thead>
-          <tbody id="btable"></tbody>
-        </table></div>
-        <p class="foot">Trasporti e bagagli sono stime con margine del 10%; USJ, ingressi, pasti e imprevisti sono stime. Non inclusi: Kamakura (si decide sul posto), shopping e souvenir.</p>
-      </details>
+      <h2 class="sec">Frasi utili</h2>
+      <div class="phr" id="phr"></div>
+    </section>
+
+    <section id="v-hotel" hidden>
+      <h1 class="vt">Hotel <span lang="ja">宿</span></h1>
+      <div class="tools"><div class="chips" id="hchips"></div></div>
+      <p class="hintro" id="hintro"></p>
+      <div id="hlist"></div>
+    </section>
+
+    <section id="v-info" hidden>
+      <h1 class="vt">Info <span lang="ja">情報</span></h1>
       <h2 class="sec colL">Novità <span class="ver" id="verTag"></span></h2>
       <div class="news colL" id="news"></div>
       <h2 class="sec">Da sapere</h2>
-      <ol class="tips">
-        <li>Suica o PASMO sul telefono (Apple Wallet o app Welcome Suica): si paga metro, treni locali, bus e konbini con un tocco.</li>
+      <ol class="tips" id="tips">
+        <li>Suica: su iPhone si aggiunge all’Apple Wallet prima di partire. Gli Android comprati fuori dal Giappone non hanno il chip FeliCa e non possono usarla sul telefono (dal Pixel 11 qualcosa sta cambiando): comprate la carta Welcome Suica a Haneda appena atterrati, oppure usate la carta di credito contactless nelle metro di Tokyo e sulle linee private.</li>
         <li>I taxi portano 4 persone: in sei servono due auto, oppure un “jumbo taxi” da 9 posti.</li>
         <li>Valigie: si spediscono dalla reception il giorno prima (11/3 per Kyoto, 15/3 per Tokyo). Tenete nello zaino un cambio per la notte.</li>
         <li>Molti locali piccoli accettano solo contanti: si preleva senza problemi ai bancomat di 7-Eleven.</li>
@@ -123,14 +142,12 @@
         <li>Shinkansen da Tokyo verso Kyoto: posto E per vedere il Fuji dal finestrino.</li>
         <li>Universal Studios: per Super Nintendo World serve un ingresso a orario o l’Express Pass, da comprare prima.</li>
       </ol>
-      <h2 class="sec">Frasi utili</h2>
-      <div class="phr" id="phr"></div>
       <h2 class="sec">Emergenze</h2>
       <div class="sos">
         <a href="tel:110"><span>110</span>Polizia</a>
         <a href="tel:119"><span>119</span>Ambulanza e vigili del fuoco</a>
       </div>
-      <p class="foot">Guida versione <b id="verFoot"></b>. Spunte e cambio restano salvati su questo telefono. <button id="theme">Cambia tema</button></p>
+      <p class="foot">Guida versione <b id="verFoot"></b>. Spunte, timbri e cambio restano salvati su questo telefono. <button id="theme">Cambia tema</button></p>
     </section>
   </main>
 </div>
@@ -141,13 +158,13 @@
     <a href="#giorni" data-v="giorni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="5" cy="12" r="2.5"/><circle cx="12" cy="12" r="2.5"/><circle cx="19" cy="12" r="2.5"/><path d="M7.5 12h2M14.5 12h2"/></svg>Giorni</a>
     <a href="#luoghi" data-v="luoghi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Luoghi</a>
     <a href="#hotel" data-v="hotel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19V6M3 15h18v4M21 15v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11" r="2"/></svg>Hotel</a>
-    <a href="#scadenze" data-v="scadenze"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14.5l2.5 2.5 5-5"/></svg><span class="navlbl">Scadenze<i class="newdot" id="dldot" hidden></i></span></a>
-    <a href="#valigia" data-v="valigia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="13" rx="2.5"/><path d="M9 7V4.5h6V7M9 11v5M15 11v5"/></svg>Valigia</a>
+    <a href="#preparativi" data-v="preparativi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14.5l2.5 2.5 5-5"/></svg><span class="navlbl">Preparativi<i class="newdot" id="dldot" hidden></i></span></a>
+    <a href="#viaggio" data-v="viaggio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5v1.2M12 15.3v1.2M8.3 12h-1M16.7 12h-1"/><circle cx="12" cy="12" r="3"/></svg>In viaggio</a>
     <a href="#info" data-v="info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg><span class="navlbl">Info<i class="newdot" id="newdot" hidden></i></span></a>
   </div>
 </nav>
 
-<script src="app.js?v=202611162256"></script>
+<script src="app.js?v=202611181610"></script>
 <script>
 if ("serviceWorker" in navigator) {
   addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));

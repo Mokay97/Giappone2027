@@ -1,6 +1,17 @@
 # Giappone 2027 – Novità della guida
 
-Versione attuale: **2.3.0**
+Versione attuale: **2.4.0**
+
+## 2.4.0 — In viaggio, timbri e feste (18 novembre 2026)
+- Nuovo menu: Preparativi (scadenze, valigia e budget), In viaggio (timbri, convertitore e frasi) e Info più ordinata
+- Modalità in viaggio: dal 6 al 21 marzo la guida si apre sul giorno corrente ed evidenzia la prossima tappa con quanto manca
+- Timbri da collezionare: durante il viaggio ogni tappa imperdibile ha il suo timbro, raccolti nel Libretto
+- Noren sulla scheda del giorno e titoli in stile rivista con i nomi giapponesi delle sezioni
+- Il cielo dell'intestazione segue l'ora di Tokyo: alba, giorno, tramonto e notte con le finestre accese
+- Natale con la neve e le illuminazioni, Capodanno giapponese con il primo sole dietro il Fuji
+- Animazione d'apertura e icona del browser cambiano con i periodi: ultima settimana, viaggio, ritorno
+- Su computer: modalità presentazione per mostrare il viaggio giorno per giorno
+- Suica: chi ha Android (compresi i Pixel fino al 10) compra la carta Welcome Suica all'arrivo
 
 ## 2.3.0 — Colori giapponesi (16 novembre 2026)
 - Nuova palette ispirata ai colori tradizionali: carta washi, inchiostro sumi, vermiglio dei torii e indaco

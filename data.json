@@ -18,7 +18,7 @@
    "m": "Arrivo a Haneda, bus fino all'hotel",
    "p": "Check-in al Toshi Hotel, riposo; opzionale: osservatorio gratuito del Tochō",
    "s": "Omoide Yokocho (Shinjuku)",
-   "n": "Jet lag: giornata leggera. Attivare la Suica sul telefono",
+   "n": "Jet lag: giornata leggera. A Haneda: Welcome Suica per chi ha Android, Suica nel wallet per chi ha iPhone",
    "plan": [
     {
      "t": "14:00",
@@ -26,7 +26,7 @@
      "n": "Haneda → Toshi Hotel",
      "d": "~60 min",
      "p": "",
-     "x": "Airport Limousine Bus fino a Tokyo Garden Terrace Kioichō, di fronte all'hotel. Orario da adattare all'arrivo del volo",
+     "x": "Airport Limousine Bus fino a Tokyo Garden Terrace Kioichō, di fronte all'hotel. Orario da adattare all'arrivo del volo. Chi ha Android compra qui la carta Welcome Suica",
      "nav": {
       "o": "Haneda Airport Terminal 3",
       "g": "Toshi Center Hotel, Hirakawacho, Tokyo",
