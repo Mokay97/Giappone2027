@@ -236,6 +236,15 @@ nav.tabs a[aria-current="page"] svg{stroke:var(--alert)}
 .fl-dot.a{left:-2px}.fl-dot.b{right:-2px;background:var(--alert)}
 .fl-label{margin:6px 0 0;font-size:14px;color:var(--muted)}
 .fl-label strong{color:var(--ink)}
+.fl-stop{position:absolute;top:8px;width:12px;height:12px;margin-left:-6px;border-radius:50%;border:3px solid var(--alert);background:var(--bg);z-index:1}
+.fl-stop em{position:absolute;top:15px;left:50%;transform:translateX(-50%);font-style:normal;font-size:11px;font-weight:700;color:var(--muted)}
+.tr-line{display:none;position:absolute;left:0;right:0;top:11px;height:6px;border-radius:3px;overflow:hidden;gap:2px}
+.tr-line i{flex:1;background:var(--c);opacity:.85}
+.flight.train .tr-line{display:flex}
+.flight.train .fl-track::before,.flight.train .fl-fill{display:none}
+.flight.train .fl-dot{border-color:var(--ink)}
+.flight.train .fl-dot.b{background:var(--ink)}
+.flight.train .fl-plane{width:34px;margin-left:-17px}
 .animate .fl-fill,.animate .fl-plane{transition:width 1.4s cubic-bezier(.2,.7,.2,1),left 1.4s cubic-bezier(.2,.7,.2,1)}
 
 /* maps */
@@ -509,7 +518,7 @@ h1.vt .present{margin-left:auto;font-family:var(--sans);font-weight:500;align-se
 #sky.dawn #skytint{opacity:.24;background:linear-gradient(to bottom,transparent 0,#F2C3B4 60%,#F7DEC3 100%)}
 #sky.day #skytint{opacity:.14;background:linear-gradient(to bottom,transparent 0,#CFE0EA 100%)}
 #sky.sunset #skytint{opacity:.26;background:linear-gradient(to bottom,transparent 0,#F2A57A 55%,#C9502F 100%)}
-#sky.night #skytint{opacity:.2;background:radial-gradient(1.5px 1.5px at 12% 30%,#fff 50%,transparent),radial-gradient(1px 1px at 33% 18%,#fff 50%,transparent),radial-gradient(1.5px 1.5px at 58% 26%,#fff 50%,transparent),radial-gradient(1px 1px at 76% 14%,#fff 50%,transparent),radial-gradient(1px 1px at 90% 34%,#fff 50%,transparent),linear-gradient(to bottom,transparent 0,#22335C 100%)}
+#sky.night #skytint{opacity:.14;background:radial-gradient(1.5px 1.5px at 12% 30%,#fff 50%,transparent),radial-gradient(1px 1px at 33% 18%,#fff 50%,transparent),radial-gradient(1.5px 1.5px at 58% 26%,#fff 50%,transparent),radial-gradient(1px 1px at 76% 14%,#fff 50%,transparent),radial-gradient(1px 1px at 90% 34%,#fff 50%,transparent),linear-gradient(to bottom,transparent 35%,#22335C 100%)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) #sky.night #skytint{opacity:.6}:root:not([data-theme="light"]) #sky.sunset #skytint{opacity:.4}}
 :root[data-theme="dark"] #sky.night #skytint{opacity:.6}
 #skyfx{position:absolute;inset:0;pointer-events:none}
@@ -539,9 +548,30 @@ h1.vt .present{margin-left:auto;font-family:var(--sans);font-weight:500;align-se
 @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media (min-width:600px){.day-head h2{font-size:30px}}
 /* ====== desktop: organizzazione e presentazione (solo schermi larghi, il mobile non cambia) ====== */
+@media (min-width:1600px){body .wrap{max-width:1420px}}
+@media (min-width:1300px) and (max-width:1599px){body .wrap{max-width:1090px}}
+#nobori{display:none}
+@media (min-width:1300px){
+  #nobori{display:block;position:fixed;inset:0;pointer-events:none;z-index:5}
+  .nb{position:absolute;top:96px;width:62px;height:min(62vh,560px);transform-origin:top center}
+  .nb.l{left:calc(50vw - 545px - 96px)}
+  .nb.r{right:calc(50vw - 545px - 96px)}
+  .nb .pole{position:absolute;left:-7px;top:-14px;bottom:-40px;width:3px;border-radius:2px;background:var(--ink);opacity:.35}
+  .nb .bar{position:absolute;left:-10px;right:-4px;top:-10px;height:3px;border-radius:2px;background:var(--ink);opacity:.35}
+  .nb .cloth{position:absolute;inset:0;background:var(--nbc,var(--shu));opacity:.82;border-radius:2px 2px 4px 4px;box-shadow:0 6px 14px rgba(0,0,0,.08)}
+  .nb .cloth::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:repeating-linear-gradient(90deg,transparent 0 9px,var(--bg) 9px 13px);opacity:.6}
+  .nb .mon{position:absolute;left:50%;top:26px;width:30px;height:30px;margin-left:-15px;border-radius:50%;border:2.5px solid var(--on-f);opacity:.9}
+  .nb b{position:absolute;left:0;right:0;top:72px;writing-mode:vertical-rl;text-orientation:upright;margin:0 auto;font-family:var(--kanji);font-weight:800;font-size:30px;letter-spacing:.25em;color:var(--on-f);display:flex;align-items:center;justify-content:center;width:100%}
+  .nb.sway{animation:nbSway 1.1s ease-out}
+  @keyframes nbSway{0%{transform:none}30%{transform:rotate(1.8deg) skewY(1deg)}60%{transform:rotate(-1.2deg)}100%{transform:none}}
+}
+@media (min-width:1600px){.nb.l{left:calc(50vw - 710px - 92px)}.nb.r{right:calc(50vw - 710px - 92px)}}
+@media (prefers-reduced-motion: reduce){.nb.sway{animation:none}}
 @media (min-width:1024px){
   .wrap{max-width:1240px;padding:64px 32px 60px}
-  #sky{top:56px;height:150px}
+  #sky{top:56px;height:250px;left:calc(50% - 50vw);right:auto;width:100vw;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 18%);mask-image:linear-gradient(to bottom,transparent 0,#000 18%)}
+  #sky svg{left:0;width:100%}
+  #skyfx svg{left:0;width:100%}
   #scene{bottom:0;height:72vh}
   nav.tabs{top:0;bottom:auto;border-top:0;border-bottom:1px solid var(--line);padding-bottom:0;transform:none;will-change:auto}
   nav.tabs div{max-width:1240px;display:flex;justify-content:flex-end;gap:4px;padding:0 32px}
@@ -550,7 +580,8 @@ h1.vt .present{margin-left:auto;font-family:var(--sans);font-weight:500;align-se
   nav.tabs a[aria-current="page"]{border-bottom-color:var(--alert)}
   nav.tabs::before{content:"日本  Giappone ’27";position:absolute;left:max(32px, calc((100vw - 1240px)/2 + 32px));top:15px;font-weight:700;font-size:16px;color:var(--ink);white-space:pre}
   header{display:none}
-  .flight{margin-top:28px}
+  .flight{margin-top:178px}
+  h1.vt{margin-top:34px;margin-bottom:16px}
   .route{margin:0;padding:10px 0 6px}
   .track{margin:0 auto}
   /* Giorni: programma a sinistra, mappa fissa a destra */

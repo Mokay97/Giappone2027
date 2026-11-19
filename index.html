@@ -14,11 +14,12 @@
 <meta name="apple-mobile-web-app-title" content="Giappone ’27">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preload" href="fonts/ZenKakuGothicNew-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=202611181610">
+<link rel="stylesheet" href="style.css?v=202611191131">
 </head>
 <body>
 <div id="bgpat" aria-hidden="true"><i></i><i></i></div>
 <div id="scene" aria-hidden="true"><div></div><div></div></div>
+<div id="nobori" aria-hidden="true"><div class="nb l"><i class="pole"></i><i class="bar"></i><div class="cloth"></div><span class="mon"></span><b></b></div><div class="nb r"><i class="pole"></i><i class="bar"></i><div class="cloth"></div><span class="mon"></span><b>日本</b></div></div>
 <div id="scroller">
 <div class="wrap">
   <div id="sky" aria-hidden="true"><div id="skytint"></div><div></div><div></div><div id="skyfx"></div></div>
@@ -26,9 +27,11 @@
     <div class="brand"><b>日本</b><span>Giappone ’27</span></div>
   </header>
   <div class="flight" id="flight">
-    <div class="fl-ends"><span><b>Milano</b> MXP</span><span><b>Tokyo</b> HND</span></div>
+    <div class="fl-ends" id="flEnds"><span><b>Milano</b> MXP</span><span><b>Tokyo</b> HND</span></div>
     <div class="fl-track" aria-hidden="true">
+      <div class="tr-line" id="trLine"></div>
       <span class="fl-dot a"></span><span class="fl-dot b"></span>
+      <span class="fl-stop" id="flStop" hidden><i></i><em>PEK</em></span>
       <div class="fl-fill" id="flFill"></div>
       <svg class="fl-plane" id="flPlane" viewBox="0 0 24 24"><path fill="currentColor" d="M21.5 11.2 14 9.6 9.6 2.5H7.4l2.2 7.3-4.9.6-1.9-2.6H1.3l1.2 4.2-1.2 4.2h1.5l1.9-2.6 4.9.6-2.2 7.3h2.2l4.4-7.1 7.5-1.6c.6-.1.6-1.1 0-1.2z"/></svg>
     </div>
@@ -164,7 +167,7 @@
   </div>
 </nav>
 
-<script src="app.js?v=202611181610"></script>
+<script src="app.js?v=202611191131"></script>
 <script>
 if ("serviceWorker" in navigator) {
   addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));

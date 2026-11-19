@@ -1,6 +1,12 @@
 # Giappone 2027 – Novità della guida
 
-Versione attuale: **2.4.0**
+Versione attuale: **2.5.0**
+
+## 2.5.0 — Volo, treno e computer più scenografico (19 novembre 2026)
+- Nei giorni dei voli l'aereo avanza in tempo reale, con lo scalo a Pechino e quanto manca all'atterraggio o alla ripartenza
+- Durante il viaggio la barra diventa un treno che scorre sui 16 giorni, colorati per città
+- Su computer: panorama a tutta larghezza con la città intera, nobori ai lati e più spazio per i contenuti
+- Nuova scadenza per lo scalo a Pechino; arrivo a Milano corretto alle 6:30 del 21 marzo
 
 ## 2.4.0 — In viaggio, timbri e feste (18 novembre 2026)
 - Nuovo menu: Preparativi (scadenze, valigia e budget), In viaggio (timbri, convertitore e frasi) e Info più ordinata
