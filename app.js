@@ -1,6 +1,6 @@
 /* Giappone 2027 – logica della guida. I dati sono in data.json */
 (async () => {
-const __D = await fetch('data.json?v=202611191131', {cache:'no-cache'}).then(r => r.json());
+const __D = await fetch('data.json?v=202611201612', {cache:'no-cache'}).then(r => r.json());
 /* ====== DATI: modificabili ====== */
 const DAYS = __D.days;
 const PLACES = __D.places;
@@ -78,6 +78,7 @@ function hcard(h,k){
   }
 }
 document.getElementById("hchips").addEventListener("click", e => { const b = e.target.closest(".chip"); if (!b) return; state.hcity = b.dataset.hc; store.set("hcity", state.hcity); renderHotels(); });
+const CARDS = [["6人です", "Rokunin desu", "Siamo in sei"], ["予約しています", "Yoyaku shite imasu", "Abbiamo una prenotazione"], ["カウンター席でも大丈夫です", "Kauntā-seki demo daijōbu desu", "Va bene anche al banco"], ["英語のメニューはありますか？", "Eigo no menyū wa arimasu ka?", "Avete un menù in inglese?"], ["おすすめは何ですか？", "Osusume wa nan desu ka?", "Cosa ci consiglia?"], ["肉を入れないでください", "Niku o irenaide kudasai", "Senza carne, per favore"], ["お会計をお願いします", "Okaikei o onegaishimasu", "Il conto, per favore"], ["別々に払えますか？", "Betsubetsu ni haraemasu ka?", "Possiamo pagare separatamente?"], ["カードで払えますか？", "Kādo de haraemasu ka?", "Si può pagare con la carta?"], ["トイレはどこですか？", "Toire wa doko desu ka?", "Dov'è il bagno?"], ["写真を撮ってもいいですか？", "Shashin o totte mo ii desu ka?", "Possiamo fare una foto?"]];
 const PHRASES = [
   ["Sumimasen","Mi scusi / permesso"],["Arigatō gozaimasu","Grazie"],
   ["Rokunin desu","Siamo in sei"],["Eigo no menyū wa arimasu ka?","Avete un menu in inglese?"],
@@ -918,12 +919,16 @@ function markNow(){
 setInterval(() => { if (!$("#v-giorni").hidden) markNow(); }, 60000);
 
 /* ====== timbri ====== */
+const dec = s => decodeURIComponent(escape(atob(s)));
 const STJP = [[/Omoide/,"思い出横丁","lantern"],[/Kaminarimon/,"雷門","lantern"],[/Senso-ji/,"浅草寺","temple"],[/Skytree/,"スカイツリー","skytree"],[/Meiji/,"明治神宮","torii"],
  [/Takeshita/,"竹下通り","bag"],[/PARCO/,"渋谷","star"],[/Crossing/,"渋谷","cross"],[/Center-gai/,"センター街","cross"],[/banco/,"恵比寿","bowl"],[/DisneySea/,"ディズニーシー","volcano"],
  [/Kanda/,"神田明神","torii"],[/Akihabara/,"秋葉原","star"],[/Chureito/,"忠霊塔","pagoda"],[/Oishi/,"富士山","fuji"],[/teamLab/,"チームラボ","star"],[/Karaoke/,"カラオケ","mic"],
  [/Shinkansen/,"新幹線","train"],[/Shirakawa/,"白川","bridge"],[/Hanamikoji/,"花見小路","lantern"],[/bambù/,"竹林","bamboo"],[/Tenry/,"天龍寺","temple"],[/Togetsuky/,"渡月橋","bridge"],
  [/Kinkaku/,"金閣寺","temple"],[/Fushimi/,"伏見稲荷","torii"],[/Kiyomizu/,"清水寺","temple"],[/Sannenzaka/,"三年坂","lantern"],[/Universal/,"大阪","globe"],[/Dotonbori/,"道頓堀","bridge"],
  [/cervi/,"奈良公園","deer"],[/Tōdai-ji/,"東大寺","temple"],[/Kasuga/,"春日大社","lantern"],[/kaiseki/,"懐石","bowl"]];
+const VIC = {"Omoide": "Primi al bancone: il fumo degli yakitori era tutto per voi.", "Kaminarimon": "La grande lanterna senza folla: un privilegio da mattinieri.", "Senso-ji": "Siete arrivati quando il tempio era ancora vostro.", "Skytree": "Il sole è sceso proprio mentre guardavate: tempismo perfetto.", "Meiji": "Il bosco silenzioso vi ha accolto all'ora giusta.", "Takeshita": "Siete passati prima della marea di gente: leggende di Harajuku.", "PARCO": "Pikachu vi stava aspettando, e voi siete arrivati in orario.", "Crossing": "Il semaforo diventa verde e il mondo si muove con voi.", "Center-gai": "Le insegne si sono accese giusto per il vostro passaggio.", "banco": "Lo chef ha alzato lo sguardo: puntuali come un vero samurai.", "DisneySea": "Ai cancelli all'apertura: la giornata è cominciata alla grande.", "Kanda": "Gli dei dell'elettronica benedicono chi arriva puntuale.", "Akihabara": "Le sale giochi non hanno avuto scampo.", "Chureito": "Puntuali come lo Shinkansen: il Fuji vi ha aspettato.", "Oishi": "Il Fuji riflesso nel lago, proprio all'ora prevista.", "teamLab": "Siete entrati nel sogno esattamente quando dovevate.", "Karaoke": "Microfono in mano all'ora giusta: addio al Giappone come si deve.", "Shinkansen": "Lato giusto, ora giusta: il Fuji dal finestrino è vostro.", "Shirakawa": "I salici e il canale nella luce perfetta.", "Hanamikoji": "Il tramonto di Gion, al minuto.", "bambù": "La foresta di bambù vuota: pochi possono dirlo.", "Tenry": "Il giardino appena aperto, solo per voi.", "Togetsuky": "Il ponte e le montagne, senza nessuno davanti.", "Kinkaku": "Il Padiglione d'Oro brillava proprio per voi.", "Fushimi": "Mille torii e nessuno davanti: missione compiuta.", "Kiyomizu": "La terrazza sospesa all'ora prevista: Kyoto ai vostri piedi.", "Sannenzaka": "Le vecchie scalinate di Kyoto al momento perfetto.", "Universal": "Primi a Super Nintendo World: livello completato.", "Dotonbori": "Il canale illuminato vi ha accolto all'ora esatta.", "cervi": "I cervi si sono inchinati: rispetto guadagnato.", "Tōdai-ji": "Il Grande Buddha vi ha visto arrivare puntuali.", "Kasuga": "Migliaia di lanterne, e voi arrivati al momento giusto.", "kaiseki": "La cena del ryokan servita all'ora perfetta: kanpai!"};
+const vicFor = s => { const k = Object.keys(VIC).find(k => s.n.includes(k)); return k ? VIC[k] : "Puntuali come un treno giapponese."; };
+const SECRET = [["m", "5ZCN5Lq6", "TWFlc3RybyBjb2xsZXppb25pc3Rh", "VHV0dGkgaSB0aW1icmkgZGVsIHZpYWdnaW86IHVuIHZlcm8gY29sbGV6aW9uaXN0YSBnaWFwcG9uZXNlLg==", "book"], ["l", "5Lyd6Kqs", "TGVnZ2VuZGEgdml2ZW50ZQ==", "VHJlIHRpbWJyaSBsZWdnZW5kYXJpOiBsYSBwdW50dWFsaXTDoCBnaWFwcG9uZXNlIHNjb3JyZSBpbiB2b2ku", "crown"], ["o", "44GK5biw44KK", "T2thZXJp", "QmVudG9ybmF0aSBhIGNhc2E6IGlsIHZpYWdnaW8gw6ggZmluaXRvLCBpIHJpY29yZGkgbm8u", "house"], ["h", "6Iqx54Gr", "SGFuYWJp", "QXZldGUgdHJvdmF0byBpIGZ1b2NoaSBkJ2FydGlmaWNpbyBuYXNjb3N0aS4=", "fire"]].map(x => ({id:x[0], jp:dec(x[1]), name:dec(x[2]), txt:dec(x[3]), ic:x[4]}));
 const STI = {
   temple:"M4 30 Q24 22 44 30 M8 30 V44 M40 30 V44 M14 22 Q24 16 34 22 M12 26 H36 M24 8 V16 M20 12 H28 M4 44 H44",
   torii:"M6 12 Q24 7 42 12 M9 17 H39 M14 12 V44 M34 12 V44 M24 17 V23 M10 23 H38",
@@ -941,38 +946,66 @@ const STI = {
   globe:"M24 4 A20 20 0 1 0 24.1 4 M4 24 H44 M24 4 Q12 24 24 44 M24 4 Q36 24 24 44 M8 14 H40 M8 34 H40",
   mic:"M18 6 H30 V24 Q24 30 18 24 Z M14 20 Q14 32 24 32 Q34 32 34 20 M24 32 V42 M16 42 H32",
   bag:"M10 16 H38 L36 44 H12 Z M18 16 Q18 6 24 6 Q30 6 30 16",
-  train:"M4 30 Q8 16 24 14 H40 Q44 14 44 22 V30 Z M4 30 H44 M30 18 H40 V24 H30 Z M10 36 H42"
+  train:"M4 30 Q8 16 24 14 H40 Q44 14 44 22 V30 Z M4 30 H44 M30 18 H40 V24 H30 Z M10 36 H42",
+  book:"M6 8 H22 Q24 8 24 12 V42 Q24 38 20 38 H6 Z M42 8 H26 Q24 8 24 12 V42 Q24 38 28 38 H42 Z M10 16 H20 M10 22 H20 M28 16 H38 M28 22 H38",
+  crown:"M6 36 L4 12 L16 24 L24 8 L32 24 L44 12 L42 36 Z M6 42 H42",
+  house:"M4 24 L24 6 L44 24 M10 20 V42 H38 V20 M20 42 V30 H28 V42",
+  fire:"M24 4 V14 M24 34 V44 M4 24 H14 M34 24 H44 M10 10 L17 17 M31 31 L38 38 M38 10 L31 17 M17 31 L10 38 M24 20 A4 4 0 1 0 24.1 20"
 };
 const stKey = (s, date) => `${date}|${s.n}`;
 const stInfo = s => { const m = STJP.find(x => x[0].test(s.n)); return m ? {jp:m[1], ic:m[2]} : {jp:"日本", ic:"torii"}; };
-function stampSVG(s, date, rot=-6, at=null){
-  const {jp, ic} = stInfo(s), d = parse(date), shape = (s.n.length % 3);
+function stampSVG(s, date, rot=-6, leg=false, ov=null){
+  const inf = ov || stInfo(s), jp = inf.jp, ic = inf.ic, d = date ? parse(date) : null, shape = ((ov ? ov.jp : s.n).length % 3);
+  const col = leg || ov ? "var(--gold)" : "var(--shu)";
   const frame = shape === 0 ? `<circle cx="60" cy="60" r="54"/><circle cx="60" cy="60" r="48"/>` : shape === 1 ? `<rect x="8" y="8" width="104" height="104" rx="18"/><rect x="14" y="14" width="92" height="92" rx="13"/>` : `<path d="M60 6 L110 34 V86 L60 114 L10 86 V34 Z"/><path d="M60 13 L104 38 V82 L60 107 L16 82 V38 Z"/>`;
-  return `<svg viewBox="0 0 120 120" style="--r:${rot}deg;transform:rotate(${rot}deg)"><g fill="none" stroke="var(--shu)" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">${frame}<g transform="translate(36 24)"><path d="${STI[ic]}"/></g></g>
-    <text x="60" y="88" text-anchor="middle" fill="var(--shu)" style="font-family:var(--kanji);font-weight:800;font-size:${jp.length>5?11:14}px">${jp}</text>
-    <text x="60" y="101" text-anchor="middle" fill="var(--shu)" style="font-size:8.5px;font-weight:700;letter-spacing:.08em">${d.getDate()}.3.2027</text></svg>`;
+  const dots = leg || ov ? [...Array(12)].map((_,k) => { const a = k*Math.PI/6; return `<circle cx="${(60+57*Math.cos(a)).toFixed(1)}" cy="${(60+57*Math.sin(a)).toFixed(1)}" r="1.6" fill="var(--gold)" stroke="none"/>`; }).join("") : "";
+  return `<svg viewBox="-4 -4 128 128" class="${leg || ov ? "leg" : ""}" style="--r:${rot}deg;transform:rotate(${rot}deg)"><g fill="none" stroke="${col}" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">${frame}${dots}<g transform="translate(36 24)"><path d="${STI[ic]}"/></g></g>
+    <text x="60" y="88" text-anchor="middle" fill="${col}" style="font-family:var(--kanji);font-weight:800;font-size:${jp.length>5?11:14}px">${jp}</text>
+    <text x="60" y="101" text-anchor="middle" fill="${col}" style="font-size:8.5px;font-weight:700;letter-spacing:.08em">${ov ? "秘密" : leg ? "LEGGENDARIO" : d.getDate() + ".3.2027"}</text></svg>`;
+}
+function stampFx(svg, title, text){
+  const fx = document.createElement("div"); fx.id = "stampfx"; fx.innerHTML = svg + (title ? `<div class="sfxt"><b>${esc(title)}</b>${text ? `<span>${esc(text)}</span>` : ""}</div>` : "");
+  document.body.appendChild(fx); if (navigator.vibrate) navigator.vibrate(title ? [18, 60, 18] : 18);
+  setTimeout(() => fx.remove(), REDUCED ? 1400 : (title ? 3200 : 1900));
+}
+function unlockSecret(id){
+  const sec = store.get("sec", {}); if (sec[id]) return; const S = SECRET.find(x => x.id === id); if (!S) return;
+  sec[id] = {at: NOW().toISOString()}; store.set("sec", sec);
+  setTimeout(() => stampFx(stampSVG({n:S.jp}, null, -4, true, S), "Timbro segreto: " + S.name, S.txt), 1200);
+}
+function checkSecrets(){
+  const all = store.get("stamps", {}), vals = Object.values(all), list = [];
+  DAYS.forEach(d => (d.plan || []).forEach(s => { if (s.p === "Imperdibile" && s.k !== "Trasferimento") list.push(stKey(s, d.date)); }));
+  if (list.length && list.every(k => all[k])) unlockSecret("m");
+  if (vals.filter(v => v.leg).length >= 3) unlockSecret("l");
+  if (PHASE() === "back") unlockSecret("o");
+
 }
 const stampable = s => TRIP() && s.p === "Imperdibile" && s.k !== "Trasferimento";
 function stBtn(s){ const d = DAYS[cur], k = stKey(s, d.date), got = store.get("stamps", {})[k];
   if (d.date > nowJ().date) return "";
-  return `<button class="navbtn stb${got?" got":""}" data-st="${esc(k)}">${got ? "✓ Timbrato" : "印 Timbro"}</button>`; }
+  return `<button class="navbtn stb${got?" got":""}" data-st="${esc(k)}">${got ? (got.leg ? "★ Leggendario" : "✓ Timbrato") : "印 Timbro"}</button>`; }
 document.getElementById("day").addEventListener("click", e => {
   const b = e.target.closest(".stb"); if (!b) return;
   const all = store.get("stamps", {}), k = b.dataset.st; if (all[k]) return;
-  const rot = Math.round(Math.random()*14 - 7); all[k] = {at: NOW().toISOString(), r: rot}; store.set("stamps", all);
   const name = k.split("|")[1], s = DAYS[cur].plan.find(x => x.n === name);
-  const fx = document.createElement("div"); fx.id = "stampfx"; fx.innerHTML = stampSVG(s, DAYS[cur].date, rot); document.body.appendChild(fx);
-  if (navigator.vibrate) navigator.vibrate(18);
-  setTimeout(() => fx.remove(), REDUCED ? 900 : 1900);
-  b.classList.add("got"); b.textContent = "✓ Timbrato";
+  const leg = Math.abs(nowJ().min - tmin(s.t)) <= 10;
+  const rot = Math.round(Math.random()*14 - 7); all[k] = {at: NOW().toISOString(), r: rot, leg}; store.set("stamps", all);
+  stampFx(stampSVG(s, DAYS[cur].date, rot, leg), leg ? "Timbro leggendario!" : "", leg ? vicFor(s) : "");
+  b.classList.add("got"); b.textContent = leg ? "★ Leggendario" : "✓ Timbrato";
+  checkSecrets();
 });
 function renderStamps(){
-  const all = store.get("stamps", {}), list = [];
+  const all = store.get("stamps", {}), sec = store.get("sec", {}), list = [];
   DAYS.forEach(d => (d.plan || []).forEach(s => { if (s.p === "Imperdibile" && s.k !== "Trasferimento") list.push([d, s]); }));
-  const got = list.filter(([d,s]) => all[stKey(s, d.date)]).length;
-  $("#ststat").textContent = TRIP() ? `${got} su ${list.length} timbri raccolti. Si timbrano dalle tappe imperdibili del giorno.` : `${got} su ${list.length} timbri. Si potranno raccogliere durante il viaggio, dalle tappe imperdibili.`;
+  const got = list.filter(([d,s]) => all[stKey(s, d.date)]).length, legs = Object.values(all).filter(v => v.leg).length;
+  $("#ststat").textContent = (TRIP() ? `${got} su ${list.length} timbri raccolti · ${legs} leggendari. Si timbrano dalle tappe imperdibili del giorno; entro 10 minuti dall'orario il timbro diventa d'oro.` : `${got} su ${list.length} timbri. Si raccolgono durante il viaggio dalle tappe imperdibili; arrivando puntuali, entro 10 minuti dall'orario, il timbro diventa leggendario.`);
+  const fmt = iso => new Date(iso).toLocaleString("it-IT",{timeZone:"Asia/Tokyo",day:"numeric",month:"numeric",hour:"2-digit",minute:"2-digit"});
   $("#stamps").innerHTML = list.map(([d,s]) => { const g = all[stKey(s, d.date)];
-    return `<figure class="${g?"":"no"}">${stampSVG(s, d.date, g ? g.r : 0)}<figcaption>${esc(s.n)}${g ? `<br>${new Date(g.at).toLocaleString("it-IT",{timeZone:"Asia/Tokyo",day:"numeric",month:"numeric",hour:"2-digit",minute:"2-digit"})}` : ""}</figcaption></figure>`; }).join("");
+    return `<figure class="${g ? (g.leg ? "lg" : "") : "no"}">${stampSVG(s, d.date, g ? g.r : 0, g && g.leg)}<figcaption>${esc(s.n)}${g ? `<br>${fmt(g.at)}` : ""}</figcaption></figure>`; }).join("")
+    + `<p class="secttl">Segreti</p>` + SECRET.map(S => sec[S.id] ? `<figure class="lg">${stampSVG({n:S.jp}, null, -4, true, S)}<figcaption>${esc(S.name)}<br>${fmt(sec[S.id].at)}</figcaption></figure>`
+      : `<figure class="no"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="var(--muted)" stroke-width="2.4" stroke-dasharray="5 6"/><text x="60" y="72" text-anchor="middle" fill="var(--muted)" style="font-size:34px;font-weight:700">???</text></svg><figcaption>Timbro segreto</figcaption></figure>`).join("");
+
 }
 
 /* ====== cielo con l'ora di Tokyo ====== */
@@ -1020,29 +1053,122 @@ function snow(){
   box.innerHTML = html; document.body.appendChild(box); setTimeout(() => box.remove(), 16000);
 }
 
-/* ====== modalità presentazione (computer) ====== */
+/* ====== presentazione per la TV (computer) ====== */
 let PRES = null;
-function presSlide(){
-  const el = document.getElementById("pres"), i = PRES.i;
-  el.classList.toggle("cover", i === 0);
-  if (i === 0) { el.innerHTML = `<div><div class="ckj">日本</div><h2>Giappone ’27</h2><p class="pd">6 – 21 marzo 2027 · Tokyo, Kyoto, Osaka, Nara · 16 giorni in sei</p></div><span class="phint">→ o clic per avanzare · Esc per uscire</span>`; return; }
-  const d = DAYS[i-1], c = cityOf(d.city), dt = parse(d.date);
-  const stops = d.plan ? d.plan.filter(s => !["Trasferimento","Pasto","Hotel"].includes(s.k) && s.p !== "Opzionale").slice(0,7).map(s => `<li><b>${esc(s.t)}</b>${esc(s.n)}</li>`).join("")
-                       : [["Mattina",d.m],["Pomeriggio",d.p],["Sera",d.s]].filter(s=>s[1]).map(s => `<li><b>${s[0].slice(0,3)}</b>${esc(s[1])}</li>`).join("");
-  const rs = ROUTES.filter(r => r.day === i), city = (rs.find(r => r.city !== "Japan" && r.city === d.city) || rs.find(r => r.city !== "Japan") || rs[0] || {}).city;
-  const map = city ? (city === "Japan" ? mapSVG("Japan", {day:i, mode:"day", animate:true}) : mapZoomSVG(city, i, true)) : "";
-  el.style.setProperty("--c", c.c); el.style.setProperty("--cf", fillOf(c.c));
-  el.innerHTML = `<div class="pl1"><div class="noren sway"><i></i><i></i><i></i><b>${c.k}</b></div><h2>${esc(d.title)}</h2><p class="pd">${GG[dt.getDay()]} ${dt.getDate()} marzo · giorno ${i} di ${DAYS.length}</p><ul>${stops}</ul></div>
-    <div class="pmap">${map}</div><span class="pcount">${i} / ${DAYS.length}</span>`;
-  fixZoom(el);
+const QRSVG = `<svg data-w="31mm" data-h="31mm" version="1.1" viewBox="0 0 31 31" xmlns="http://www.w3.org/2000/svg"><path d="M1,1H2V2H1zM2,1H3V2H2zM3,1H4V2H3zM4,1H5V2H4zM5,1H6V2H5zM6,1H7V2H6zM7,1H8V2H7zM12,1H13V2H12zM13,1H14V2H13zM15,1H16V2H15zM18,1H19V2H18zM19,1H20V2H19zM20,1H21V2H20zM23,1H24V2H23zM24,1H25V2H24zM25,1H26V2H25zM26,1H27V2H26zM27,1H28V2H27zM28,1H29V2H28zM29,1H30V2H29zM1,2H2V3H1zM7,2H8V3H7zM10,2H11V3H10zM14,2H15V3H14zM16,2H17V3H16zM18,2H19V3H18zM23,2H24V3H23zM29,2H30V3H29zM1,3H2V4H1zM3,3H4V4H3zM4,3H5V4H4zM5,3H6V4H5zM7,3H8V4H7zM9,3H10V4H9zM11,3H12V4H11zM12,3H13V4H12zM16,3H17V4H16zM19,3H20V4H19zM20,3H21V4H20zM23,3H24V4H23zM25,3H26V4H25zM26,3H27V4H26zM27,3H28V4H27zM29,3H30V4H29zM1,4H2V5H1zM3,4H4V5H3zM4,4H5V5H4zM5,4H6V5H5zM7,4H8V5H7zM9,4H10V5H9zM10,4H11V5H10zM11,4H12V5H11zM12,4H13V5H12zM13,4H14V5H13zM14,4H15V5H14zM16,4H17V5H16zM17,4H18V5H17zM18,4H19V5H18zM23,4H24V5H23zM25,4H26V5H25zM26,4H27V5H26zM27,4H28V5H27zM29,4H30V5H29zM1,5H2V6H1zM3,5H4V6H3zM4,5H5V6H4zM5,5H6V6H5zM7,5H8V6H7zM9,5H10V6H9zM12,5H13V6H12zM13,5H14V6H13zM15,5H16V6H15zM18,5H19V6H18zM19,5H20V6H19zM20,5H21V6H20zM21,5H22V6H21zM23,5H24V6H23zM25,5H26V6H25zM26,5H27V6H26zM27,5H28V6H27zM29,5H30V6H29zM1,6H2V7H1zM7,6H8V7H7zM9,6H10V7H9zM10,6H11V7H10zM14,6H15V7H14zM15,6H16V7H15zM16,6H17V7H16zM19,6H20V7H19zM21,6H22V7H21zM23,6H24V7H23zM29,6H30V7H29zM1,7H2V8H1zM2,7H3V8H2zM3,7H4V8H3zM4,7H5V8H4zM5,7H6V8H5zM6,7H7V8H6zM7,7H8V8H7zM9,7H10V8H9zM11,7H12V8H11zM13,7H14V8H13zM15,7H16V8H15zM17,7H18V8H17zM19,7H20V8H19zM21,7H22V8H21zM23,7H24V8H23zM24,7H25V8H24zM25,7H26V8H25zM26,7H27V8H26zM27,7H28V8H27zM28,7H29V8H28zM29,7H30V8H29zM9,8H10V9H9zM11,8H12V9H11zM12,8H13V9H12zM13,8H14V9H13zM15,8H16V9H15zM21,8H22V9H21zM1,9H2V10H1zM3,9H4V10H3zM4,9H5V10H4zM5,9H6V10H5zM6,9H7V10H6zM7,9H8V10H7zM11,9H12V10H11zM14,9H15V10H14zM16,9H17V10H16zM17,9H18V10H17zM18,9H19V10H18zM21,9H22V10H21zM23,9H24V10H23zM24,9H25V10H24zM25,9H26V10H25zM26,9H27V10H26zM27,9H28V10H27zM1,10H2V11H1zM4,10H5V11H4zM6,10H7V11H6zM8,10H9V11H8zM12,10H13V11H12zM13,10H14V11H13zM14,10H15V11H14zM18,10H19V11H18zM19,10H20V11H19zM20,10H21V11H20zM21,10H22V11H21zM23,10H24V11H23zM24,10H25V11H24zM25,10H26V11H25zM29,10H30V11H29zM3,11H4V12H3zM4,11H5V12H4zM5,11H6V12H5zM6,11H7V12H6zM7,11H8V12H7zM11,11H12V12H11zM14,11H15V12H14zM15,11H16V12H15zM16,11H17V12H16zM17,11H18V12H17zM18,11H19V12H18zM22,11H23V12H22zM23,11H24V12H23zM24,11H25V12H24zM25,11H26V12H25zM2,12H3V13H2zM4,12H5V13H4zM6,12H7V13H6zM8,12H9V13H8zM11,12H12V13H11zM15,12H16V13H15zM16,12H17V13H16zM17,12H18V13H17zM25,12H26V13H25zM26,12H27V13H26zM28,12H29V13H28zM2,13H3V14H2zM3,13H4V14H3zM4,13H5V14H4zM7,13H8V14H7zM8,13H9V14H8zM9,13H10V14H9zM10,13H11V14H10zM11,13H12V14H11zM12,13H13V14H12zM16,13H17V14H16zM18,13H19V14H18zM19,13H20V14H19zM20,13H21V14H20zM22,13H23V14H22zM26,13H27V14H26zM27,13H28V14H27zM1,14H2V15H1zM2,14H3V15H2zM3,14H4V15H3zM6,14H7V15H6zM8,14H9V15H8zM12,14H13V15H12zM14,14H15V15H14zM17,14H18V15H17zM18,14H19V15H18zM19,14H20V15H19zM20,14H21V15H20zM21,14H22V15H21zM23,14H24V15H23zM24,14H25V15H24zM25,14H26V15H25zM29,14H30V15H29zM1,15H2V16H1zM3,15H4V16H3zM6,15H7V16H6zM7,15H8V16H7zM8,15H9V16H8zM9,15H10V16H9zM10,15H11V16H10zM12,15H13V16H12zM14,15H15V16H14zM15,15H16V16H15zM16,15H17V16H16zM18,15H19V16H18zM22,15H23V16H22zM23,15H24V16H23zM24,15H25V16H24zM26,15H27V16H26zM27,15H28V16H27zM2,16H3V17H2zM4,16H5V17H4zM6,16H7V17H6zM8,16H9V17H8zM9,16H10V17H9zM11,16H12V17H11zM13,16H14V17H13zM14,16H15V17H14zM17,16H18V17H17zM21,16H22V17H21zM28,16H29V17H28zM3,17H4V18H3zM5,17H6V18H5zM7,17H8V18H7zM8,17H9V18H8zM11,17H12V18H11zM15,17H16V18H15zM21,17H22V18H21zM22,17H23V18H22zM26,17H27V18H26zM27,17H28V18H27zM1,18H2V19H1zM2,18H3V19H2zM5,18H6V19H5zM11,18H12V19H11zM13,18H14V19H13zM17,18H18V19H17zM19,18H20V19H19zM20,18H21V19H20zM21,18H22V19H21zM23,18H24V19H23zM24,18H25V19H24zM25,18H26V19H25zM27,18H28V19H27zM29,18H30V19H29zM1,19H2V20H1zM3,19H4V20H3zM7,19H8V20H7zM9,19H10V20H9zM11,19H12V20H11zM12,19H13V20H12zM13,19H14V20H13zM16,19H17V20H16zM17,19H18V20H17zM18,19H19V20H18zM21,19H22V20H21zM24,19H25V20H24zM27,19H28V20H27zM1,20H2V21H1zM6,20H7V21H6zM8,20H9V21H8zM10,20H11V21H10zM11,20H12V21H11zM13,20H14V21H13zM15,20H16V21H15zM17,20H18V21H17zM23,20H24V21H23zM24,20H25V21H24zM28,20H29V21H28zM1,21H2V22H1zM5,21H6V22H5zM7,21H8V22H7zM8,21H9V22H8zM10,21H11V22H10zM11,21H12V22H11zM13,21H14V22H13zM18,21H19V22H18zM20,21H21V22H20zM21,21H22V22H21zM22,21H23V22H22zM23,21H24V22H23zM24,21H25V22H24zM25,21H26V22H25zM27,21H28V22H27zM28,21H29V22H28zM29,21H30V22H29zM9,22H10V23H9zM10,22H11V23H10zM12,22H13V23H12zM14,22H15V23H14zM15,22H16V23H15zM17,22H18V23H17zM18,22H19V23H18zM19,22H20V23H19zM21,22H22V23H21zM25,22H26V23H25zM26,22H27V23H26zM27,22H28V23H27zM28,22H29V23H28zM29,22H30V23H29zM1,23H2V24H1zM2,23H3V24H2zM3,23H4V24H3zM4,23H5V24H4zM5,23H6V24H5zM6,23H7V24H6zM7,23H8V24H7zM12,23H13V24H12zM14,23H15V24H14zM15,23H16V24H15zM16,23H17V24H16zM19,23H20V24H19zM20,23H21V24H20zM21,23H22V24H21zM23,23H24V24H23zM25,23H26V24H25zM26,23H27V24H26zM27,23H28V24H27zM1,24H2V25H1zM7,24H8V25H7zM9,24H10V25H9zM11,24H12V25H11zM12,24H13V25H12zM13,24H14V25H13zM14,24H15V25H14zM16,24H17V25H16zM20,24H21V25H20zM21,24H22V25H21zM25,24H26V25H25zM29,24H30V25H29zM1,25H2V26H1zM3,25H4V26H3zM4,25H5V26H4zM5,25H6V26H5zM7,25H8V26H7zM9,25H10V26H9zM11,25H12V26H11zM15,25H16V26H15zM16,25H17V26H16zM17,25H18V26H17zM18,25H19V26H18zM21,25H22V26H21zM22,25H23V26H22zM23,25H24V26H23zM24,25H25V26H24zM25,25H26V26H25zM27,25H28V26H27zM1,26H2V27H1zM3,26H4V27H3zM4,26H5V27H4zM5,26H6V27H5zM7,26H8V27H7zM9,26H10V27H9zM10,26H11V27H10zM11,26H12V27H11zM12,26H13V27H12zM17,26H18V27H17zM19,26H20V27H19zM20,26H21V27H20zM21,26H22V27H21zM22,26H23V27H22zM26,26H27V27H26zM27,26H28V27H27zM28,26H29V27H28zM29,26H30V27H29zM1,27H2V28H1zM3,27H4V28H3zM4,27H5V28H4zM5,27H6V28H5zM7,27H8V28H7zM9,27H10V28H9zM10,27H11V28H10zM12,27H13V28H12zM16,27H17V28H16zM19,27H20V28H19zM20,27H21V28H20zM22,27H23V28H22zM23,27H24V28H23zM24,27H25V28H24zM25,27H26V28H25zM26,27H27V28H26zM27,27H28V28H27zM28,27H29V28H28zM1,28H2V29H1zM7,28H8V29H7zM10,28H11V29H10zM11,28H12V29H11zM13,28H14V29H13zM14,28H15V29H14zM15,28H16V29H15zM16,28H17V29H16zM21,28H22V29H21zM23,28H24V29H23zM24,28H25V29H24zM25,28H26V29H25zM26,28H27V29H26zM28,28H29V29H28zM1,29H2V30H1zM2,29H3V30H2zM3,29H4V30H3zM4,29H5V30H4zM5,29H6V30H5zM6,29H7V30H6zM7,29H8V30H7zM9,29H10V30H9zM10,29H11V30H10zM12,29H13V30H12zM13,29H14V30H13zM14,29H15V30H14zM16,29H17V30H16zM17,29H18V30H17zM18,29H19V30H18zM20,29H21V30H20zM22,29H23V30H22zM23,29H24V30H23zM24,29H25V30H24zM27,29H28V30H27z" id="qr-path" fill="#000000" fill-opacity="1" fill-rule="nonzero" stroke="none"/></svg>`;
+function presDeck(){
+  const S = [{k:"cover", ch:"Apertura"}, {k:"nums", ch:"Apertura"}, {k:"map", ch:"Apertura"}];
+  let lastCh = null;
+  DAYS.forEach((d,i) => {
+    const ch = d.city === "Milano" ? (i === 0 ? "Partenza" : "Ritorno") : d.city + (i >= 12 && d.city === "Tokyo" ? " · il ritorno" : "");
+    if (d.city !== "Milano" && ch !== lastCh) S.push({k:"city", city:d.city, ch, days:DAYS.map((x,j)=>j).filter(j => DAYS[j].city === d.city && (i >= 12 ? j >= 12 : j < 12))});
+    lastCh = ch; S.push({k:"day", i, ch});
+  });
+  S.push({k:"hotels", ch:"Chiusura"}, {k:"budget", ch:"Chiusura"}, {k:"end", ch:"Chiusura"});
+  return S;
 }
-function presOpen(){ PRES = {i:0}; const el = document.createElement("div"); el.id = "pres"; document.body.appendChild(el); presSlide();
-  el.addEventListener("click", () => presGo(1)); if (el.requestFullscreen) el.requestFullscreen().catch(() => {}); }
-function presClose(){ if (!PRES) return; PRES = null; const el = document.getElementById("pres"); if (el) el.remove(); if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); }
-function presGo(dir){ if (!PRES) return; const n = PRES.i + dir; if (n < 0) return; if (n > DAYS.length) { presClose(); return; } PRES.i = n; presSlide(); }
+const presLogo = () => `<div class="logo2"><svg viewBox="0 0 560 420"><defs><linearGradient id="sunG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D8402A"/><stop offset=".65" stop-color="#E9673F"/><stop offset="1" stop-color="#F3A15F"/></linearGradient></defs>
+  <circle cx="280" cy="200" r="150" fill="url(#sunG)"/>
+  <g fill="#2A1A14"><path d="M176 132 Q280 112 384 132 L380 146 Q280 128 180 146 Z"/><rect x="196" y="158" width="168" height="12" rx="3"/><rect x="214" y="134" width="16" height="216"/><rect x="330" y="134" width="16" height="216"/><rect x="273" y="146" width="14" height="24"/></g>
+  <path d="M110 300 H450" stroke="#2A1A14" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#E9673F" stroke-width="5" stroke-linecap="round" opacity=".55"><path d="M210 320 H350"/><path d="M230 338 H330"/><path d="M252 354 H308"/></g>
+  <g class="br-l"><path d="M0 20 Q90 40 150 96 Q182 126 196 170" fill="none" stroke="#6B4A36" stroke-width="7" stroke-linecap="round"/><path d="M90 50 Q110 30 140 30 M150 96 Q178 84 200 92" fill="none" stroke="#6B4A36" stroke-width="4" stroke-linecap="round"/>
+    ${[[60,34],[100,56],[134,30],[150,100],[176,132],[198,92],[118,78],[190,168]].map(([x,y],k) => `<g transform="translate(${x} ${y})">${[0,72,144,216,288].map(a => `<ellipse cx="0" cy="-8" rx="6" ry="9" fill="${k%2?"#F7C9D3":"#F4B3C2"}" transform="rotate(${a})"/>`).join("")}<circle r="3" fill="#E3C15A"/></g>`).join("")}</g>
+  <g class="br-r"><path d="M560 400 Q470 380 420 330 Q392 302 380 262" fill="none" stroke="#6B4A36" stroke-width="7" stroke-linecap="round"/><path d="M470 372 Q450 392 420 394" fill="none" stroke="#6B4A36" stroke-width="4" stroke-linecap="round"/>
+    ${[[500,384],[454,366],[424,394],[420,326],[396,296],[382,262],[446,344]].map(([x,y],k) => `<g transform="translate(${x} ${y})">${[0,72,144,216,288].map(a => `<ellipse cx="0" cy="-8" rx="6" ry="9" fill="${k%2?"#F4B3C2":"#F7C9D3"}" transform="rotate(${a})"/>`).join("")}<circle r="3" fill="#E3C15A"/></g>`).join("")}</g>
+  ${[[180,110,0],[420,300,3],[150,160,6]].map(([x,y,d]) => `<ellipse class="pt" cx="${x}" cy="${y}" rx="6" ry="9" fill="#F4B3C2" style="animation-delay:${d}s"/>`).join("")}
+</svg></div>`;
+const presTwo = (c, title, date, left, map) => `<div class="sl two"><div class="sh">${c ? `<div class="nmini"><i></i><i></i><i></i><b>${c.k}</b></div>` : ""}<div><h2>${title}</h2>${date ? `<p class="pd">${date}</p>` : ""}</div></div>
+  <div class="sc">${left}</div><div class="sm">${map}</div></div>`;
+function presFitText(st){
+  const sc = st.querySelector(".sc"); if (!sc) return;
+  let fs = 1; sc.style.setProperty("--fs", fs);
+  while (sc.scrollHeight > sc.clientHeight + 2 && fs > 0.7) { fs -= 0.05; sc.style.setProperty("--fs", fs.toFixed(2)); }
+  if (sc.scrollHeight > sc.clientHeight + 2) sc.querySelectorAll("li.op").forEach(x => x.remove());
+  if (sc.scrollHeight > sc.clientHeight + 2) { const d = sc.querySelector(".desc"); if (d) d.remove(); }
+  while (sc.scrollHeight > sc.clientHeight + 2 && sc.querySelectorAll("li").length > 3) sc.querySelector("li:last-of-type").remove();
+}
+function presSlide(){
+  const el = document.getElementById("pres"), st = el.querySelector(".stage"), D = PRES.deck, sl = D[PRES.i];
+  let html = "", city = null;
+  const cnt = s => s.k !== "Trasferimento" && s.k !== "Pasto" && s.k !== "Hotel";
+  if (sl.k === "cover") {
+    const days = Math.max(0, Math.round((parse(DAYS[0].date) - today)/864e5));
+    html = `<div class="sl one">${presLogo()}<div><h2 style="font-size:110px;margin-top:10px">Giappone ’27</h2><p class="pd" style="font-size:38px">6 – 21 marzo 2027 · in sei${days > 0 ? ` · mancano ${days} giorni` : ""}</p></div></div>`;
+  } else if (sl.k === "nums") {
+    const tappe = DAYS.reduce((a,d) => a + (d.plan ? d.plan.filter(cnt).length : 0), 0);
+    const treni = DAYS.reduce((a,d) => a + (d.plan ? d.plan.filter(s => s.k === "Trasferimento").length : 0), 0);
+    const nst = DAYS.reduce((a,d) => a + (d.plan ? d.plan.filter(s => s.p === "Imperdibile" && s.k !== "Trasferimento").length : 0), 0);
+    const tot = BUDGET.reduce((s,b) => s + b.t, 0);
+    html = `<div class="sl one"><div style="width:100%"><h2>Il viaggio in numeri</h2><div class="nums"><div><b>16</b><span>giorni</span></div><div><b>4</b><span>città</span></div><div><b>${tappe}</b><span>tappe</span></div>
+      <div><b>${treni}</b><span>spostamenti</span></div><div><b>${nst}</b><span>timbri da raccogliere</span></div><div><b>${Math.round(tot/PEOPLE).toLocaleString("it-IT")} €</b><span>a testa</span></div></div></div></div>`;
+  } else if (sl.k === "map") {
+    html = presTwo(null, "Il percorso", "Milano → Pechino → Tokyo, poi in Shinkansen fino a Kyoto, Osaka e Nara, e ritorno a Tokyo",
+      `<ul><li><b>6–7/3</b>Volo con scalo a Pechino</li><li><b>7/3</b>Tokyo</li><li><b>13/3</b>Kyoto</li><li><b>16/3</b>Osaka</li><li><b>17/3</b>Nara</li><li><b>18/3</b>Di nuovo Tokyo</li><li><b>20–21/3</b>Rientro via Pechino</li></ul>`,
+      mapSVG("Japan", {mode:"all"}));
+  } else if (sl.k === "city") {
+    city = sl.city; const c = cityOf(city), ds = sl.days, nights = ds.filter(j => DAYS[j].hotel).length;
+    const hot = [...new Set(ds.map(j => DAYS[j].hotel).filter(Boolean))];
+    const imp = PLACES.filter(p => p.city === city && p.imp >= 5 && ds.includes((p.day||0)-1)).slice(0,6);
+    html = `<div class="ckj">${c.k}</div>` + presTwo(c, esc(sl.ch), `${ds.length} ${ds.length === 1 ? "giorno" : "giorni"} · ${nights} ${nights === 1 ? "notte" : "notti"} · ${esc(hot.join(", "))}`,
+      `<h3>Da non perdere</h3><ul>${imp.map(p => `<li><b>${String(p.day).padStart(2,"0")}</b>${esc(p.name)}</li>`).join("")}</ul>`, mapSVG(city, {mode:"all", clean:true}));
+  } else if (sl.k === "day") {
+    const i = sl.i, d = DAYS[i], c = cityOf(d.city), dt = parse(d.date); city = d.city;
+    const rs = ROUTES.filter(r => r.day === i+1), mc = (rs.find(r => r.city !== "Japan" && r.city === d.city) || rs.find(r => r.city !== "Japan") || rs[0] || {}).city;
+    const map = mc ? (mc === "Japan" ? mapSVG("Japan", {day:i+1, mode:"day", animate:true}) : mapZoomSVG(mc, i+1, true)) : "";
+    let list, desc = "", meta = "";
+    if (d.plan) {
+      const st = d.plan.filter(s => s.k !== "Trasferimento" && s.k !== "Pasto" && !(s.k === "Hotel" && /Check-out|deposito/i.test(s.n)));
+      list = st.slice(0, 12).map(s => `<li class="${s.p==="Opzionale"?"op":""}"><b>${esc(s.t)}</b>${esc(s.n)}${s.p==="Imperdibile" ? `<span class="im">Imperdibile</span>` : ""}</li>`).join("");
+      const tr = d.plan.filter(s => s.k === "Trasferimento" && s.x).slice(0, 2).map(s => esc(s.x.split(/[.;]/)[0])).join(" · ");
+      const top = d.plan.filter(s => s.p === "Imperdibile" && s.x && s.k !== "Trasferimento").slice(0, 2);
+      desc = top.map(s => `<p><b>${esc(s.n)}</b> — ${esc(s.x.length > 150 ? s.x.slice(0, 147).replace(/\s\S*$/, "") + "…" : s.x)}</p>`).join("");
+      meta = `${tr ? `<span>🚆 <b>${tr}</b></span>` : ""}${d.hotel ? `<span>🛏 <b>${esc(d.hotel)}</b></span>` : ""}`;
+    } else list = [["Mattina",d.m],["Pomeriggio",d.p],["Sera",d.s]].filter(s=>s[1]).map(s => `<li><b>${s[0].slice(0,3)}</b>${esc(s[1])}</li>`).join("");
+    html = presTwo(c, esc(d.title), `${GG[dt.getDay()]} ${dt.getDate()} marzo · giorno ${i+1} di ${DAYS.length}`,
+      `<ul>${list}</ul>${meta ? `<div class="meta">${meta}</div>` : ""}${desc ? `<div class="desc">${desc}</div>` : ""}`, map);
+  } else if (sl.k === "hotels") {
+    html = `<div class="sl one"><div style="width:100%"><h2 style="margin-bottom:46px">Dove dormiamo</h2><div class="hgrid">${HOTELS.map(h => `<div class="hc" style="--c:${fillOf(cityOf(h.city).c)}"><b>${esc(h.n)}</b><span>${esc(h.city)} · ${esc(h.dates)} · ${esc(h.nights)}</span><span>${esc(h.addr)}</span></div>`).join("")}</div></div></div>`;
+  } else if (sl.k === "budget") {
+    const tot = BUDGET.reduce((s,b)=>s+b.t,0), paid = BUDGET.filter(b=>b.s==="Saldato").reduce((s,b)=>s+b.t,0), mx = Math.max(...BUDGET.map(b=>b.t));
+    html = `<div class="sl"><div><h2>Il budget</h2><div class="nums" style="grid-template-columns:1fr;gap:30px;text-align:left"><div style="text-align:left"><b>${eur(tot/PEOPLE)}</b><span>costo totale a testa</span></div>
+      <div style="text-align:left"><b style="color:var(--ok)">${eur(paid/PEOPLE)}</b><span>già pagati</span></div><div style="text-align:left"><b>${eur((tot-paid)/PEOPLE)}</b><span>ancora da pagare</span></div></div></div>
+      <div class="bars">${[...BUDGET].sort((a,b)=>b.t-a.t).map(b => `<div class="br"><span>${esc(b.v)}</span><i><em class="${b.s==="Saldato"?"pd2":""}" style="width:${(b.t/mx*100).toFixed(1)}%"></em></i><s>${eur(b.t/PEOPLE)}</s></div>`).join("")}</div></div>`;
+  } else if (sl.k === "end") {
+    const ok = new Set(store.get("todo", [])), nx = DEADLINES.filter(x => !ok.has(x[1]) && parse(x[0]) >= today).slice(0, 6);
+    html = `<div class="sl"><div><h2>Prossimi passi</h2><p class="pd">Chi se ne occupa?</p><ul>${nx.map(x => { const d = parse(x[0]); return `<li><b>${d.getDate()}/${d.getMonth()+1}</b>${esc(x[2])}</li>`; }).join("")}</ul></div>
+      <div style="text-align:center"><div class="qr" style="margin:0 auto">${QRSVG}</div><p class="pd" style="margin-top:26px">Inquadrate e installate l'app</p><h3>mokay97.github.io/Giappone2027</h3></div></div>`;
+  }
+  const c = city ? cityOf(city) : null;
+  st.style.setProperty("--c", c ? c.c : "var(--shu)"); st.style.setProperty("--cf", c ? fillOf(c.c) : "var(--shu)");
+  let prevCh = null;
+  const dots = D.map((x,j) => { const chg = x.ch !== prevCh && j > 0; prevCh = x.ch; return `<i class="${j <= PRES.i ? "on" : ""}${chg ? " ch" : ""}"></i>`; }).join("");
+  st.innerHTML = html + `<div class="dots">${dots}</div><span class="chap">${esc(sl.ch)}</span><span class="ctr">${PRES.i+1} / ${D.length}</span>`;
+  fixZoom(st); presFitText(st);
+  if (sl.k === "map") st.querySelectorAll(".rt.all").forEach((p,k) => { if (p.classList.contains("fly")) return; p.setAttribute("pathLength","1"); p.style.strokeDasharray = 1; p.style.strokeDashoffset = 1; p.style.transition = `stroke-dashoffset 1.1s ease ${0.4 + k*0.45}s`; requestAnimationFrame(() => requestAnimationFrame(() => p.style.strokeDashoffset = 0)); });
+}
+function presFit(){ const el = document.getElementById("pres"); if (!el) return; const st = el.querySelector(".stage"); const k = Math.min(innerWidth/1920, innerHeight/1080); st.style.transform = `translate(-50%,-50%) scale(${k})`; }
+function presIndex(){
+  const st = document.querySelector("#pres .stage"); if (st.querySelector(".idx")) { st.querySelector(".idx").remove(); return; }
+  const chs = []; PRES.deck.forEach((x,j) => { if (!chs.find(c => c.ch === x.ch)) chs.push({ch:x.ch, j}); });
+  const box = document.createElement("div"); box.className = "idx"; box.innerHTML = `<h3>Indice</h3>` + chs.map(c => `<button data-j="${c.j}">${esc(c.ch)}</button>`).join("");
+  box.addEventListener("click", e => { e.stopPropagation(); const b = e.target.closest("button"); if (b) { PRES.i = +b.dataset.j; presSlide(); } }); st.appendChild(box);
+}
+function presOpen(){
+  PRES = {i:0, deck: presDeck(), theme: document.documentElement.dataset.theme || null};
+  const el = document.createElement("div"); el.id = "pres"; el.innerHTML = `<div class="stage"></div>`; document.body.appendChild(el);
+  presFit(); presSlide(); el.addEventListener("click", () => presGo(1)); if (el.requestFullscreen) el.requestFullscreen().catch(() => {});
+}
+function presClose(){ if (!PRES) return; const th = PRES.theme; PRES = null; const el = document.getElementById("pres"); if (el) el.remove();
+  if (th) document.documentElement.dataset.theme = th; else delete document.documentElement.dataset.theme;
+  if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); }
+function presGo(dir){ if (!PRES) return; const n = PRES.i + dir; if (n < 0) return; if (n >= PRES.deck.length) { presClose(); return; } PRES.i = n; presSlide(); }
+addEventListener("resize", presFit);
 addEventListener("keydown", e => { if (!PRES) return;
   if (["ArrowRight"," ","PageDown","Enter"].includes(e.key)) { e.preventDefault(); e.stopImmediatePropagation(); presGo(1); }
   else if (["ArrowLeft","PageUp"].includes(e.key)) { e.preventDefault(); e.stopImmediatePropagation(); presGo(-1); }
+  else if (e.key === "t" || e.key === "T") { const r = document.documentElement, dark = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; r.dataset.theme = dark ? "light" : "dark"; }
+  else if (e.key === "g" || e.key === "G") { e.preventDefault(); presIndex(); }
   else if (e.key === "Escape") { e.preventDefault(); presClose(); } }, true);
 document.addEventListener("fullscreenchange", () => { if (!document.fullscreenElement && PRES) presClose(); });
 document.getElementById("presentBtn").addEventListener("click", presOpen);
@@ -1053,6 +1179,43 @@ function showSub(k){
   if (k === "scadenze") renderDeadlines(); if (k === "valigia") renderPack(); if (k === "budget") renderMoney();
 }
 document.getElementById("prepseg").addEventListener("click", e => { const b = e.target.closest("button"); if (b) showSub(b.dataset.sub); });
+
+/* ====== cartelli da mostrare ====== */
+function renderCards(){ $("#cards").innerHTML = CARDS.map((c,i) => `<button data-c="${i}"><b>${c[0]}</b><small>${esc(c[2])}</small></button>`).join(""); }
+function openCard(i){ const c = CARDS[i], el = document.createElement("div"); el.id = "bigcard"; el.setAttribute("role","dialog");
+  el.innerHTML = `<b lang="ja">${c[0]}</b><i>${esc(c[1])}</i><span>${esc(c[2])}</span><small>Tocca per chiudere</small>`; document.body.appendChild(el);
+  history.pushState({card:1}, ""); el.addEventListener("click", () => history.back()); }
+function closeCard(){ const el = document.getElementById("bigcard"); if (el) el.remove(); }
+addEventListener("popstate", closeCard);
+document.getElementById("cards").addEventListener("click", e => { const b = e.target.closest("button"); if (b) openCard(+b.dataset.c); });
+addEventListener("keydown", e => { if (e.key === "Escape" && document.getElementById("bigcard")) history.back(); });
+renderCards();
+
+/* ====== fuochi d'artificio ====== */
+let hTaps = [];
+function hanabi(big){
+  const old = document.getElementById("hanabi"); if (old) old.remove();
+  const box = document.createElement("div"); box.id = "hanabi"; document.body.appendChild(box);
+  if (REDUCED) { box.classList.add("glow"); if (big) box.innerHTML = `<span class="hk" style="animation:none;opacity:1">花火</span>`; setTimeout(() => box.remove(), big ? 2400 : 1200); return; }
+  const cv = document.createElement("canvas"), dpr = Math.min(2, devicePixelRatio || 1); box.appendChild(cv);
+  const W = box.clientWidth, H = box.clientHeight; cv.width = W*dpr; cv.height = H*dpr; cv.style.width = W+"px"; cv.style.height = H+"px";
+  const g = cv.getContext("2d"); g.scale(dpr, dpr);
+  const cols = ["#E8553E","#F2A65A","#FFD27A","#9AD0FF","#B79BE0","#A9C46A","#FFFFFF","#F4B3C2"], P = [];
+  const burst = (x, y, n, col, sp) => { for (let k = 0; k < n; k++) { const a = Math.PI*2*k/n + Math.random()*.2, v = sp*(.6 + Math.random()*.6); P.push({x, y, vx:Math.cos(a)*v, vy:Math.sin(a)*v, life:1, col}); } };
+  const shots = big ? 16 : 5;
+  for (let s = 0; s < shots; s++) setTimeout(() => burst(W*(.15 + Math.random()*.7), H*(.2 + Math.random()*.4), big ? 70 : 54, cols[s % cols.length], big ? 4.2 : 3.4), s*(big ? 260 : 380));
+  if (big) setTimeout(() => { burst(W/2, H*.38, 140, "#E3C15A", 5.6); const k = document.createElement("span"); k.className = "hk"; k.textContent = "花火"; box.appendChild(k); }, shots*260 + 200);
+  const end = Date.now() + (big ? 7000 : 4200);
+  (function tick(){ g.clearRect(0,0,W,H); g.globalCompositeOperation = "lighter";
+    for (let i = P.length - 1; i >= 0; i--) { const p = P[i]; p.x += p.vx; p.y += p.vy; p.vy += .045; p.vx *= .985; p.vy *= .985; p.life -= .012;
+      if (p.life <= 0) { P.splice(i,1); continue; } g.globalAlpha = Math.max(0, p.life); g.fillStyle = p.col; g.beginPath(); g.arc(p.x, p.y, 2.2, 0, 7); g.fill(); }
+    if (Date.now() < end) requestAnimationFrame(tick); else box.remove(); })();
+}
+document.querySelectorAll(".logo").forEach(el => el.addEventListener("click", () => {
+  const now = Date.now(); hTaps = hTaps.filter(x => now - x < 2000); hTaps.push(now);
+  if (hTaps.length >= 5) { hTaps = []; hanabi(true); setTimeout(() => unlockSecret("h"), 4200); } else if (hTaps.length === 1) hanabi(false);
+}));
+
 /* ====== router ====== */
 const VIEWS = ["giorni","luoghi","hotel","preparativi","viaggio","info"];
 const OLDV = {scadenze:["preparativi","scadenze"], valigia:["preparativi","valigia"], soldi:["preparativi","budget"]};
@@ -1140,8 +1303,8 @@ function swipeTo(i){ showDay(i); SC().scrollTo(0, 0); }
 })();
 
 /* ====== versioni e novità ====== */
-const APPVER = "2.5.0";
-const CHANGES = [{"v": "2.5.0", "d": "19 novembre 2026", "t": "Volo, treno e computer più scenografico", "items": ["Nei giorni dei voli l'aereo avanza in tempo reale, con lo scalo a Pechino e quanto manca all'atterraggio o alla ripartenza", "Durante il viaggio la barra diventa un treno che scorre sui 16 giorni, colorati per città", "Su computer: panorama a tutta larghezza con la città intera, nobori ai lati e più spazio per i contenuti", "Nuova scadenza per lo scalo a Pechino; arrivo a Milano corretto alle 6:30 del 21 marzo"]}, {"v": "2.4.0", "d": "18 novembre 2026", "t": "In viaggio, timbri e feste", "items": ["Nuovo menu: Preparativi (scadenze, valigia e budget), In viaggio (timbri, convertitore e frasi) e Info più ordinata", "Modalità in viaggio: dal 6 al 21 marzo la guida si apre sul giorno corrente ed evidenzia la prossima tappa con quanto manca", "Timbri da collezionare: durante il viaggio ogni tappa imperdibile ha il suo timbro, raccolti nel Libretto", "Noren sulla scheda del giorno e titoli in stile rivista con i nomi giapponesi delle sezioni", "Il cielo dell'intestazione segue l'ora di Tokyo: alba, giorno, tramonto e notte con le finestre accese", "Natale con la neve e le illuminazioni, Capodanno giapponese con il primo sole dietro il Fuji", "Animazione d'apertura e icona del browser cambiano con i periodi: ultima settimana, viaggio, ritorno", "Su computer: modalità presentazione per mostrare il viaggio giorno per giorno", "Suica: chi ha Android (compresi i Pixel fino al 10) compra la carta Welcome Suica all'arrivo"]}, {"v": "2.3.0", "d": "16 novembre 2026", "t": "Colori giapponesi", "items": ["Nuova palette ispirata ai colori tradizionali: carta washi, inchiostro sumi, vermiglio dei torii e indaco", "Colori delle città sui toni tradizionali: Tokyo indaco, Kyoto glicine, Osaka cachi, Nara matcha", "Sfondi illustrati: la mappa del Giappone negli Hotel, il monte Fuji in Scadenze e Valigia, il Fuji con l'onda in Info", "Luoghi su computer: la mappa resta ferma e l'elenco scorre nella sua colonna; cambiando giorno la pagina non si muove più"]}, {"v": "2.2.0", "d": "16 novembre 2026", "t": "Scadenze, Valigia e Luoghi rinnovati", "items": ["Nuova sezione Scadenze: tutto quello da prenotare e verificare prima di partire, in ordine di data, con i pulsanti per aggiungerlo a Google Calendar o al calendario di iPhone", "Nuova sezione Valigia: le cose da portare per categorie, con le quantità per il gruppo e i consigli per il Giappone", "Luoghi rinnovati: i luoghi in programma sono in ordine di giorno e orario, con il collegamento alla giornata; gli opzionali stanno in fondo", "In Luoghi puoi scegliere quali luoghi vedere sulla mappa; la mappa è più pulita e, su computer, molto più grande", "Pulsante Foto sulle tappe: apre Google Maps sulle foto del luogo", "Soldi spostati in Info: convertitore e totali in evidenza, dettaglio del budget a scomparsa"]}, {"v": "2.1.0", "d": "16 novembre 2026", "t": "Novità della guida", "items": ["Nella sezione Info, le novità di ogni versione e lo storico completo", "Un pallino rosso sul menu Info avvisa quando c'è un aggiornamento"]}, {"v": "2.0.1", "d": "16 novembre 2026", "t": "Menu sempre visibile e aggiornamenti immediati", "items": ["Il menu in basso resta sempre al suo posto anche su Android, quando ricompare la barra del browser", "Ogni aggiornamento arriva subito sul telefono, senza file vecchi rimasti in memoria"]}, {"v": "2.0.0", "d": "16 novembre 2026", "t": "Versione per computer", "items": ["Su schermi larghi la guida si dispone su due colonne: programma a sinistra, mappa grande e fissa a destra", "Luoghi con mappa sempre in vista, Hotel affiancati, Soldi e Info su due colonne", "Menu in alto e frecce ← → della tastiera per cambiare giorno, comodo per presentare il viaggio", "Sul telefono non cambia nulla"]}, {"v": "1.10.1", "d": "16 novembre 2026", "t": "Più fluida", "items": ["Sfondo alleggerito: meno consumo di batteria e scorrimento più stabile"]}, {"v": "1.10.0", "d": "16 novembre 2026", "t": "Sfondi giapponesi", "items": ["Nell'intestazione il panorama della città del giorno: Tokyo, Kyoto, Osaka, Nara, il Fuji e Milano", "Motivi tradizionali in filigrana per ogni città: onde, foglia di canapa, esagoni, cerchi", "Petali di susino che cadono all'apertura"]}, {"v": "1.9.1", "d": "15 novembre 2026", "t": "Swipe più comodo", "items": ["Con lo swipe si torna in cima alla giornata; con i pulsanti Prima/Dopo si resta in fondo"]}, {"v": "1.9.0", "d": "15 novembre 2026", "t": "Swipe, meteo e tema nero", "items": ["Swipe a destra e sinistra sulla scheda per cambiare giorno", "Ora locale e ora di Milano nella scheda del giorno; meteo previsto da metà febbraio, visibile anche offline", "Tema scuro a nero pieno", "Testi più leggibili, colori a contrasto più alto e spunte più facili da toccare", "App più veloce: font salvati sul telefono e funzionamento offline completo"]}, {"v": "1.8.1", "d": "15 novembre 2026", "t": "Pulsanti Prima/Dopo", "items": ["Cambiando giorno i pulsanti restano sotto il dito e la mappa resta in vista"]}, {"v": "1.8.0", "d": "15 novembre 2026", "t": "Checklist prima di partire", "items": ["Nella sezione Info, l'elenco di cosa verificare con gli hotel e cosa prenotare, con le spunte"]}, {"v": "1.7.0", "t": "Kyoto, Osaka e Nara tappa per tappa", "items": ["Programma dettagliato con orari, durate e pulsanti di Google Maps anche per Kyoto, Osaka e Nara", "Arashiyama all'alba, tram storico Randen, Fushimi Inari presto, Gion al tramonto, serata al ryokan", "Nove nuovi luoghi opzionali, dal Ryōan-ji al Sentiero del Filosofo"]}, {"v": "1.6.0", "t": "Indicazioni con Google Maps", "items": ["Su ogni tappa un pulsante che apre Google Maps con il tragitto già impostato", "A piedi Google segue il nostro percorso panoramico; per i treni propone i mezzi", "Conto alla rovescia in mesi e giorni, poi giorni, ore e minuti, infine ore e minuti"]}, {"v": "1.5.1", "t": "Primo giorno", "items": ["Ripristinata la pausa in hotel il giorno dell'arrivo"]}, {"v": "1.5.0", "t": "Mappa zoom e cena al banco", "items": ["Aprendo un giorno, una mappa ingrandita sul percorso con le tappe di dettaglio", "Etichette a tre livelli nei Luoghi: imperdibile, opzionale, scartato", "Cena al banco a Ebisu (ti cucinano davanti) e un solo karaoke d'addio la sera del 19", "Giornate senza pause: si spinge forte"]}, {"v": "1.4.0", "t": "Tokyo tappa per tappa", "items": ["Itinerario di Tokyo con orari, durate e tipo di tappa, con partenza sempre dall'hotel", "Interruttore \"Nascondi opzionali\" per vedere solo l'essenziale", "Ghibli Park tolto dal programma"]}, {"v": "1.3.0", "t": "Tokyo rivista", "items": ["Luoghi divisi in imperdibili, opzionali e scartati", "Skytree unica torre a pagamento; il 19 è una giornata libera da decidere sul posto"]}, {"v": "1.2.1", "t": "Animazione", "items": ["L'animazione d'apertura parte a ogni avvio dell'app"]}, {"v": "1.2.0", "t": "Animazione d'apertura", "items": ["Sole, kanji, linea della metro e aereo che atterra nella barra del conto alla rovescia", "Tornando sull'app, l'aereo riparte lungo la barra"]}, {"v": "1.1.0", "t": "Computer", "items": ["Le file di date e città si scorrono con la rotellina del mouse"]}, {"v": "1.0.0", "t": "Prima versione ufficiale: l'app", "items": ["La guida diventa un'app da installare sul telefono, con icona sulla schermata Home", "Funziona anche senza connessione, una volta aperta con internet", "Online su GitHub per tutto il gruppo, con QR code per condividerla"]}, {"v": "0.6.0-beta", "t": "Hotel", "items": ["Nuova sezione Hotel: descrizione, posizione sulla mappa, check-in e check-out, link alle foto", "Hotel divisi per città"]}, {"v": "0.5.0-beta", "t": "Mappa del Giappone e budget completo", "items": ["Mappa del Giappone con il percorso del viaggio e i luoghi fuori città", "Budget con le spese stimate: Universal Studios, ingressi, pasti, tasse e imprevisti", "Colonna \"Da pagare a testa\" nella sezione Soldi"]}, {"v": "0.4.0-alpha", "t": "Mappe dettagliate", "items": ["Mappe costruite sulle posizioni reali: treni, fiumi, parchi, scala e nord", "Ogni percorso parte dall'hotel"]}, {"v": "0.3.0-alpha", "t": "Percorsi sulle mappe", "items": ["Il percorso di ogni giorno disegnato come una linea della metro"]}, {"v": "0.2.0-alpha", "t": "Mappe e conto alla rovescia", "items": ["Mappe stilizzate di ogni città con le zone del viaggio", "Barra del conto alla rovescia con l'aereo da Milano a Tokyo"]}, {"v": "0.1.0-alpha", "t": "La prima guida", "items": ["Itinerario giorno per giorno con le fermate in stile metro", "Luoghi filtrabili con le spunte \"visto\", budget e convertitore yen-euro", "Alloggi, consigli pratici, frasi utili e numeri di emergenza"]}];
+const APPVER = "2.6.1";
+const CHANGES = [{"v": "2.6.1", "d": "20 novembre 2026", "t": "Presentazione più ordinata", "items": ["Il testo resta sempre dentro lo schermo: se è lungo si adatta da solo", "Le mappe occupano tutto il loro spazio e non scivolano più verso il basso", "Titolo e noren in una fascia in alto, testo e mappa più grandi sotto"]}, {"v": "2.6.0", "d": "20 novembre 2026", "t": "Timbri leggendari e presentazione per la TV", "items": ["Timbri leggendari: arrivate puntuali, entro 10 minuti dall'orario della tappa, e il timbro diventa d'oro con una frase tutta sua", "Cartelli da mostrare: in In viaggio, frasi in giapponese a tutto schermo da girare verso camerieri e commessi", "Presentazione per la TV rifatta: copertina animata, il viaggio in numeri, la mappa del percorso, capitoli per città, giornate dettagliate, hotel, budget e QR per installare l'app"]}, {"v": "2.5.0", "d": "19 novembre 2026", "t": "Volo, treno e computer più scenografico", "items": ["Nei giorni dei voli l'aereo avanza in tempo reale, con lo scalo a Pechino e quanto manca all'atterraggio o alla ripartenza", "Durante il viaggio la barra diventa un treno che scorre sui 16 giorni, colorati per città", "Su computer: panorama a tutta larghezza con la città intera, nobori ai lati e più spazio per i contenuti", "Nuova scadenza per lo scalo a Pechino; arrivo a Milano corretto alle 6:30 del 21 marzo"]}, {"v": "2.4.0", "d": "18 novembre 2026", "t": "In viaggio, timbri e feste", "items": ["Nuovo menu: Preparativi (scadenze, valigia e budget), In viaggio (timbri, convertitore e frasi) e Info più ordinata", "Modalità in viaggio: dal 6 al 21 marzo la guida si apre sul giorno corrente ed evidenzia la prossima tappa con quanto manca", "Timbri da collezionare: durante il viaggio ogni tappa imperdibile ha il suo timbro, raccolti nel Libretto", "Noren sulla scheda del giorno e titoli in stile rivista con i nomi giapponesi delle sezioni", "Il cielo dell'intestazione segue l'ora di Tokyo: alba, giorno, tramonto e notte con le finestre accese", "Natale con la neve e le illuminazioni, Capodanno giapponese con il primo sole dietro il Fuji", "Animazione d'apertura e icona del browser cambiano con i periodi: ultima settimana, viaggio, ritorno", "Su computer: modalità presentazione per mostrare il viaggio giorno per giorno", "Suica: chi ha Android (compresi i Pixel fino al 10) compra la carta Welcome Suica all'arrivo"]}, {"v": "2.3.0", "d": "16 novembre 2026", "t": "Colori giapponesi", "items": ["Nuova palette ispirata ai colori tradizionali: carta washi, inchiostro sumi, vermiglio dei torii e indaco", "Colori delle città sui toni tradizionali: Tokyo indaco, Kyoto glicine, Osaka cachi, Nara matcha", "Sfondi illustrati: la mappa del Giappone negli Hotel, il monte Fuji in Scadenze e Valigia, il Fuji con l'onda in Info", "Luoghi su computer: la mappa resta ferma e l'elenco scorre nella sua colonna; cambiando giorno la pagina non si muove più"]}, {"v": "2.2.0", "d": "16 novembre 2026", "t": "Scadenze, Valigia e Luoghi rinnovati", "items": ["Nuova sezione Scadenze: tutto quello da prenotare e verificare prima di partire, in ordine di data, con i pulsanti per aggiungerlo a Google Calendar o al calendario di iPhone", "Nuova sezione Valigia: le cose da portare per categorie, con le quantità per il gruppo e i consigli per il Giappone", "Luoghi rinnovati: i luoghi in programma sono in ordine di giorno e orario, con il collegamento alla giornata; gli opzionali stanno in fondo", "In Luoghi puoi scegliere quali luoghi vedere sulla mappa; la mappa è più pulita e, su computer, molto più grande", "Pulsante Foto sulle tappe: apre Google Maps sulle foto del luogo", "Soldi spostati in Info: convertitore e totali in evidenza, dettaglio del budget a scomparsa"]}, {"v": "2.1.0", "d": "16 novembre 2026", "t": "Novità della guida", "items": ["Nella sezione Info, le novità di ogni versione e lo storico completo", "Un pallino rosso sul menu Info avvisa quando c'è un aggiornamento"]}, {"v": "2.0.1", "d": "16 novembre 2026", "t": "Menu sempre visibile e aggiornamenti immediati", "items": ["Il menu in basso resta sempre al suo posto anche su Android, quando ricompare la barra del browser", "Ogni aggiornamento arriva subito sul telefono, senza file vecchi rimasti in memoria"]}, {"v": "2.0.0", "d": "16 novembre 2026", "t": "Versione per computer", "items": ["Su schermi larghi la guida si dispone su due colonne: programma a sinistra, mappa grande e fissa a destra", "Luoghi con mappa sempre in vista, Hotel affiancati, Soldi e Info su due colonne", "Menu in alto e frecce ← → della tastiera per cambiare giorno, comodo per presentare il viaggio", "Sul telefono non cambia nulla"]}, {"v": "1.10.1", "d": "16 novembre 2026", "t": "Più fluida", "items": ["Sfondo alleggerito: meno consumo di batteria e scorrimento più stabile"]}, {"v": "1.10.0", "d": "16 novembre 2026", "t": "Sfondi giapponesi", "items": ["Nell'intestazione il panorama della città del giorno: Tokyo, Kyoto, Osaka, Nara, il Fuji e Milano", "Motivi tradizionali in filigrana per ogni città: onde, foglia di canapa, esagoni, cerchi", "Petali di susino che cadono all'apertura"]}, {"v": "1.9.1", "d": "15 novembre 2026", "t": "Swipe più comodo", "items": ["Con lo swipe si torna in cima alla giornata; con i pulsanti Prima/Dopo si resta in fondo"]}, {"v": "1.9.0", "d": "15 novembre 2026", "t": "Swipe, meteo e tema nero", "items": ["Swipe a destra e sinistra sulla scheda per cambiare giorno", "Ora locale e ora di Milano nella scheda del giorno; meteo previsto da metà febbraio, visibile anche offline", "Tema scuro a nero pieno", "Testi più leggibili, colori a contrasto più alto e spunte più facili da toccare", "App più veloce: font salvati sul telefono e funzionamento offline completo"]}, {"v": "1.8.1", "d": "15 novembre 2026", "t": "Pulsanti Prima/Dopo", "items": ["Cambiando giorno i pulsanti restano sotto il dito e la mappa resta in vista"]}, {"v": "1.8.0", "d": "15 novembre 2026", "t": "Checklist prima di partire", "items": ["Nella sezione Info, l'elenco di cosa verificare con gli hotel e cosa prenotare, con le spunte"]}, {"v": "1.7.0", "t": "Kyoto, Osaka e Nara tappa per tappa", "items": ["Programma dettagliato con orari, durate e pulsanti di Google Maps anche per Kyoto, Osaka e Nara", "Arashiyama all'alba, tram storico Randen, Fushimi Inari presto, Gion al tramonto, serata al ryokan", "Nove nuovi luoghi opzionali, dal Ryōan-ji al Sentiero del Filosofo"]}, {"v": "1.6.0", "t": "Indicazioni con Google Maps", "items": ["Su ogni tappa un pulsante che apre Google Maps con il tragitto già impostato", "A piedi Google segue il nostro percorso panoramico; per i treni propone i mezzi", "Conto alla rovescia in mesi e giorni, poi giorni, ore e minuti, infine ore e minuti"]}, {"v": "1.5.1", "t": "Primo giorno", "items": ["Ripristinata la pausa in hotel il giorno dell'arrivo"]}, {"v": "1.5.0", "t": "Mappa zoom e cena al banco", "items": ["Aprendo un giorno, una mappa ingrandita sul percorso con le tappe di dettaglio", "Etichette a tre livelli nei Luoghi: imperdibile, opzionale, scartato", "Cena al banco a Ebisu (ti cucinano davanti) e un solo karaoke d'addio la sera del 19", "Giornate senza pause: si spinge forte"]}, {"v": "1.4.0", "t": "Tokyo tappa per tappa", "items": ["Itinerario di Tokyo con orari, durate e tipo di tappa, con partenza sempre dall'hotel", "Interruttore \"Nascondi opzionali\" per vedere solo l'essenziale", "Ghibli Park tolto dal programma"]}, {"v": "1.3.0", "t": "Tokyo rivista", "items": ["Luoghi divisi in imperdibili, opzionali e scartati", "Skytree unica torre a pagamento; il 19 è una giornata libera da decidere sul posto"]}, {"v": "1.2.1", "t": "Animazione", "items": ["L'animazione d'apertura parte a ogni avvio dell'app"]}, {"v": "1.2.0", "t": "Animazione d'apertura", "items": ["Sole, kanji, linea della metro e aereo che atterra nella barra del conto alla rovescia", "Tornando sull'app, l'aereo riparte lungo la barra"]}, {"v": "1.1.0", "t": "Computer", "items": ["Le file di date e città si scorrono con la rotellina del mouse"]}, {"v": "1.0.0", "t": "Prima versione ufficiale: l'app", "items": ["La guida diventa un'app da installare sul telefono, con icona sulla schermata Home", "Funziona anche senza connessione, una volta aperta con internet", "Online su GitHub per tutto il gruppo, con QR code per condividerla"]}, {"v": "0.6.0-beta", "t": "Hotel", "items": ["Nuova sezione Hotel: descrizione, posizione sulla mappa, check-in e check-out, link alle foto", "Hotel divisi per città"]}, {"v": "0.5.0-beta", "t": "Mappa del Giappone e budget completo", "items": ["Mappa del Giappone con il percorso del viaggio e i luoghi fuori città", "Budget con le spese stimate: Universal Studios, ingressi, pasti, tasse e imprevisti", "Colonna \"Da pagare a testa\" nella sezione Soldi"]}, {"v": "0.4.0-alpha", "t": "Mappe dettagliate", "items": ["Mappe costruite sulle posizioni reali: treni, fiumi, parchi, scala e nord", "Ogni percorso parte dall'hotel"]}, {"v": "0.3.0-alpha", "t": "Percorsi sulle mappe", "items": ["Il percorso di ogni giorno disegnato come una linea della metro"]}, {"v": "0.2.0-alpha", "t": "Mappe e conto alla rovescia", "items": ["Mappe stilizzate di ogni città con le zone del viaggio", "Barra del conto alla rovescia con l'aereo da Milano a Tokyo"]}, {"v": "0.1.0-alpha", "t": "La prima guida", "items": ["Itinerario giorno per giorno con le fermate in stile metro", "Luoghi filtrabili con le spunte \"visto\", budget e convertitore yen-euro", "Alloggi, consigli pratici, frasi utili e numeri di emergenza"]}];
 function renderNews(){
   const [last, ...old] = CHANGES;
   $("#verTag").textContent = "v" + APPVER; $("#verFoot").textContent = APPVER;
@@ -1285,7 +1448,7 @@ function playIntro(){
   timers.push(setTimeout(finish, 2400));
 }
 (function startup(){
-  setFavicon(); updateSky();
+  setFavicon(); updateSky(); setTimeout(checkSecrets, 3000);
   const P0 = PHASE();
   if (!REDUCED) { playIntro(); if (P0 === "xmas") snow(); else if (P0 !== "ny") petals(); }
   else flightTo(true);

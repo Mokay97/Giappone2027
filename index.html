@@ -14,7 +14,7 @@
 <meta name="apple-mobile-web-app-title" content="Giappone ’27">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preload" href="fonts/ZenKakuGothicNew-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css?v=202611191131">
+<link rel="stylesheet" href="style.css?v=202611201612">
 </head>
 <body>
 <div id="bgpat" aria-hidden="true"><i></i><i></i></div>
@@ -24,7 +24,7 @@
 <div class="wrap">
   <div id="sky" aria-hidden="true"><div id="skytint"></div><div></div><div></div><div id="skyfx"></div></div>
   <header>
-    <div class="brand"><b>日本</b><span>Giappone ’27</span></div>
+    <div class="brand"><b class="logo" role="button" tabindex="0" aria-label="日本">日本</b><span>Giappone ’27</span></div>
   </header>
   <div class="flight" id="flight">
     <div class="fl-ends" id="flEnds"><span><b>Milano</b> MXP</span><span><b>Tokyo</b> HND</span></div>
@@ -119,6 +119,9 @@
         <div class="quick" id="quick"></div>
         <div class="rate"><label for="rate">Cambio: 1 € =</label><input id="rate" inputmode="decimal"><span>yen</span></div>
       </div>
+      <h2 class="sec">Cartelli da mostrare</h2>
+      <p class="hintro">Tocca una frase: compare in grande, da girare verso chi vi serve.</p>
+      <div class="cards" id="cards"></div>
       <h2 class="sec">Frasi utili</h2>
       <div class="phr" id="phr"></div>
     </section>
@@ -157,6 +160,7 @@
 </div>
 
 <nav class="tabs" aria-label="Sezioni">
+  <span class="navbrand"><b class="logo" role="button" tabindex="0" aria-label="日本">日本</b>&nbsp; Giappone ’27</span>
   <div>
     <a href="#giorni" data-v="giorni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="5" cy="12" r="2.5"/><circle cx="12" cy="12" r="2.5"/><circle cx="19" cy="12" r="2.5"/><path d="M7.5 12h2M14.5 12h2"/></svg>Giorni</a>
     <a href="#luoghi" data-v="luoghi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Luoghi</a>
@@ -167,7 +171,7 @@
   </div>
 </nav>
 
-<script src="app.js?v=202611191131"></script>
+<script src="app.js?v=202611201612"></script>
 <script>
 if ("serviceWorker" in navigator) {
   addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));

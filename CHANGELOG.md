@@ -1,6 +1,16 @@
 # Giappone 2027 – Novità della guida
 
-Versione attuale: **2.5.0**
+Versione attuale: **2.6.1**
+
+## 2.6.1 — Presentazione più ordinata (20 novembre 2026)
+- Il testo resta sempre dentro lo schermo: se è lungo si adatta da solo
+- Le mappe occupano tutto il loro spazio e non scivolano più verso il basso
+- Titolo e noren in una fascia in alto, testo e mappa più grandi sotto
+
+## 2.6.0 — Timbri leggendari e presentazione per la TV (20 novembre 2026)
+- Timbri leggendari: arrivate puntuali, entro 10 minuti dall'orario della tappa, e il timbro diventa d'oro con una frase tutta sua
+- Cartelli da mostrare: in In viaggio, frasi in giapponese a tutto schermo da girare verso camerieri e commessi
+- Presentazione per la TV rifatta: copertina animata, il viaggio in numeri, la mappa del percorso, capitoli per città, giornate dettagliate, hotel, budget e QR per installare l'app
 
 ## 2.5.0 — Volo, treno e computer più scenografico (19 novembre 2026)
 - Nei giorni dei voli l'aereo avanza in tempo reale, con lo scalo a Pechino e quanto manca all'atterraggio o alla ripartenza
