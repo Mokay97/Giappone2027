@@ -1,15 +1,64 @@
 {
   "name": "Giappone 2027 – Guida di viaggio",
   "short_name": "Giappone ’27",
+  "description": "La nostra guida di viaggio in Giappone, 6–21 marzo 2027",
   "lang": "it",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#F3F4F2",
-  "theme_color": "#F3F4F2",
+  "background_color": "#F5F1E8",
+  "theme_color": "#F5F1E8",
   "icons": [
-    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
-    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
-    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Oggi",
+      "short_name": "Oggi",
+      "url": "./index.html#giorni",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Hotel",
+      "short_name": "Hotel",
+      "url": "./index.html#hotel",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "In viaggio",
+      "short_name": "In viaggio",
+      "url": "./index.html#viaggio",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
   ]
 }

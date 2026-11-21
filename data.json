@@ -2754,22 +2754,22 @@
  "budget": [
   {
    "v": "Volo A/R",
-   "t": 7800.0,
+   "t": 7800,
    "s": "Saldato"
   },
   {
    "v": "Hotel Tokyo 1",
-   "t": 1324.0,
+   "t": 1324,
    "s": "Prenotato"
   },
   {
    "v": "Hotel Tokyo 2",
-   "t": 599.0,
+   "t": 599,
    "s": "Prenotato"
   },
   {
    "v": "Hotel Kyoto",
-   "t": 492.0,
+   "t": 492,
    "s": "Prenotato"
   },
   {
@@ -2779,7 +2779,7 @@
   },
   {
    "v": "Disney Sea",
-   "t": 360.0,
+   "t": 360,
    "s": "Da fare"
   },
   {
@@ -2789,7 +2789,7 @@
   },
   {
    "v": "Hotel Osaka",
-   "t": 128.0,
+   "t": 128,
    "s": "Prenotato"
   },
   {
@@ -2804,7 +2804,7 @@
   },
   {
    "v": "E-Sim",
-   "t": 300.0,
+   "t": 300,
    "s": "Da fare"
   },
   {
@@ -2814,7 +2814,7 @@
   },
   {
    "v": "Ingressi e attività",
-   "t": 800.0,
+   "t": 800,
    "s": "Da fare"
   },
   {
@@ -2826,6 +2826,845 @@
    "v": "Tasse di soggiorno e imprevisti",
    "t": 271.67,
    "s": "Da fare"
+  }
+ ],
+ "deadlines": [
+  [
+   "2026-11-30",
+   "pass",
+   "Controllare la validità dei passaporti",
+   "Devono coprire tutto il soggiorno. Per turismo fino a 90 giorni gli italiani non hanno bisogno di visto"
+  ],
+  [
+   "2026-12-15",
+   "ass",
+   "Assicurazione di viaggio",
+   "Farla presto: copre anche eventuali cancellazioni. Nel budget è ancora da pagare"
+  ],
+  [
+   "2027-01-09",
+   "cena",
+   "Cena al banco a Ebisu (9/3, per sei)",
+   "Prenotare con 1–2 mesi d'anticipo su Tabelog o TableCheck, anche in inglese"
+  ],
+  [
+   "2027-01-10",
+   "dis",
+   "Biglietti DisneySea (10/3)",
+   "Le vendite aprono il 10 gennaio alle 14 ora giapponese (le 6 del mattino in Italia), due mesi prima della visita. Poi, nel parco, Premier Access per Fantasy Springs dall'app"
+  ],
+  [
+   "2027-01-16",
+   "usj",
+   "Universal Studios ed Express Pass (16/3)",
+   "Le vendite aprono circa 60 giorni prima, a mezzanotte ora giapponese (le 16 del giorno prima in Italia). L'Express Pass include l'ingresso a Super Nintendo World e va via in fretta"
+  ],
+  [
+   "2027-01-18",
+   "tlb",
+   "teamLab Borderless (18/3, verso le 15:30)",
+   "Biglietti con data e ora sul sito ufficiale, disponibili circa due mesi prima"
+  ],
+  [
+   "2027-01-31",
+   "ina1",
+   "INA House Nijojo: reception aperta alle 6:45 del 15/3?",
+   "Serve per spedire le valigie a Tokyo; in alternativa si spedisce da un konbini"
+  ],
+  [
+   "2027-01-31",
+   "ina2",
+   "INA House Nijojo: custodisce le valigie dal 12/3?",
+   "Arrivano il giorno prima del check-in"
+  ],
+  [
+   "2027-01-31",
+   "vin1",
+   "Hotel Vintage: custodisce le valigie dal 16–17/3 fino al 18?",
+   "Meglio farselo confermare per iscritto"
+  ],
+  [
+   "2027-01-31",
+   "mb1",
+   "Morning Box: tiene gli zaini dalle 8 del 16/3?",
+   "Altrimenti armadietti a Universal City"
+  ],
+  [
+   "2027-01-31",
+   "mb2",
+   "Morning Box: capsule o camere?",
+   "Nei capsule hotel i piani sono spesso separati tra uomini e donne"
+  ],
+  [
+   "2027-01-31",
+   "mk1",
+   "Mikasa Ryokan: orari della navetta",
+   "Da Kintetsu-Nara la sera del 17/3 e verso la stazione la mattina del 18/3; c'è anche il giro serale sul monte Wakakusa"
+  ],
+  [
+   "2027-02-06",
+   "sky",
+   "Skytree, fascia delle 17:00 dell'8/3",
+   "Prenotazione online con data e ora, aperta circa un mese prima"
+  ],
+  [
+   "2027-02-12",
+   "bus",
+   "Bus Shinjuku → Kawaguchiko e ritorno (12/3)",
+   "Prenotazione circa un mese prima: andata alle 7:45, ritorno alle 16:45"
+  ],
+  [
+   "2027-02-13",
+   "shk",
+   "Shinkansen Tokyo → Kyoto (13/3)",
+   "Le prenotazioni aprono un mese prima alle 10 ora giapponese (le 2 di notte in Italia). Posti lato E per vedere il Fuji"
+  ],
+  [
+   "2027-02-13",
+   "pek",
+   "Scalo a Pechino (andata e ritorno)",
+   "Al check-in chiedete il bagaglio registrato fino a Tokyo all'andata e fino a Milano al ritorno. Restando nella zona transiti di norma non serve il visto; se volete uscire dall'aeroporto verificate le regole d'ingresso aggiornate. Power bank con capacità e marca ben leggibili sull'etichetta: i controlli in Cina sono severi"
+  ],
+  [
+   "2027-02-18",
+   "shk2",
+   "Shinkansen Kyoto → Tokyo (18/3)",
+   "Stessa regola: un mese prima alle 10 ora giapponese. Posti lato A per il Fuji"
+  ],
+  [
+   "2027-02-20",
+   "trk",
+   "Localizzatori per le valigie",
+   "Uno per ogni valigia spedita: AirTag per iPhone, Tile o compatibili con Trova il mio dispositivo per Android"
+  ],
+  [
+   "2027-02-26",
+   "esim",
+   "eSIM",
+   "Acquistarla e installarla a casa, si attiva all'arrivo"
+  ],
+  [
+   "2027-03-01",
+   "vjw",
+   "Visit Japan Web",
+   "Registrazione con passaporto e dati del volo: genera i QR per immigrazione e dogana da mostrare all'arrivo"
+  ],
+  [
+   "2027-03-03",
+   "card",
+   "Carte di pagamento pronte per l'estero",
+   "Controllare i limiti e le commissioni sui prelievi; meglio due circuiti diversi"
+  ],
+  [
+   "2027-03-04",
+   "sui",
+   "iPhone: Suica nell'Apple Wallet",
+   "Si aggiunge prima di partire e si ricarica dal telefono"
+  ],
+  [
+   "2027-03-04",
+   "sui2",
+   "Android: pianificare la Suica fisica",
+   "Gli Android comprati fuori dal Giappone non hanno il chip FeliCa (dal Pixel 11 qualcosa sta cambiando): comprate la carta Welcome Suica a Haneda all'arrivo, oppure usate la carta contactless nelle metro di Tokyo e sulle linee private"
+  ],
+  [
+   "2027-03-04",
+   "gm",
+   "Google Maps con accesso fatto",
+   "Serve per i pulsanti delle indicazioni nella guida"
+  ]
+ ],
+ "pack": [
+  [
+   "Documenti",
+   [
+    [
+     "doc1",
+     "Passaporto",
+     "a testa",
+     "Valido per tutto il viaggio"
+    ],
+    [
+     "doc2",
+     "Polizza dell'assicurazione",
+     "a testa",
+     "In PDF sul telefono, con il numero di assistenza"
+    ],
+    [
+     "doc3",
+     "Copia digitale dei documenti",
+     "a testa",
+     "Foto di passaporto e carte in una cartella offline"
+    ],
+    [
+     "doc4",
+     "Prenotazioni offline",
+     "1 per il gruppo",
+     "Voli, hotel e biglietti salvati sul telefono di almeno due persone"
+    ]
+   ]
+  ],
+  [
+   "Soldi e pagamenti",
+   [
+    [
+     "sol1",
+     "Carta senza commissioni all'estero",
+     "a testa",
+     "Meglio una seconda carta di un circuito diverso"
+    ],
+    [
+     "sol2",
+     "Borsellino per le monete",
+     "a testa",
+     "In Giappone si accumulano tante monete"
+    ],
+    [
+     "sol3",
+     "Un po' di contanti in euro",
+     "a testa",
+     "Per il rientro in Italia"
+    ],
+    [
+     "sol4",
+     "Carta contactless per i mezzi (chi ha Android)",
+     "a testa",
+     "Si avvicina ai tornelli delle metro di Tokyo e delle linee private; per JR e bus serve la Welcome Suica"
+    ]
+   ]
+  ],
+  [
+   "Elettronica",
+   [
+    [
+     "ele1",
+     "Adattatore per prese di tipo A",
+     "1 a testa",
+     "Due lamelle piatte, 100V: i caricabatterie vanno bene, phon e piastre da 230V no"
+    ],
+    [
+     "ele2",
+     "Caricatore USB multiplo",
+     "1 per camera",
+     "Così basta un adattatore per più telefoni"
+    ],
+    [
+     "ele3",
+     "Power bank",
+     "a testa",
+     "Solo nel bagaglio a mano, mai in stiva"
+    ],
+    [
+     "ele4",
+     "Cavi di ricarica",
+     "a testa",
+     ""
+    ],
+    [
+     "ele5",
+     "Localizzatori GPS",
+     "1 per valigia spedita",
+     "AirTag, Tile o simili: le valigie viaggiano da sole tra le città"
+    ],
+    [
+     "ele6",
+     "Auricolari",
+     "a testa",
+     "Per treni e Shinkansen"
+    ]
+   ]
+  ],
+  [
+   "Salute",
+   [
+    [
+     "sal1",
+     "Farmaci personali con ricetta",
+     "a testa",
+     "Attenzione ad alcuni farmaci da banco con pseudoefedrina o codeina: in Giappone possono essere vietati"
+    ],
+    [
+     "sal2",
+     "Kit di primo soccorso",
+     "1 per il gruppo",
+     "Cerotti per vesciche, antidolorifici, antidiarroici"
+    ],
+    [
+     "sal3",
+     "Gel disinfettante per le mani",
+     "a testa",
+     ""
+    ]
+   ]
+  ],
+  [
+   "Abbigliamento (marzo, 5–15 °C)",
+   [
+    [
+     "abb1",
+     "Vestiti a strati e giacca leggera impermeabile",
+     "a testa",
+     ""
+    ],
+    [
+     "abb2",
+     "Scarpe comode già rodate",
+     "a testa",
+     "Si camminano 15–20 km al giorno"
+    ],
+    [
+     "abb3",
+     "Calzini in buono stato",
+     "a testa",
+     "Ci si toglie spesso le scarpe: templi, ryokan, alcuni ristoranti"
+    ],
+    [
+     "abb4",
+     "Ombrello pieghevole",
+     "a testa",
+     "Oppure si compra al konbini all'occorrenza"
+    ]
+   ]
+  ],
+  [
+   "Ryokan e onsen",
+   [
+    [
+     "ryo1",
+     "Niente da portare per il bagno",
+     "—",
+     "Yukata e asciugamani li dà il ryokan; nell'onsen si entra senza costume"
+    ]
+   ]
+  ],
+  [
+   "Varie",
+   [
+    [
+     "var1",
+     "Asciugamano piccolo o fazzoletto di stoffa",
+     "a testa",
+     "Molti bagni pubblici non hanno salviette per le mani"
+    ],
+    [
+     "var2",
+     "Sacchetto per i rifiuti",
+     "a testa",
+     "I cestini sono quasi introvabili"
+    ],
+    [
+     "var3",
+     "Zaino giornaliero",
+     "a testa",
+     ""
+    ],
+    [
+     "var4",
+     "Borsa pieghevole per i souvenir",
+     "a testa",
+     ""
+    ],
+    [
+     "var5",
+     "Lucchetto per la valigia",
+     "a testa",
+     ""
+    ]
+   ]
+  ],
+  [
+   "Zaino per i giorni senza valigie",
+   [
+    [
+     "zai1",
+     "Cambio per due notti (11–13/3)",
+     "a testa",
+     "Le valigie partono per Kyoto l'11 mattina"
+    ],
+    [
+     "zai2",
+     "Cambio per tre notti (15–18/3)",
+     "a testa",
+     "Le valigie partono per Tokyo il 15; all'INA House c'è la lavatrice"
+    ],
+    [
+     "zai3",
+     "Spazzolino, caricabatterie e medicine",
+     "a testa",
+     "Sempre nello zaino, mai nella valigia spedita"
+    ]
+   ]
+  ]
+ ],
+ "hotels": [
+  {
+   "n": "Toshi Hotel",
+   "full": "Toshi Center Hotel",
+   "city": "Tokyo",
+   "addr": "2-4-1 Hirakawachō, Chiyoda",
+   "dates": "7 → 13 marzo",
+   "nights": "6 notti",
+   "cost": 1324,
+   "cin": "15:00",
+   "cout": "11:00",
+   "desc": "Hotel moderno in un edificio alto nel quartiere di Nagatachō, il cuore politico di Tokyo. Le camere sono dal 15° piano in su, con vista sullo skyline. Ci sono due ristoranti e la colazione a buffet (circa 1.980 yen a persona).",
+   "pos": "A 3 minuti a piedi dalla stazione Nagatachō (linee Hanzōmon, Namboku e Yūrakuchō) e a 4 da Kōjimachi. Il Palazzo Imperiale è a circa 12 minuti a piedi.",
+   "tip": "Da Haneda c’è l’Airport Limousine Bus fino a Tokyo Garden Terrace Kioichō, proprio di fronte all’hotel: comodo il primo giorno, con le valigie.",
+   "url": "https://www.booking.com/hotel/jp/toshi-center.it.html"
+  },
+  {
+   "n": "INA House Nijojo",
+   "full": "INA House Nijojo",
+   "city": "Kyoto",
+   "addr": "Inabachō 456, Kamigyō",
+   "dates": "13 → 16 marzo",
+   "nights": "3 notti",
+   "cost": 492,
+   "cin": "15:00",
+   "cout": "10:00",
+   "desc": "Aparthotel con camere familiari, angolo cottura (microonde, frigo, piastra) e lavatrice in camera: utile a metà viaggio per fare il bucato. Non ci sono colazione né ristorante.",
+   "pos": "Zona residenziale tranquilla a nord-ovest del Castello Nijō, a circa 11 minuti a piedi. Il Kitano Tenmangū è a circa 19 minuti: comodo per la giornata del Kinkaku-ji.",
+   "tip": "Le valigie spedite da Tokyo arrivano qui il 12: chiedete conferma che le tengano fino al check-in del 13.",
+   "url": "https://www.booking.com/Share-vwwL5J"
+  },
+  {
+   "n": "Hotel Morning Box",
+   "full": "Hotel Morning Box Osaka Shinsaibashi",
+   "city": "Osaka",
+   "addr": "1-10-3 Higashi-Shinsaibashi, Chūō",
+   "dates": "16 → 17 marzo",
+   "nights": "1 notte",
+   "cost": 128,
+   "cin": "15:00",
+   "cout": "11:00",
+   "desc": "Capsule hotel solo per adulti, con spa e sauna, collegato al centro commerciale sotterraneo di Nagahori.",
+   "pos": "Vicino alla stazione Nagahoribashi, a 400 metri dalla galleria commerciale di Shinsaibashi e a circa 15 minuti a piedi da Dotonbori.",
+   "tip": "Nei capsule hotel i piani sono spesso separati tra uomini e donne: verificate nella prenotazione se avete capsule o camere. Chiedete anche se tengono gli zaini prima del check-in.",
+   "url": "https://www.booking.com/Share-QoFsbZT",
+   "mapPoint": "Morning Box"
+  },
+  {
+   "n": "Mikasa Ryokan",
+   "full": "Mikasa Ryokan",
+   "city": "Nara",
+   "addr": "728-10 Kawakami-chō",
+   "dates": "17 → 18 marzo",
+   "nights": "1 notte, cena e colazione",
+   "cost": 873.92,
+   "cin": "15:00",
+   "cout": "10:30",
+   "desc": "Ryokan tradizionale con camere in tatami e futon, bagni termali interni e all’aperto e alcune camere con onsen privato. Dalla sala da pranzo si vede tutta Nara.",
+   "pos": "Sulle pendici del monte Wakakusa, accanto alla foresta primordiale di Kasuga, a circa 1,6 km dal Tōdai-ji. Fuori dal centro: si arriva con la navetta.",
+   "tip": "Navetta gratuita dalla stazione Kintetsu-Nara (circa 10 minuti). Da JR Nara la navetta va prenotata via email. La sera l’hotel organizza un giro gratuito al panorama del monte Wakakusa.",
+   "url": "https://www.booking.com/hotel/jp/mikasa.html",
+   "mapPoint": "Mikasa Ryokan"
+  },
+  {
+   "n": "Hotel Vintage",
+   "full": "Hotel Vintage",
+   "city": "Tokyo",
+   "addr": "2-10-7 Irifune, Chūō",
+   "dates": "18 → 20 marzo",
+   "nights": "2 notti",
+   "cost": 599,
+   "cin": "15:00",
+   "cout": "10:00",
+   "desc": "Hotel di tre stelle con junior suite, alcune con balcone. Piccolo e tranquillo, in una zona residenziale del centro.",
+   "pos": "Tra Hatchōbori (circa 430 metri) e Tsukiji: il mercato esterno di Tsukiji, per una colazione a base di pesce, è a una breve passeggiata. La Stazione di Tokyo è a circa 1,5 km.",
+   "tip": "Le valigie spedite da Kyoto il 15 arrivano qui prima di voi: chiedete per iscritto che le custodiscano fino al 18.",
+   "url": "https://www.booking.com/Share-Dr0MgK7"
+  }
+ ],
+ "cards": [
+  [
+   "6人です",
+   "Rokunin desu",
+   "Siamo in sei"
+  ],
+  [
+   "予約しています",
+   "Yoyaku shite imasu",
+   "Abbiamo una prenotazione"
+  ],
+  [
+   "カウンター席でも大丈夫です",
+   "Kauntā-seki demo daijōbu desu",
+   "Va bene anche al banco"
+  ],
+  [
+   "英語のメニューはありますか？",
+   "Eigo no menyū wa arimasu ka?",
+   "Avete un menù in inglese?"
+  ],
+  [
+   "おすすめは何ですか？",
+   "Osusume wa nan desu ka?",
+   "Cosa ci consiglia?"
+  ],
+  [
+   "肉を入れないでください",
+   "Niku o irenaide kudasai",
+   "Senza carne, per favore"
+  ],
+  [
+   "お会計をお願いします",
+   "Okaikei o onegaishimasu",
+   "Il conto, per favore"
+  ],
+  [
+   "別々に払えますか？",
+   "Betsubetsu ni haraemasu ka?",
+   "Possiamo pagare separatamente?"
+  ],
+  [
+   "カードで払えますか？",
+   "Kādo de haraemasu ka?",
+   "Si può pagare con la carta?"
+  ],
+  [
+   "トイレはどこですか？",
+   "Toire wa doko desu ka?",
+   "Dov'è il bagno?"
+  ],
+  [
+   "写真を撮ってもいいですか？",
+   "Shashin o totte mo ii desu ka?",
+   "Possiamo fare una foto?"
+  ]
+ ],
+ "phrases": [
+  [
+   "Sumimasen",
+   "Mi scusi / permesso"
+  ],
+  [
+   "Arigatō gozaimasu",
+   "Grazie"
+  ],
+  [
+   "Rokunin desu",
+   "Siamo in sei"
+  ],
+  [
+   "Eigo no menyū wa arimasu ka?",
+   "Avete un menu in inglese?"
+  ],
+  [
+   "Kore o kudasai",
+   "Questo, per favore"
+  ],
+  [
+   "Okaikei onegaishimasu",
+   "Il conto, per favore"
+  ],
+  [
+   "… wa doko desu ka?",
+   "Dov’è …?"
+  ],
+  [
+   "Daijōbu desu",
+   "Va bene / no, grazie"
+  ]
+ ],
+ "changes": [
+  {
+   "v": "2.7.0",
+   "d": "21 novembre 2026",
+   "t": "Più solida e con il meteo",
+   "items": [
+    "L'app si apre subito anche con la rete lenta o assente, e avvisa quando un aggiornamento è pronto",
+    "Se qualcosa non si carica compare un messaggio chiaro con il pulsante Riprova, invece della pagina bianca",
+    "Meteo sotto ogni giorno nella striscia del percorso, quando la previsione arriva (circa 16 giorni prima), con Kawaguchiko per il giorno del Fuji",
+    "In Valigia gli avvisi dal meteo: ombrello, strati pesanti o abiti leggeri",
+    "Su Android, tenendo premuta l'icona: scorciatoie per Oggi, Hotel e In viaggio",
+    "Il link della guida su WhatsApp mostra un'anteprima con immagine e descrizione"
+   ]
+  },
+  {
+   "v": "2.6.1",
+   "d": "20 novembre 2026",
+   "t": "Presentazione più ordinata",
+   "items": [
+    "Il testo resta sempre dentro lo schermo: se è lungo si adatta da solo",
+    "Le mappe occupano tutto il loro spazio e non scivolano più verso il basso",
+    "Titolo e noren in una fascia in alto, testo e mappa più grandi sotto"
+   ]
+  },
+  {
+   "v": "2.6.0",
+   "d": "20 novembre 2026",
+   "t": "Timbri leggendari e presentazione per la TV",
+   "items": [
+    "Timbri leggendari: arrivate puntuali, entro 10 minuti dall'orario della tappa, e il timbro diventa d'oro con una frase tutta sua",
+    "Cartelli da mostrare: in In viaggio, frasi in giapponese a tutto schermo da girare verso camerieri e commessi",
+    "Presentazione per la TV rifatta: copertina animata, il viaggio in numeri, la mappa del percorso, capitoli per città, giornate dettagliate, hotel, budget e QR per installare l'app"
+   ]
+  },
+  {
+   "v": "2.5.0",
+   "d": "19 novembre 2026",
+   "t": "Volo, treno e computer più scenografico",
+   "items": [
+    "Nei giorni dei voli l'aereo avanza in tempo reale, con lo scalo a Pechino e quanto manca all'atterraggio o alla ripartenza",
+    "Durante il viaggio la barra diventa un treno che scorre sui 16 giorni, colorati per città",
+    "Su computer: panorama a tutta larghezza con la città intera, nobori ai lati e più spazio per i contenuti",
+    "Nuova scadenza per lo scalo a Pechino; arrivo a Milano corretto alle 6:30 del 21 marzo"
+   ]
+  },
+  {
+   "v": "2.4.0",
+   "d": "18 novembre 2026",
+   "t": "In viaggio, timbri e feste",
+   "items": [
+    "Nuovo menu: Preparativi (scadenze, valigia e budget), In viaggio (timbri, convertitore e frasi) e Info più ordinata",
+    "Modalità in viaggio: dal 6 al 21 marzo la guida si apre sul giorno corrente ed evidenzia la prossima tappa con quanto manca",
+    "Timbri da collezionare: durante il viaggio ogni tappa imperdibile ha il suo timbro, raccolti nel Libretto",
+    "Noren sulla scheda del giorno e titoli in stile rivista con i nomi giapponesi delle sezioni",
+    "Il cielo dell'intestazione segue l'ora di Tokyo: alba, giorno, tramonto e notte con le finestre accese",
+    "Natale con la neve e le illuminazioni, Capodanno giapponese con il primo sole dietro il Fuji",
+    "Animazione d'apertura e icona del browser cambiano con i periodi: ultima settimana, viaggio, ritorno",
+    "Su computer: modalità presentazione per mostrare il viaggio giorno per giorno",
+    "Suica: chi ha Android (compresi i Pixel fino al 10) compra la carta Welcome Suica all'arrivo"
+   ]
+  },
+  {
+   "v": "2.3.0",
+   "d": "16 novembre 2026",
+   "t": "Colori giapponesi",
+   "items": [
+    "Nuova palette ispirata ai colori tradizionali: carta washi, inchiostro sumi, vermiglio dei torii e indaco",
+    "Colori delle città sui toni tradizionali: Tokyo indaco, Kyoto glicine, Osaka cachi, Nara matcha",
+    "Sfondi illustrati: la mappa del Giappone negli Hotel, il monte Fuji in Scadenze e Valigia, il Fuji con l'onda in Info",
+    "Luoghi su computer: la mappa resta ferma e l'elenco scorre nella sua colonna; cambiando giorno la pagina non si muove più"
+   ]
+  },
+  {
+   "v": "2.2.0",
+   "d": "16 novembre 2026",
+   "t": "Scadenze, Valigia e Luoghi rinnovati",
+   "items": [
+    "Nuova sezione Scadenze: tutto quello da prenotare e verificare prima di partire, in ordine di data, con i pulsanti per aggiungerlo a Google Calendar o al calendario di iPhone",
+    "Nuova sezione Valigia: le cose da portare per categorie, con le quantità per il gruppo e i consigli per il Giappone",
+    "Luoghi rinnovati: i luoghi in programma sono in ordine di giorno e orario, con il collegamento alla giornata; gli opzionali stanno in fondo",
+    "In Luoghi puoi scegliere quali luoghi vedere sulla mappa; la mappa è più pulita e, su computer, molto più grande",
+    "Pulsante Foto sulle tappe: apre Google Maps sulle foto del luogo",
+    "Soldi spostati in Info: convertitore e totali in evidenza, dettaglio del budget a scomparsa"
+   ]
+  },
+  {
+   "v": "2.1.0",
+   "d": "16 novembre 2026",
+   "t": "Novità della guida",
+   "items": [
+    "Nella sezione Info, le novità di ogni versione e lo storico completo",
+    "Un pallino rosso sul menu Info avvisa quando c'è un aggiornamento"
+   ]
+  },
+  {
+   "v": "2.0.1",
+   "d": "16 novembre 2026",
+   "t": "Menu sempre visibile e aggiornamenti immediati",
+   "items": [
+    "Il menu in basso resta sempre al suo posto anche su Android, quando ricompare la barra del browser",
+    "Ogni aggiornamento arriva subito sul telefono, senza file vecchi rimasti in memoria"
+   ]
+  },
+  {
+   "v": "2.0.0",
+   "d": "16 novembre 2026",
+   "t": "Versione per computer",
+   "items": [
+    "Su schermi larghi la guida si dispone su due colonne: programma a sinistra, mappa grande e fissa a destra",
+    "Luoghi con mappa sempre in vista, Hotel affiancati, Soldi e Info su due colonne",
+    "Menu in alto e frecce ← → della tastiera per cambiare giorno, comodo per presentare il viaggio",
+    "Sul telefono non cambia nulla"
+   ]
+  },
+  {
+   "v": "1.10.1",
+   "d": "16 novembre 2026",
+   "t": "Più fluida",
+   "items": [
+    "Sfondo alleggerito: meno consumo di batteria e scorrimento più stabile"
+   ]
+  },
+  {
+   "v": "1.10.0",
+   "d": "16 novembre 2026",
+   "t": "Sfondi giapponesi",
+   "items": [
+    "Nell'intestazione il panorama della città del giorno: Tokyo, Kyoto, Osaka, Nara, il Fuji e Milano",
+    "Motivi tradizionali in filigrana per ogni città: onde, foglia di canapa, esagoni, cerchi",
+    "Petali di susino che cadono all'apertura"
+   ]
+  },
+  {
+   "v": "1.9.1",
+   "d": "15 novembre 2026",
+   "t": "Swipe più comodo",
+   "items": [
+    "Con lo swipe si torna in cima alla giornata; con i pulsanti Prima/Dopo si resta in fondo"
+   ]
+  },
+  {
+   "v": "1.9.0",
+   "d": "15 novembre 2026",
+   "t": "Swipe, meteo e tema nero",
+   "items": [
+    "Swipe a destra e sinistra sulla scheda per cambiare giorno",
+    "Ora locale e ora di Milano nella scheda del giorno; meteo previsto da metà febbraio, visibile anche offline",
+    "Tema scuro a nero pieno",
+    "Testi più leggibili, colori a contrasto più alto e spunte più facili da toccare",
+    "App più veloce: font salvati sul telefono e funzionamento offline completo"
+   ]
+  },
+  {
+   "v": "1.8.1",
+   "d": "15 novembre 2026",
+   "t": "Pulsanti Prima/Dopo",
+   "items": [
+    "Cambiando giorno i pulsanti restano sotto il dito e la mappa resta in vista"
+   ]
+  },
+  {
+   "v": "1.8.0",
+   "d": "15 novembre 2026",
+   "t": "Checklist prima di partire",
+   "items": [
+    "Nella sezione Info, l'elenco di cosa verificare con gli hotel e cosa prenotare, con le spunte"
+   ]
+  },
+  {
+   "v": "1.7.0",
+   "t": "Kyoto, Osaka e Nara tappa per tappa",
+   "items": [
+    "Programma dettagliato con orari, durate e pulsanti di Google Maps anche per Kyoto, Osaka e Nara",
+    "Arashiyama all'alba, tram storico Randen, Fushimi Inari presto, Gion al tramonto, serata al ryokan",
+    "Nove nuovi luoghi opzionali, dal Ryōan-ji al Sentiero del Filosofo"
+   ]
+  },
+  {
+   "v": "1.6.0",
+   "t": "Indicazioni con Google Maps",
+   "items": [
+    "Su ogni tappa un pulsante che apre Google Maps con il tragitto già impostato",
+    "A piedi Google segue il nostro percorso panoramico; per i treni propone i mezzi",
+    "Conto alla rovescia in mesi e giorni, poi giorni, ore e minuti, infine ore e minuti"
+   ]
+  },
+  {
+   "v": "1.5.1",
+   "t": "Primo giorno",
+   "items": [
+    "Ripristinata la pausa in hotel il giorno dell'arrivo"
+   ]
+  },
+  {
+   "v": "1.5.0",
+   "t": "Mappa zoom e cena al banco",
+   "items": [
+    "Aprendo un giorno, una mappa ingrandita sul percorso con le tappe di dettaglio",
+    "Etichette a tre livelli nei Luoghi: imperdibile, opzionale, scartato",
+    "Cena al banco a Ebisu (ti cucinano davanti) e un solo karaoke d'addio la sera del 19",
+    "Giornate senza pause: si spinge forte"
+   ]
+  },
+  {
+   "v": "1.4.0",
+   "t": "Tokyo tappa per tappa",
+   "items": [
+    "Itinerario di Tokyo con orari, durate e tipo di tappa, con partenza sempre dall'hotel",
+    "Interruttore \"Nascondi opzionali\" per vedere solo l'essenziale",
+    "Ghibli Park tolto dal programma"
+   ]
+  },
+  {
+   "v": "1.3.0",
+   "t": "Tokyo rivista",
+   "items": [
+    "Luoghi divisi in imperdibili, opzionali e scartati",
+    "Skytree unica torre a pagamento; il 19 è una giornata libera da decidere sul posto"
+   ]
+  },
+  {
+   "v": "1.2.1",
+   "t": "Animazione",
+   "items": [
+    "L'animazione d'apertura parte a ogni avvio dell'app"
+   ]
+  },
+  {
+   "v": "1.2.0",
+   "t": "Animazione d'apertura",
+   "items": [
+    "Sole, kanji, linea della metro e aereo che atterra nella barra del conto alla rovescia",
+    "Tornando sull'app, l'aereo riparte lungo la barra"
+   ]
+  },
+  {
+   "v": "1.1.0",
+   "t": "Computer",
+   "items": [
+    "Le file di date e città si scorrono con la rotellina del mouse"
+   ]
+  },
+  {
+   "v": "1.0.0",
+   "t": "Prima versione ufficiale: l'app",
+   "items": [
+    "La guida diventa un'app da installare sul telefono, con icona sulla schermata Home",
+    "Funziona anche senza connessione, una volta aperta con internet",
+    "Online su GitHub per tutto il gruppo, con QR code per condividerla"
+   ]
+  },
+  {
+   "v": "0.6.0-beta",
+   "t": "Hotel",
+   "items": [
+    "Nuova sezione Hotel: descrizione, posizione sulla mappa, check-in e check-out, link alle foto",
+    "Hotel divisi per città"
+   ]
+  },
+  {
+   "v": "0.5.0-beta",
+   "t": "Mappa del Giappone e budget completo",
+   "items": [
+    "Mappa del Giappone con il percorso del viaggio e i luoghi fuori città",
+    "Budget con le spese stimate: Universal Studios, ingressi, pasti, tasse e imprevisti",
+    "Colonna \"Da pagare a testa\" nella sezione Soldi"
+   ]
+  },
+  {
+   "v": "0.4.0-alpha",
+   "t": "Mappe dettagliate",
+   "items": [
+    "Mappe costruite sulle posizioni reali: treni, fiumi, parchi, scala e nord",
+    "Ogni percorso parte dall'hotel"
+   ]
+  },
+  {
+   "v": "0.3.0-alpha",
+   "t": "Percorsi sulle mappe",
+   "items": [
+    "Il percorso di ogni giorno disegnato come una linea della metro"
+   ]
+  },
+  {
+   "v": "0.2.0-alpha",
+   "t": "Mappe e conto alla rovescia",
+   "items": [
+    "Mappe stilizzate di ogni città con le zone del viaggio",
+    "Barra del conto alla rovescia con l'aereo da Milano a Tokyo"
+   ]
+  },
+  {
+   "v": "0.1.0-alpha",
+   "t": "La prima guida",
+   "items": [
+    "Itinerario giorno per giorno con le fermate in stile metro",
+    "Luoghi filtrabili con le spunte \"visto\", budget e convertitore yen-euro",
+    "Alloggi, consigli pratici, frasi utili e numeri di emergenza"
+   ]
   }
  ]
 }

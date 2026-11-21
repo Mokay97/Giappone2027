@@ -91,6 +91,10 @@ header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
 .badge i{font-style:normal;font-weight:700;font-size:11px;color:var(--c)}
 .badge em{font-style:normal;font-weight:700;font-size:16px}
 .stop small{font-size:12px;color:var(--muted)}
+.stop .wxi{font-size:14px;line-height:1;margin-top:-2px}
+.pkwx{background:var(--surface);border-radius:14px;padding:12px 14px;margin:6px 0 10px;border-left:4px solid var(--ai)}
+.pkwx b{display:block;font-size:14px;margin-bottom:4px}
+.pkwx p{margin:2px 0;font-size:14px;color:var(--muted)}
 .stop[aria-current="true"] .badge{background:var(--cf,var(--c));border-color:var(--cf,var(--c));transform:scale(1.12)}
 .stop[aria-current="true"] .badge i,.stop[aria-current="true"] .badge em{color:var(--on-f)}
 .stop.today small{color:var(--ink);font-weight:700}
@@ -704,3 +708,11 @@ svg.leg{animation:shine 2.6s ease-in-out infinite}
   #v-info>.colL{float:left;clear:left;width:calc(50% - 20px);margin-left:0}
   .phr{grid-template-columns:1fr 1fr}
 }
+
+#booterr{position:fixed;inset:0;z-index:300;background:var(--bg);display:grid;place-items:center;padding:24px;text-align:center}
+#booterr b{font-family:var(--kanji);font-size:54px;color:var(--shu)}
+#booterr h2{font-family:var(--kanji);font-weight:800;margin:10px 0 6px}
+#booterr p{color:var(--muted);max-width:420px;margin:0 auto 16px}
+#booterr button{border:0;background:var(--shu);color:var(--on-shu);border-radius:999px;padding:12px 22px;font:inherit;font-weight:700;cursor:pointer}
+#updbar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:250;border:0;background:var(--ai);color:var(--on-ai);border-radius:999px;padding:11px 18px;font:inherit;font-size:14px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.2);cursor:pointer}
+@media (min-width:1024px){#updbar{bottom:24px}}

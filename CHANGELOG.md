@@ -1,6 +1,14 @@
 # Giappone 2027 – Novità della guida
 
-Versione attuale: **2.6.1**
+Versione attuale: **2.7.0**
+
+## 2.7.0 — Più solida e con il meteo (21 novembre 2026)
+- L'app si apre subito anche con la rete lenta o assente, e avvisa quando un aggiornamento è pronto
+- Se qualcosa non si carica compare un messaggio chiaro con il pulsante Riprova, invece della pagina bianca
+- Meteo sotto ogni giorno nella striscia del percorso, quando la previsione arriva (circa 16 giorni prima), con Kawaguchiko per il giorno del Fuji
+- In Valigia gli avvisi dal meteo: ombrello, strati pesanti o abiti leggeri
+- Su Android, tenendo premuta l'icona: scorciatoie per Oggi, Hotel e In viaggio
+- Il link della guida su WhatsApp mostra un'anteprima con immagine e descrizione
 
 ## 2.6.1 — Presentazione più ordinata (20 novembre 2026)
 - Il testo resta sempre dentro lo schermo: se è lungo si adatta da solo
